@@ -8,6 +8,7 @@
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/captura-calif.css" rel="stylesheet">
 
   </head>
   <body>
@@ -20,10 +21,9 @@
               <img src="../imgs/logo3.png" class="img-circle" id="logo">
             </div>
             <ul class="nav nav-pills nav-stacked" id="menu-list">
-                <li class="active"><a href=""><span class="glyphicon glyphicon-th-list"></span>&nbsp; Capturar Resultados</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-edit"></span>&nbsp; Inscripción</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-ok"></span>&nbsp; Calificaciones</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-hourglass"></span>&nbsp; Horarios</a></li>
+                <li><a href="index-asistente-admision.html"><span class="glyphicon glyphicon-home"></span>&nbsp; Inicio</a></li>
+                <li class="active"><a href="captura-calificaciones.html"><span class="glyphicon glyphicon-th-list"></span>&nbsp; Captura de Resultados</a></li>
+                <li><a href="gestion-aspirantes.html"><span class="glyphicon glyphicon-folder-open"></span>&nbsp; Gestion de Aspirantes</a></li>
             </ul>
             <div id="menu-filler">
 
@@ -40,6 +40,7 @@
                 <h2>Captura de Resultados</h2>
               </div>
               <div class="content">
+                <form action="lista-aceptados.html">
                   <table class="table table-striped">
                     <colgroup>
                       <col class="col-sm-5">
@@ -48,7 +49,7 @@
                     </colgroup>
                     <thead>
                       <tr>
-                        <th>Número de Aspirante</th><th>Nombre Completo</th><th>Aceptado</th>
+                        <th>Número de Aspirante</th><th>Nombre Completo</th><th>Puntaje</th>
                       </tr>
                     </thead>
 
@@ -56,36 +57,41 @@
                       <tr>
                         <td>8374162539</td><td>Pedro Jimenez Gonzalez</td>        
                         <td>
-                          <input type="checkbox" value="">                       
+                          <input type="text" class="form-control calif">
                         </td>
                       </tr>
                       <tr>
                         <td>4352617352</td><td>Juan Gutierrez Gomez</td>        
                         <td>
-                          <input type="checkbox" value="">                        
+                          <input type="text" class="form-control calif">
                         </td>
                       </tr>
                       <tr>
                         <td>1827364582</td><td>Ana Jimena Mendoza Lopez</td>        
                         <td>
-                          <input type="checkbox" value="">                        
+                          <input type="text" class="form-control calif">
                         </td>
                       </tr>
                       <tr>
                         <td>9283746152</td><td>Sofía García Martinez</td>        
                         <td>
-                          <input type="checkbox" value="">                        
+                          <input type="text" class="form-control calif">
                         </td>
                       </tr>
                       <tr>
                         <td>6735483916</td><td>Laura Gonzalez Lopez</td>        
                         <td>
-                          <input type="checkbox" value="">                        
+                          <input type="text" class="form-control calif">
                         </td>
                       </tr>
                     </tbody>
 
                   </table>
+
+                  <div class="row" id="opciones">
+                    <button class="col-sm-offset-10 col-sm-2 btn btn-default" type="submit">Cerrar Proceso</button>
+                  </div>
+                </form>
               </div>
             </div>
             <div class="row" id="footer">
