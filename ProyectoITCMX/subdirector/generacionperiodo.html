@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Establecer Periodo</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+
+  </head>
+  <body>
+        <div class="row" id="main-content">
+          <div class="col-sm-2" id="menu-bg">
+              <img src="../imgs/imagen-menu.jpg" id="menu-img">
+          </div>
+          <div class="col-sm-2" id="side-menu">
+            <div class="text-center" id="image-container">
+              <img src="../imgs/logo3.png" class="img-circle" id="logo">
+            </div>
+            <ul class="nav nav-pills nav-stacked" id="menu-list">
+                <li><a href="index.html"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
+                <li class="active"><a href=""><span class="glyphicon glyphicon-calendar"></span>&nbsp; Establecer Periodo</a></li>
+            </ul>
+            <div id="menu-filler">
+
+            </div>
+          </div>
+          <div class="col-sm-10 col-sm-offset-2" id="main-side">
+            <div class="row" id="header">
+              <div class="pull-right" id="user-name-container">
+                <div id="user-name">Pedro Gutierrez Gonzalez &nbsp;<span class="glyphicon glyphicon-list-alt"></span></div>
+              </div>
+            </div>
+            <div class="row" id="content-container">
+              <div class="page-header">
+                <h2>Fechas de Generación de Periodo</h2>
+              </div>
+              <div class="content">
+
+                  <form action="" class="form-horizontal">
+
+                    <div class="form-group">
+                      <label for="" class="control-label col-sm-offset-4">Fecha de Inicio de Periodo:</label>
+					  <div class="input-group date form_date col-sm-offset-4 col-sm-4" data-date=""
+						   data-date-format="dd MM yyyy" data-link-field="inicio"
+						   data-link-format="yyyy-mm-dd">
+						   <input class="form-control" type="text" value=""> <span class="input-group-addon"><span
+							   class="glyphicon glyphicon-remove"></span></span> <span
+							   class="input-group-addon"><span
+							   class="glyphicon glyphicon-calendar"></span></span>
+					   </div>
+					   <input type="hidden" id="inicio" value="" /><br />
+                    </div>
+
+					<div class="form-group">
+                      <label for="" class="control-label col-sm-offset-4">Fecha de Fin de Periodo:</label>
+					  <div class="input-group date form_date col-sm-offset-4 col-sm-4" data-date=""
+						   data-date-format="dd MM yyyy" data-link-field="fin"
+						   data-link-format="yyyy-mm-dd">
+						   <input class="form-control" type="text" value=""> <span class="input-group-addon"><span
+							   class="glyphicon glyphicon-remove"></span></span> <span
+							   class="input-group-addon"><span
+							   class="glyphicon glyphicon-calendar"></span></span>
+					   </div>
+					   <input type="hidden" id="fin" value="" /><br />
+                    </div>
+                  </form>
+
+				<div class="text-center">
+					<a href="#" class="btn btn-primary">Establecer Periodo</a>
+				</div>
+
+              </div>
+            </div>
+            <div class="row" id="footer">
+              <div class="col-sm-5" id="dir">
+                 Av. Juan de Dios Bátiz esq. Av. Miguel Othón de Mendizábal, Col. Lindavista. Demarcación Territorial, Gustavo A. Madero. Ciudad de México. C. P. 07738.
+              </div>
+              <div class="col-sm-5 col-sm-offset-2" id="year">
+                <span class="pull-right"><span class="glyphicon glyphicon-registration-mark"></span>&nbsp;2016</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../js/bootstrap-datetimepicker.js"
+		charset="UTF-8"></script>
+	<script type="text/javascript" src="../js/bootstrap-datetimepicker.es.js"
+		charset="UTF-8"></script>
+	<script type="text/javascript">
+		$('.form_datetime').datetimepicker({
+			language : 'es',
+			weekStart : 1,
+			todayBtn : 1,
+			autoclose : 1,
+			todayHighlight : 1,
+			startView : 2,
+			forceParse : 0,
+			showMeridian : 1
+		});
+		$('.form_date').datetimepicker({
+		    multidate: true,
+		    daysOfWeekDisabled: "0,6",
+			language : 'es',
+			weekStart : 1,
+			todayBtn : 1,
+			autoclose : 1,
+			todayHighlight : 1,
+			startView : 2,
+			minView : 2,
+			forceParse : 0
+		});
+		$('.form_time').datetimepicker({
+			language : 'es',
+			weekStart : 1,
+			todayBtn : 1,
+			autoclose : 1,
+			todayHighlight : 1,
+			startView : 1,
+			minView : 0,
+			maxView : 1,
+			forceParse : 0
+		});
+	</script>
+
+  </body>
+</html>
