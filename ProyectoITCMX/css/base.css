@@ -88,6 +88,10 @@ body{
 	border-radius: 0px;
 }
 
+.nav .open>a{
+	background-color: #1E4352 !important;
+}
+
 #side-menu a:hover{
 	color: #DDE7EB !important;
 	background-color:#1E4352
@@ -194,4 +198,14 @@ body{
     background-color: whitesmoke;
     color: #4C768A;
     border-color: #4C768A;
+}
+
+.dropdown-menu-right{
+	top: 0px;
+	right: -160px;
+	background-color: #2B5A6E;
+}
+
+.dropdown-menu-right a:hover{
+	background-color: #2B5A6E !important;
 }

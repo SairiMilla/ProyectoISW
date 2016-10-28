@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GESTION  PARA ALUMNO</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+
+  </head>
+  <body>
+        <div class="row" id="main-content">
+          <div class="col-sm-2" id="menu-bg">
+              <img src="../imgs/imagen-menu.jpg" id="menu-img">
+          </div>
+		<div class="col-sm-2" id="side-menu">
+			<div class="text-center" id="image-container">
+
+				<img src="../imgs/logo3.png" class="img-circle" id="logo">
+			</div>
+			<ul class="nav nav-pills nav-stacked" id="menu-list">
+				<li><a href="index-asistente-gestion-escolar.html"><span class="glyphicon glyphicon-home"></span>&nbsp; Inicio</a></li>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-education"></span>&nbsp; Alumnos</span></a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                          <li><a href="buscarAlumno.html">Cambiar Horario</a></li>
+                          <li><a href="buscarAlumno2.html">Comprobante de Inscripción</a></li>
+                        </ul>                
+                </li>
+                <li><a href="busqueda-inscripcion.html"><span class="glyphicon glyphicon-save"></span>&nbsp; Inscribir Alumno </a></li>
+                <li class="active"><a href="buscarAlumnoTabla.html"><span class="glyphicon glyphicon-refresh"></span>&nbsp; Reinscribir Alumno </a></li>
+			</ul>
+			<div id="menu-filler"></div>
+		</div>
+              <div class="col-sm-12 col-sm-offset-2" id="main-side">
+            <div class="row" id="header">
+              <div class="pull-right" id="user-name-container">
+                <div id="user-name">Jefe Departamento Escolar &nbsp;<span class="glyphicon glyphicon-user"></span></div>
+              </div>
+            </div>
+            <div class="container">
+           <div class="row" >
+              <div class="page-header">
+                <h1>Modificar Horario de Alumno</h1>
+                <h2>Gestion Alumno</h2>
+              </div>
+          </div>
+          
+        
+		<div class="row">
+		<div class="col-sm-5 ">
+		</div>
+	  	  <div class="col-sm-4 ">
+	  	  <h2>Horario Actual</h2>
+	      </div>
+		<div class="col-sm-3 ">
+		<a href="index-asistente-gestion-escolar.html" class="btn btn-primary" role="button" >Finalizar Gestion</a>
+		 </div>
+	   </div>
+	   
+
+  <div class="row"> 
+  <div class="table table-striped">
+               <div class="col-sm-11 ">
+  <table class="table table-striped">
+    <tr class="info">
+      <th></th>
+      <th>Grupo</th>
+      <th>Materia</th>    
+      <th>Profesor</th>
+      <th>Lunes</th>
+      <th>Martes</th>
+      <th>Miercoles</th>
+      <th>Jueves   </th>
+      <th>Viernes  </th>
+
+	  
+      
+    </tr>
+    <tr>
+      <td>
+      	<div class="checkbox">
+  		<label><input type="checkbox" value=""></label>
+		</div>
+      </td>
+      <td>3CM1 </td>
+      <td>Ingenieria de Software</td>
+      <td>Lopez Rabadan Jose</td>
+      <td>7:00-8:30</td>
+      <td></td>
+      <td>7:00-8:30</td>
+      <td></td>
+      <td>7:00-8:30</td>
+           
+    </tr>
+    
+     <tr>
+      <td>
+      	<div class="checkbox">
+  		<label><input type="checkbox" value=""></label>
+		</div>
+      </td>
+      <td>3CM2 </td>
+      <td>Arquitectura de Computadoras</td>
+      <td>Gelacio Cabrera Reyes</td>
+      <td></td>
+      <td>7:00-8:30</td>
+      <td>8:30-10:00</td>
+      <td>7:00-8:30</td>
+      <td></td>
+       </tr>   
+       
+       <tr>
+        <td>
+      	<div class="checkbox">
+  		<label><input type="checkbox" value=""></label>
+		</div>
+      </td>
+      <td>3CM4 </td>
+      <td>Compiladores</td>
+      <td>Tecla Parra Roberto</td>
+      <td></td>
+      <td>8:30-10:00</td>
+      <td>10:30-12:00</td>
+      <td>10:30-12:00</td>
+      <td></td>
+       </tr>   
+       
+       <tr>
+        <td>
+      	<div class="checkbox">
+  		<label><input type="checkbox" value=""></label>
+		</div>
+      </td>
+      <td>3CM6</td>
+      <td>Microcontroladores</td>
+      <td>Perez Perez Juan</td>
+      <td>10:30-12:00</td>
+      <td></td>
+      <td></td>
+      <td>8:30-10:00</td>
+      <td>12:00-13:30</td>
+       </tr>   
+       
+       <tr>
+          <td>
+          <div class="checkbox">
+  		   <label><input type="checkbox" value=""></label>
+		  </div>
+          </td>
+	      <td>3CM6</td>
+	      <td>Redes 2</td>
+	      <td>Perez Mondragon Tanibeth</td>
+	      <td></td>
+	      <td>12:00-13:30</td>
+	      <td>13:30-15:00</td>
+	      <td>12:00-13:30</td>
+	      <td>7:00-8:30</td>
+	      </tr>  
+  </table>
+  </div>
+</div>
+</div>
+
+	   <div class="row">
+	   	<div class="col-sm-2">
+	   </div>
+		<div class="col-sm-4">
+		 <div class="container">
+			  <!-- Trigger the modal with a button -->
+			  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Agregar Materia</button>
+			
+			  <!-- Modal -->
+			  <div class="modal fade" id="myModal" role="dialog">
+			      <div class="modal-dialog modal-lg">
+			      <!-- Modal content-->
+			      <div class="modal-content">
+			        <div class="modal-header">
+			          <button type="button" class="close" data-dismiss="modal">Cancelar</button>
+
+			          <h4 class="modal-title">Modal Header</h4>
+			        </div>
+			        <div class="modal-body">
+			        <div class="row">
+					  <div class="col-sm-7">
+					   <div class="form-group">
+					     <div class="input-group">
+					       <div class="input-group-addon">Buscar Materia Por: </div>
+					        <select class="form-control" name="" id="buscarmateria">
+					         <option value="">Semestre</option>
+					   		 <option value="">Area</option>
+					    	 <option value="">Grupo</option>
+					  		</select>
+					 	  </div>
+					   </div>
+					 </div>
+					 <div class="col-sm-5">
+					 	<div class="form-group">
+        			     	<div class="input-group">
+          						<label class="sr-only" for="semestre">Semestre</label>
+          						<div class="input-group-addon">Semestre:</div>
+          						  <input class="form-control" id="semestre" type="text" placeholder="Semestre:">
+   								</div>
+   					    </div> 
+					 </div>
+					 
+				</div>
+			          <div class="row"> 
+							  <div class="table-responsive">
+							               <div class="col-sm-11 ">
+							  <table class="table table-striped table-hover table-condensed">
+							    <tr class="success">
+							      <th></th>
+							      <th>Grupo</th>
+							      <th>Materia</th>    
+							      <th>L</th>
+							      <th>M</th>
+							      <th>M</th>
+							      <th>J</th>
+							      <th>V </th>							
+								  
+							      
+							    </tr>
+							    <tr>
+							      <td>
+							      	<div class="checkbox">
+							  		<label><input type="checkbox" value=""></label>
+									</div>
+							      </td>
+							      <td>3CM1 </td>
+							      <td>Ingenieria de Software</td>
+							      <td>7:00-8:30</td>
+							      <td></td>
+							      <td>7:00-8:30</td>
+							      <td></td>
+							      <td>7:00-8:30</td>
+							           
+							    </tr>
+							    
+							     <tr>
+							      <td>
+							      	<div class="checkbox">
+							  		<label><input type="checkbox" value=""></label>
+									</div>
+							      </td>
+							      <td>3CM2 </td>
+							      <td>Arquitectura de Computadoras</td>
+							      <td></td>
+							      <td>7:00-8:30</td>
+							      <td>8:30-10:00</td>
+							      <td>7:00-8:30</td>
+							      <td></td>
+							       </tr>   
+							       
+							       <tr>
+							        <td>
+							      	<div class="checkbox">
+							  		<label><input type="checkbox" value=""></label>
+									</div>
+							      </td>
+							      <td>3CM4 </td>
+							      <td>Compiladores</td>
+							      <td></td>
+							      <td>8:30-10:00</td>
+							      <td>10:30-12:00</td>
+							      <td>10:30-12:00</td>
+							      <td></td>
+							       </tr>   
+							       
+							       <tr>
+							        <td>
+							      	<div class="checkbox">
+							  		<label><input type="checkbox" value=""></label>
+									</div>
+							      </td>
+							      <td>3CM6</td>
+							      <td>Micros</td>
+							      <td>10:30-12:00</td>
+							      <td></td>
+							      <td></td>
+							      <td>8:30-10:00</td>
+							      <td>12:00-13:30</td>
+							       </tr>   
+							       
+							       <tr>
+							          <td>
+							          <div class="checkbox">
+							  		   <label><input type="checkbox" value=""></label>
+									  </div>
+							          </td>
+								      <td>3CM6</td>
+								      <td>Redes 2</td>
+								      <td>12:00-13:30</td>
+								      <td>13:30-15:00</td>
+								      <td>12:00-13:30</td>
+								      <td>7:00-8:30</td>
+								      </tr>  
+							  </table>
+							  </div>
+							</div>
+							</div>
+			        
+			        
+			        </div>
+			        <div class="modal-footer">
+			          <button type="button" class="btn btn-default" data-dismiss="modal">Agregar</button>
+			          
+			       </div>
+			     </div>      
+			  </div>
+			</div>
+		  </div>
+	   	</div>
+	   	
+	   			<div class="col-sm-4">
+		 <div class="container">
+			  <!-- Trigger the modal with a button -->
+			  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">Eliminar Materia</button>
+			
+			  <!-- Modal -->
+			  <div class="modal fade" id="myModal2" role="dialog">
+			    <div class="modal-dialog">
+			    
+			      <!-- Modal content-->
+			      <div class="modal-content">
+			        <div class="modal-header">
+			          <button type="button" class="close" data-dismiss="modal">Cancelar</button>
+			        </div>
+			        <div class="modal-body">
+			        	<h2>¿Seguro desea eliminar estas materias?</h2>
+			        </div>
+			        <div class="modal-footer">
++			          <button type="button" class="btn btn-default" data-dismiss="modal">Eliminar</button>
+			          
+			       </div>
+			     </div>      
+			  </div>
+			</div>
+		  </div>
+	   	</div>
+	   	
+	   	
+	   	
+	   </div>
+	   
+<div class=row>
+		<h1></h1>
+
+</div>
+</div>
+            <br><br><br><br><br><br> <br><br><br>
+            <div class="row" id="footer">
+              <div class="col-sm-8" id="dir">
+                 Av. Juan de Dios Bátiz esq. Av. Miguel Othón de Mendizábal, Col. Lindavista. Demarcación Territorial, Gustavo A. Madero. Ciudad de México. C. P. 07738.
+              </div>
+              <div class="col-sm-8 col-sm-offset-2" id="year">
+                <span class="pull-right"><span class="glyphicon glyphicon-registration-mark"></span>&nbsp;2016</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+     <script src="../js/jquery-ui.js"></script>
+
+
+  </body>
+</html>
