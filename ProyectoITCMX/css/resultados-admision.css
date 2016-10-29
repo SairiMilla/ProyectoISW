@@ -1,0 +1,32 @@
+#img-aspirante{
+	width: 100%;
+}
+
+
+#img-aspirante-container{
+		border-right: 2px;
+		border-right-style: solid;
+		border-right-color: #4C768A;
+}
+
+#datos-aspirante{
+	margin-top: 40px;
+	padding-left: 10px;
+}
+
+.dato{
+	font-size: 1.2em;
+	margin: 10px 0px;
+}
+.campo{
+	color: #4C768A;
+	font-weight: bold;
+}
+
+.result-positivo{
+	color: #6195AD;
+}
+
+.result-negativo{
+	color: #8C4530;
+}
