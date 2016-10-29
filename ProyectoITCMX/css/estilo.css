@@ -5,25 +5,10 @@
 
 .top {margin-top: 15px;}
 
-#top2 {margin-top: 60px;}
-
-#btn-green {
-	color: green;
-	font-size: 15px;
-}
-
-#left {margin-left: 100px;}
-
-#left2 {margin-left: 50px;}
-
-#left-btn {margin-left: 150px;}
+.top2 {margin-top: 60px;}
 
 #ast{
 	color: red;
 	font-size: 20px;
 	font-weight: bold;
-}
-
-#info {
-	font-size: 12px;
 }
