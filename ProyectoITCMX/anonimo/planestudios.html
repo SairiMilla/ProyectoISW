@@ -25,7 +25,6 @@
                 <li class="active"><a href=""><span class="glyphicon glyphicon-ok"></span>&nbsp; Plan de estudios</a></li>
                 <li><a href="admision.html"><span class="glyphicon glyphicon-hourglass"></span>&nbsp; Admisi&oacute;n</a></li>
                 <li><a href="contacto.html"><span class="glyphicon glyphicon-hourglass"></span>&nbsp; Contacto</a></li>
-                <li><a href="iniciarsesion.html"><span class="glyphicon glyphicon-hourglass"></span>&nbsp; Iniciar sesi&oacute;n</a></li>
             </ul>
             <div id="menu-filler">
 
@@ -36,28 +35,51 @@
             <!-- Header -->
             <div class="row" id="header">
               <div class="pull-right" id="user-name-container">
-                <div id="user-name">Pedro Gutierrez Gonzalez &nbsp;<span class="glyphicon glyphicon-education"></span></div>
+                <div id="user-name"><a href="" data-toggle="modal" data-target="#iniciar-sesion">Iniciar Sesión &nbsp;<span class="glyphicon glyphicon-log-in"></span></a></div>
               </div>
             </div>
             <div class="row" id="content-container">
               <div class="page-header">
-                <h2>Bienvenida</h2>
+                <h2>Plan de Estudios</h2>
               </div>
                 
-              <!-- Contenido -->
-              <div class="jumbotron content">
-                  <h1>Plan estudios</h1>
-                  <div class="text-center">
-              <div class="panel panel-info">
-                <!--<div class="panel-heading">Segundo Nivel</div>-->
-                <div class="content">
-                    <img src="../imgs/plan_de_estudios.png" class="img-responsive center-block ">
+              <!-- Imagen del Plan de Estudios -->
+                <div class="text-center">
+                    <div class="panel panel-info">
+                        <div class="content">
+                            <img src="../imgs/plan_de_estudios.png" class="img-responsive center-block ">
+                        </div>
                     </div>
-              </div>
-                    </div>
-                  
-              </div>
+                </div>  
             </div>
+            
+            <!-- Modal Iniciar Sesión -->
+              <div class="modal fade" id="iniciar-sesion" role="dialog">
+                <div class="modal-dialog">
+
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title text-center">Inicia Sesión </h4>
+                    </div>
+                    <div class="modal-body">
+                          <form>
+                            <div class="form-group">
+                              <label for="text">Usuario:</label>
+                              <input type="text" class="form-control" id="email" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                              <label for="pwd">Contraseña:</label>
+                              <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit</button>
+                          </form>
+                    </div>
+
+                </div>
+               </div> 
+              </div>
               
             <!-- Footer -->
             <div class="row" id="footer">
@@ -70,8 +92,8 @@
             </div>
           </div>
         </div>
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
   </body>
 </html>
