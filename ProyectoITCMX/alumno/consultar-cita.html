@@ -20,20 +20,31 @@
             <div class="text-center" id="image-container">
               <img src="../imgs/logo3.png" class="img-circle" id="logo">
             </div>
-            <ul class="nav nav-pills nav-stacked" id="menu-list">
-                <li class="active"><a href=""><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
+            <ul class="nav nav-pills nav-stacked left-menu" id="menu-list">
+                <li><a href="alumno.html"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-edit"></span>&nbsp; Datos personales</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-ok"></span>&nbsp; Consultar calificaciones</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-edit"></span>&nbsp; Horario</a></li>             
-                <li role="presentation" class="active dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                    Reinscripcion <span class="caret"></span>
-                  </a>
-                  <ul class="dropdown-menu" id="menu-list">
-                    <ul class="dropdown"><a href="inscribir-horario.html">Inscribir Horario</a></ul>
-                    <ul class="dropdown"><a href="#">Consultar Cita de Reinscripción</a></ul>
-                    <ul class="dropdown"><a href="#">Consultar Horarios</a></ul>
-                  </ul>
+                <li><a href="#"><span class="glyphicon glyphicon-edit"></span>&nbsp; Horario</a></li>                           
+                <li>
+                    <a href="#" data-target="#item1" data-toggle="collapse" data-parent="#stacked-menu">
+                        Reinscripci&oacute;n<span class="caret arrow"></span>
+                    </a>
+                    
+                    <ul class="nav nav-stacked collapse left-submenu" id="item1">
+                        <li>
+                            <a href="inscribir-horario.html">
+                                <span class="glyphicon glyphicon-edit"></span>&nbsp; Inscribir Horario</a>
+                        </li>
+                        <li>
+                            <a href="consultar-cita.html">
+                                <span class="glyphicon glyphicon-ok"></span>&nbsp; Consultar Cita de Reinscripci&iacute;n</a>
+                        </li>
+                        <li>
+                          <a href="">
+                            <span>Consultar Horarios</span>
+                          </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
             <div id="menu-filler">
