@@ -8,7 +8,9 @@
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/base.css" rel="stylesheet">
-
+    <link href="../css/gestion-aspirantes.css" rel="stylesheet">
+    <script src="../js/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/sweetalert.css">
   </head>
 
 
@@ -47,16 +49,16 @@
 
                           <div class="input-group">
                               <div class="form-group">
-                                  <select class="form-control select-search" name="category">
+                                  <select class="form-control select-search" name="category" id="tipo-busqueda">
                                     <option value="0">Buscar por Folio</option>
                                     <option value="1">Buscar por Nombre</option>
                                   </select>   
                               </div>
                               <div class="form-group">
-                                <input type="text" class="form-control search-text" placeholder="Buscar un aspirante">
+                                <input type="text" class="form-control search-text" placeholder="Buscar un aspirante" id="busqueda">
                               </div>
                               <div class="form-group">
-                                <button type="submit" class="btn btn-default btn-search btn-red"><span class="glyphicon glyphicon-search"></span></button>
+                                <button id="buscar" type="button" class="btn btn-default btn-search btn-red"><span class="glyphicon glyphicon-search"></span></button>
                               </div>
 
                           </div>
@@ -64,12 +66,17 @@
                       <div class="form-group col-sm-offset-1 col-sm-5">
                         <label class="control-label col-sm-2 radio-default" for="text">Filtro:</label>
                         <div class="col-sm-offset-2">
-                            <label class="checkbox-inline"><input type="checkbox" value="">Correcto</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="">Incorrecto</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="">Pendiente</label>
+                            <label class="checkbox-inline"><input type="checkbox" value=""  name="filtro" id="corr">Correcto</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="" name="filtro" id="incorr">Incorrecto</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="" name="filtro" id="pend">Pendiente</label>
                         </div>
                       </div>
                     </form>
+                  </div>
+                  
+                  <div class="alert alert-info fade in" id="alerta-busqueda">
+                    <a href="#" class="close" aria-label="close">&times;</a>
+                    <strong>Info!</strong> La búsqueda no ha arrojado resultados.
                   </div>
                   <div class="row">
                       <table class="table table-striped">
@@ -91,9 +98,9 @@
                           </tr>
                         </thead>
 
-                        <tbody>
+                        <tbody id="contenido-tabla">
                           <tr>
-                            <td>8374162539</td>
+                            <td>TR6YU758</td>
                             <td >Pedro Jimenez Gonzalez</td>  
                             <td><span class="highlight corr-highlight">Correcta</span></td>        
 
@@ -106,7 +113,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <td>4352617352</td>
+                            <td>HJKUYT678</td>
                             <td>Juan Gutierrez Gomez</td>        
                             <td ><span class="highlight incorr-highlight">Incorrecta</span></td>        
 
@@ -134,7 +141,7 @@
 
                           </tr>
                           <tr>
-                            <td>9283746152</td>
+                            <td>AF542HU7</td>
                             <td>Sofía García Martinez</td>        
                             <td><span class="highlight rev-highlight">En revisión</span></td>        
 
@@ -148,7 +155,7 @@
 
                           </tr>
                           <tr>
-                            <td>6735483916</td>
+                            <td>892YH7HK</td>
                             <td>Laura Gonzalez Lopez</td>        
                             <td><span class="highlight pend-highlight">Pendiente de Revisión</span></td>        
 
@@ -198,39 +205,39 @@
                 <h4 class="modal-title">Datos del Aspirante Pedro Jimenez Gonzalez</h4>
               </div>
               <div class="modal-body">
-                 <form class="form-horizontal">     
+                 <form class="form-horizontal" id="form-datos-alumno" data-toggle="validator">     
                     <div class="form-group">
                       <label class="control-label col-sm-2" for="text">Nombre:</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" id="nombre" placeholder="Introduce nombre o nombres">
+                        <input type="text" class="form-control" id="nombre" placeholder="Introduce nombre o nombres" required>
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="control-label col-sm-2" for="text">Primer Apellido:</label>
+                      <label class="control-label col-sm-2" for="primapellido">Primer Apellido:</label>
                       <div class="col-sm-4">
-                        <input type="text" class="form-control" id="apellido">
+                        <input type="text" class="form-control" id="primapellido" required>
                       </div>
-                      <label class="control-label col-sm-2" for="text">Segundo Apellido:</label>
+                      <label class="control-label col-sm-2" for="sapellido">Segundo Apellido:</label>
                       <div class="col-sm-4">
-                        <input type="text" class="form-control" id="apellido" placeholder="(Opcional)">
+                        <input type="text" class="form-control" id="sapellido" placeholder="(Opcional)">
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label class="control-label col-sm-2" for="text">CURP:</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" id="curp">
+                        <input type="text" class="form-control" id="curp" required>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label class="control-label col-sm-2" for="callno">Calle y No. de casa:</label>
                       <div class="col-sm-4">
-                        <input type="text" class="form-control" id="callno">
+                        <input type="text" class="form-control" id="callno" required>
                       </div>
                       <label class="control-label col-sm-2" for="colon">Colonia:</label>
                       <div class="col-sm-4">
-                        <input type="text" class="form-control" id="colon">
+                        <input type="text" class="form-control" id="colon" required>
                       </div>
                     </div>
 
@@ -238,16 +245,17 @@
 
                         <label class="control-label col-sm-2" for="cp">C.P.</label>
                         <div class="col-sm-3">
-                          <input type="text" class="form-control" id="cp" placeholder="Código Postal">
+                          <input type="text" class="form-control" id="cp" placeholder="Código Postal" required pattern="([0-9])+" data-pattern-error="Sólo valores numéricos">
+                          <div class="help-block with-errors"></div>
                         </div>
                         <label class="control-label col-sm-2" for="municipio">Delegación:</label>
                         <div class="col-sm-5">
-                            <select class="form-control" id="estado">
-                              <option>--Selecciona--</option>
-                              <option>Gustavo A. Madero</option>
-                              <option>Álvaro Obregón</option>
-                              <option>Coyoacán</option>
-                              <option>Iztapalapa</option>
+                            <select class="form-control" id="estado" required>
+                              <option value="">--Selecciona--</option>
+                              <option value="Gustavo A. Madero">Gustavo A. Madero</option>
+                              <option value="Álvaro Obregón">Álvaro Obregón</option>
+                              <option value="Coyoacán">Coyoacán</option>
+                              <option value="Iztapalapa">Iztapalapa</option>
                             </select>  
                         </div>
                     </div>  
@@ -265,14 +273,14 @@
                             class="glyphicon glyphicon-calendar"></span></span>
                         </div>
                       </div>
-                      <label class="control-label col-sm-2" for="colon">Lugar de Nacimiento:</label>
+                      <label class="control-label col-sm-2" for="colon" >Lugar de Nacimiento:</label>
                       <div class="col-sm-4">
-                        <select class="form-control" id="estado">
-                            <option>--Selecciona--</option>
-                            <option>Ciudad de México</option>
-                            <option>Veracruz</option>
-                            <option>Jalisco</option>
-                            <option>Guerrero</option>
+                        <select class="form-control" id="lug" required>
+                            <option value="">--Selecciona--</option>
+                            <option value="Ciudad de México">Ciudad de México</option>
+                            <option value="Veracruz">Veracruz</option>
+                            <option value="Jalisco">Jalisco</option>
+                            <option value="Guerrero">Guerrero</option>
                         </select> 
                       </div>
                     </div>
@@ -281,36 +289,38 @@
 
                         <label class="control-label col-sm-2 radio-label" for="text">Género:</label>
                         <div class="col-sm-3">
-                          <div class="radio"><label><input type="radio" name="optradio">Masculino</label></div>
-                          <div class="radio"><label><input type="radio" name="optradio">Femenino</label></div>
-                          <div class="radio"><label><input type="radio" name="optradio">Otro</label></div>         
+                          <div class="radio"><label><input type="radio" name="optradio" required>Masculino</label></div>
+                          <div class="radio"><label><input type="radio" name="optradio" required>Femenino</label></div>
+                          <div class="radio"><label><input type="radio" name="optradio" required>Otro</label></div>         
                         </div>
                         <label class="control-label col-sm-2" for="municipio">E-mail:</label>
                         <div class="col-sm-5">
-                          <input type="text" class="form-control" id="cp">
+                          <input type="email" class="form-control" id="mail" required>
+                          <div class="help-block with-errors"></div> 
                         </div>
                     </div>
 
                     <div class="form-group">
                       <label class="control-label col-sm-2" for="text">Escuela de Procedencia:</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" id="escuela">
+                        <input type="text" class="form-control" id="escuela" required>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label class="control-label col-sm-2" for="text">Teléfono:</label>
                       <div class="col-sm-4">
-                        <input type="text" class="form-control" id="escuela">
+                        <input type="text" class="form-control" id="tel" required>
                       </div>
 
                       <label class="control-label col-sm-2" for="estado">Plantel al que desea Ingresar:</label>
                         <div class="col-sm-4">
-                            <select class="form-control" id="estado">
-                            <option>Ciudad de México</option>
-                            <option>Veracruz</option>
-                            <option>Jalisco</option>
-                            <option>Guerrero</option>
+                            <select class="form-control" id="plant" required>
+                                <option value="">--Selecciona--</option>
+                                <option value="Ciudad de México">Ciudad de México</option>
+                                <option value="Veracruz">Veracruz</option>
+                                <option value="Jalisco">Jalisco</option>
+                                <option value="Guerrero">Guerrero</option>
                             </select>  
                         </div>
                     </div>
@@ -405,14 +415,15 @@
                 <h4 class="modal-title">Introduce un comentario</h4>
               </div>
               <div class="modal-body">
-                  <form class="form-horizontal">
-                    <div class="form-group">
-                      <label for="comment">Comentario:</label>
-                      <textarea class="form-control" rows="5" id="comment"></textarea>
+                  <form class="form-horizontal" data-toggle="validator" id="comentarios-correo">
+                    <div class="form-group" id="form-comentarios">
+                      <label for="comment" class="control-label">Comentario:</label>
+                      <textarea class="form-control" rows="5" id="comment" required></textarea>
+                      <div class="help-block with-errors"></div>  
                     </div>
                     <div class="form-group">
                       <div class="col-sm-offset-7 col-sm-5">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Enviar Correo de Notificación</button>
+                        <button class="btn btn-default" id="butn-enviar">Enviar Correo de Notificación</button>
                       </div>
                    </div>  
                   </form> 
@@ -424,13 +435,55 @@
 
     <script src="../js/jquery-1.11.3.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/validator.min.js"></script>
+
     <script type="text/javascript" src="../js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
     <script type="text/javascript" src="../js/bootstrap-datetimepicker.es.js" charset="UTF-8"></script>
     <script>
       $(document).ready(function(){
           $('[data-toggle="tooltip"]').tooltip(); 
           var notif=false;
-
+          var contI=$('#contenido-tabla').html();
+          $('#alerta-busqueda').hide();
+          
+          
+          $('#form-datos-alumno').validator().on('submit', function (e) {
+              if (e.isDefaultPrevented()) {
+                // handle the invalid form...
+              } else {
+                  e.preventDefault();
+                swal({
+                  title: "Datos Actualizados",
+                  text: "Se han actualizado los datos del aspirante",
+                  type: "success",
+                },
+                function(){
+                  $('#editarDatos').modal('hide');
+                });
+              }
+            });
+          
+          $('#comentarios-correo').validator().on('submit', function (e) {
+              if (e.isDefaultPrevented()) {
+                // handle the invalid form...
+              } else {
+                  e.preventDefault();
+                swal({
+                  title: "Accion Completada",
+                  text: "Se ha enviado notificacion al alumno",
+                  type: "success",
+                },
+                function(){
+                  $('#modalComentarios').modal('hide');
+                });
+              }
+            });
+          
+          
+          $('#butn-enviar').on('click', function () {
+           notif=true;
+          });
+          
           $('#btnNotificar').on('click', function () {
            notif=true;
           });
@@ -439,7 +492,7 @@
             // Load up a new modal...
             if(notif){
               $('#modalComentarios').modal('show');
-              notif=false;
+                notif=false;
             }
           });
 
@@ -455,6 +508,52 @@
             minView : 2,
             forceParse : 0
           });
+          
+          $('input[name="filtro"]').change(function () {
+                var tablaCons="";
+                if($('input[name="filtro"]:checkbox:checked').length>0){
+                    if($("#corr").is(":checked")){
+                        tablaCons+=" <tr><td>8374162539</td><td >Pedro Jimenez Gonzalez</td><td><span class='highlight corr-highlight'>Correcta</span></td> <td><button type='button' class='btn btn-default' data-toggle='modal' data-target='#myModal'>Revisar</button></td><td><button type='button' class='btn btn-default' data-toggle='modal' data-target='#editarDatos'>Editar</button></td></tr>";
+                    } 
+                    if($("#incorr").is(":checked")){
+                        tablaCons+=" <tr><td>4352617352</td><td>Ana Jimena Mendoza Lopez</td><td><span class='highlight incorr-highlight'>Incorrecta</span></td> <td><button type='button' class='btn btn-default' data-toggle='modal' data-target='#myModal'>Revisar</button></td><td><button type='button' class='btn btn-default' data-toggle='modal' data-target='#editarDatos'>Editar</button></td></tr>";
+                        tablaCons+=" <tr><td>1827364582</td><td>Juan Gutierrez Gomez</td><td><span class='highlight incorr-highlight'>Incorrecta</span></td> <td><button type='button' class='btn btn-default' data-toggle='modal' data-target='#myModal'>Revisar</button></td><td><button type='button' class='btn btn-default' data-toggle='modal' data-target='#editarDatos'>Editar</button></td></tr>";
+                    }
+                    
+                   if($("#pend").is(":checked")){
+                        tablaCons+=" <tr><td>6735483916</td><td>Laura Gonzalez Lopez</td><td><span class='highlight incorr-highlight'>Pendiente de Revisión</span></td> <td><button type='button' class='btn btn-default' data-toggle='modal' data-target='#myModal'>Revisar</button></td><td><button type='button' class='btn btn-default' data-toggle='modal' data-target='#editarDatos'>Editar</button></td></tr>";
+                    }
+                    $('#contenido-tabla').html(tablaCons);
+
+                }
+               else{
+
+                    $('#contenido-tabla').html(contI);
+               }
+          });
+          
+          $('#buscar').click(function () {
+              var val="";
+                if($('#busqueda').val()==""){
+                   
+                    $('#contenido-tabla').html(contI);
+                }
+                else if($('#busqueda').val()=="Pedro Jimenez Gonzalez" && $('#tipo-busqueda').val()==1){
+                    val= "<tr><td>8374162539</td><td >Pedro Jimenez Gonzalez</td><td><span class='highlight corr-highlight'>Correcta</span></td> <td><button type='button' class='btn btn-default' data-toggle='modal' data-target='#myModal'>Revisar</button></td><td><button type='button' class='btn btn-default' data-toggle='modal' data-target='#editarDatos'>Editar</button></td></tr>";
+                    $('#contenido-tabla').html(val);
+                }
+                else if($('#busqueda').val()=="AF542HU7" && $('#tipo-busqueda').val()==0){
+                    val= "<tr><td>AF542HU7</td><td >Sofía García Martinez</td><td><span class='highlight corr-highlight'>En revisión</span></td> <td><button type='button' class='btn btn-default disabled' data-toggle='modal' data-target='#myModal' disabled>Revisar</button></td><td><button type='button' class='btn btn-default' data-toggle='modal' data-target='#editarDatos'>Editar</button></td></tr>";
+                    $('#contenido-tabla').html(val);
+                }
+                else
+                    $('#alerta-busqueda').show(); // shows alert with Bootstrap CSS3 implem
+            });
+          
+          $('.close').click(function () {
+                $(this).parent().hide();
+            });
+          
       });
       
     </script>
