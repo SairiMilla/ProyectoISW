@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GESTION CITAS REINSCRIPCION PARA ALUMNO</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/estilo.css" rel="stylesheet">
+    <link href="../css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+
+  </head>
+  <body>
+        <div class="row" id="main-content">
+          <div class="col-sm-2" id="menu-bg">
+              <img src="../imgs/imagen-menu.jpg" id="menu-img">
+          </div>
+          <div class="col-sm-2" id="side-menu">
+            <div class="text-center" id="image-container">
+            
+              <a href="index-gestion.html"><img src="../imgs/logo3.png" class="img-circle" id="logo"></a>
+            </div>
+            <ul class="nav nav-pills nav-stacked" id="menu-list">
+                    <li><a href="index-gestion.html"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
+                    <li>
+                        <a href="#" data-target="#item1" data-toggle="collapse" data-parent="#stacked-menu">
+                            Nuevo Ingreso<span class="caret arrow"></span>
+                        </a>
+                        
+                        <ul class="nav nav-stacked collapse left-submenu" id="item1">
+                                <li>
+                                    <a href="inscribir-horario.html">
+                                        <span class="glyphicon glyphicon-edit"></span>&nbsp; Inscribir Alumno</a>
+                                </li>
+                                <li>
+                                    <a href="buscar-alumno.html" data-target="#item2" data-toggle="collapse" data-parent="#stacked-menu">
+                                Buscar Alumno<span class="caret arrow"></span>
+                                </a>
+                        </ul>
+                    <li><a href="buscar-alumno.html" class="active"><span class="glyphicon glyphicon-search"></span>&nbsp; Buscar Alumno</a></li>
+                    <li class="active"><a href="#"><span class="glyphicon glyphicon-ok"></span>&nbsp; Consultar Horarios</a></li>
+              </ul>
+      <div idd="menu-filler">
+            </div>
+          </div>
+          <div class="col-sm-12 col-sm-offset-2" id="main-side">
+            <div class="row" id="header">
+              <div class="pull-right" id="user-name-container">
+                <div id="user-name">Asistente de Gestión Escolar &nbsp;<span class="glyphicon glyphicon-user"></span></div>
+              </div>
+            </div>
+            <div class="row" id="content-container">
+              <div class="page-header">
+                <h1>Gestion</h1>
+                <h2>Buscar Grupos</h2>
+              </div>
+              <div class="content">
+                <form>
+                  <div class="row"> 
+              <div class="col-sm-offset-1 col-sm-3 ">
+                <div class="form-group">
+                 <div class="input-group">
+                  <div class="input-group-addon">Turno:  </div>
+                  <select class="form-control" name="" id="Buscar por:">
+                      <option value="">Matutino</option>
+                      <option value="">Vespertino</option>
+                  </select>
+                 </div>
+                </div>
+              </div>
+              <div class="col-sm-3 ">
+                <div class="form-group">
+                 <div class="input-group">
+                  <div class="input-group-addon">Semestre:  </div>
+                    <select class="form-control" name="" id="Buscar por:">
+                      <option value="" selected>1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                      <option value="">4</option>
+                      <option value="">5</option>
+                      <option value="">6</option>
+                      <option value="">7</option>
+                      <option value="">8</option>
+                    </select>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-3 ">
+                <div class="form-group">
+                 <div class="input-group">
+                  <div class="input-group-addon">Grupo:  </div>
+                  <select class="form-control" name="" id="Buscar por:">
+                      <option value="" selected>Todo</option>
+                      <option value="">1CM1</option>
+                      <option value="">1CM2</option>
+                      <option value="">1CM3</option>
+                      <option value="">1CM4</option>
+                      <option value="">1CM5</option>
+                      <option value="">1CM6</option>
+                      <option value="">1CM7</option>
+                      <option value="">1CM8</option>
+                      <option value="">2CM1</option>
+                      <option value="">2CM2</option>
+                      <option value="">2CM3</option>
+                      <option value="">2CM4</option>
+                      <option value="">2CM5</option>
+                      <option value="">2CM6</option>
+                      <option value="">2CM7</option>
+                      <option value="">2CM8</option>
+                      <option value="">3CM1</option>
+                      <option value="">3CM2</option>
+                      <option value="">3CM3</option>
+                      <option value="">3CM4</option>
+                      <option value="">3CM5</option>
+                      <option value="">3CM6</option>
+                      <option value="">3CM7</option>
+                      <option value="">3CM8</option>
+                  </select>
+                 </div>
+                </div>
+              </div>
+        </div>
+                
+                  <div class="row top">                   
+                   <div class="table table-responsive">
+                    <table class="table table-striped">
+                      <colgroup>
+                        <col class="col-md-1">
+                        <col class="col-md-1">
+                        <col class="col-md-2">
+                        <col class="col-md-1">
+                        <col class="col-md-1">
+                        <col class="col-md-1">
+                        <col class="col-md-1">
+                        <col class="col-md-1">
+                        <col class="col-md-1">
+                        <col class="col-md-1">
+                      </colgroup>
+                      <thead>
+                      <tr class="info">                        
+                        <th class="text-center">Grupo</th>
+                        <th class="text-center">Materia</th>
+                        <th class="text-center">Profesor</th>                        
+                        <th class="text-center">Edificio</th>
+                        <th class="text-center">Salón</th>
+                        <th class="text-center">Lun</th>
+                        <th class="text-center">Mar</th>
+                        <th class="text-center">Mie</th>
+                        <th class="text-center">Jue</th>
+                        <th class="text-center">Vie</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr class="text-center">
+                        <td>1CM1 </td>
+                        <td>Ingenieria de Software</td>
+                        <td>Lopez Rabadan Jose</td>
+                        <td></td><td></td>
+                        <td>7:00-8:30</td>
+                        <td></td>
+                        <td>7:00-8:30</td>
+                        <td></td>
+                        <td>7:00-8:30</td>
+                        
+                      </tr>
+                      <tr class="text-center">
+                        <td>1CM1 </td>
+                        <td>Arquitectura de Computadoras</td>
+                        <td>Gelacio Cabrera Reyes</td>
+                        <td></td><td></td>
+                        <td></td>
+                        <td>7:00-8:30</td>
+                        <td>8:30-10:00</td>
+                        <td>7:00-8:30</td>
+                        <td></td>
+                        
+                      </tr>   
+                         
+                      <tr class="text-center">
+                        <td>1CM1 </td>
+                        <td>Compiladores</td>
+                        <td>Tecla Parra Roberto</td>
+                        <td></td><td></td>
+                        <td></td>
+                        <td>8:30-10:00</td>
+                        <td>10:30-12:00</td>
+                        <td>10:30-12:00</td>
+                        <td></td>
+                        
+                      </tr>   
+                         
+                      <tr class="text-center">                       
+                        <td>1CM1</td>
+                        <td>Microcontroladores</td>
+                        <td>Perez Perez Juan</td>
+                        <td></td><td></td>
+                        <td>10:30-12:00</td>
+                        <td></td>
+                        <td></td>
+                        <td>8:30-10:00</td>
+                        <td>12:00-13:30</td>
+                        
+                      </tr>
+
+                      <tr class="text-center">
+                        <td>1CM2 </td>
+                        <td>Ingenieria de Software</td>
+                        <td>Lopez Rabadan Jose</td>
+                        <td></td><td></td>
+                        <td>7:00-8:30</td>
+                        <td></td>
+                        <td>7:00-8:30</td>
+                        <td></td>
+                        <td>7:00-8:30</td>
+                        
+                      </tr>
+                      <tr class="text-center">
+                        <td>1CM2 </td>
+                        <td>Arquitectura de Computadoras</td>
+                        <td>Gelacio Cabrera Reyes</td>
+                        <td></td><td></td>
+                        <td></td>
+                        <td>7:00-8:30</td>
+                        <td>8:30-10:00</td>
+                        <td>7:00-8:30</td>
+                        <td></td>
+                        
+                      </tr>   
+                         
+                      <tr class="text-center">
+                        <td>1CM2 </td>
+                        <td>Compiladores</td>
+                        <td>Tecla Parra Roberto</td>
+                        <td></td><td></td>
+                        <td></td>
+                        <td>8:30-10:00</td>
+                        <td>10:30-12:00</td>
+                        <td>10:30-12:00</td>
+                        <td></td>
+                        
+                      </tr>   
+                         
+                      <tr class="text-center">                       
+                        <td>1CM2</td>
+                        <td>Microcontroladores</td>
+                        <td>Perez Perez Juan</td>
+                        <td></td><td></td>
+                        <td>10:30-12:00</td>
+                        <td></td>
+                        <td></td>
+                        <td>8:30-10:00</td>
+                        <td>12:00-13:30</td>
+                        
+                      </tr>
+
+                      <tr class="text-center">
+                        <td>1CM3 </td>
+                        <td>Ingenieria de Software</td>
+                        <td>Lopez Rabadan Jose</td>
+                        <td></td><td></td>
+                        <td>7:00-8:30</td>
+                        <td></td>
+                        <td>7:00-8:30</td>
+                        <td></td>
+                        <td>7:00-8:30</td>
+                        
+                      </tr>
+                      <tr class="text-center">
+                        <td>1CM3 </td>
+                        <td>Arquitectura de Computadoras</td>
+                        <td>Gelacio Cabrera Reyes</td>
+                        <td></td><td></td>
+                        <td></td>
+                        <td>7:00-8:30</td>
+                        <td>8:30-10:00</td>
+                        <td>7:00-8:30</td>
+                        <td></td>
+                        
+                      </tr>   
+                         
+                      <tr class="text-center">
+                        <td>1CM3 </td>
+                        <td>Compiladores</td>
+                        <td>Tecla Parra Roberto</td>
+                        <td></td><td></td>
+                        <td></td>
+                        <td>8:30-10:00</td>
+                        <td>10:30-12:00</td>
+                        <td>10:30-12:00</td>
+                        <td></td>
+                        
+                      </tr>   
+                         
+                      <tr class="text-center">                       
+                        <td>1CM3</td>
+                        <td>Microcontroladores</td>
+                        <td>Perez Perez Juan</td>
+                        <td></td><td></td>
+                        <td>10:30-12:00</td>
+                        <td></td>
+                        <td></td>
+                        <td>8:30-10:00</td>
+                        <td>12:00-13:30</td>
+                        
+                      </tr>
+
+                      <tr class="text-center">
+                        <td>1CM4 </td>
+                        <td>Ingenieria de Software</td>
+                        <td>Lopez Rabadan Jose</td>
+                        <td></td><td></td>
+                        <td>7:00-8:30</td>
+                        <td></td>
+                        <td>7:00-8:30</td>
+                        <td></td>
+                        <td>7:00-8:30</td>
+                        
+                      </tr>
+                      <tr class="text-center">
+                        <td>1CM4 </td>
+                        <td>Arquitectura de Computadoras</td>
+                        <td>Gelacio Cabrera Reyes</td>
+                        <td></td><td></td>
+                        <td></td>
+                        <td>7:00-8:30</td>
+                        <td>8:30-10:00</td>
+                        <td>7:00-8:30</td>
+                        <td></td>
+                        
+                      </tr>   
+                         
+                      <tr class="text-center">
+                        <td>1CM4 </td>
+                        <td>Compiladores</td>
+                        <td>Tecla Parra Roberto</td>
+                        <td></td><td></td>
+                        <td></td>
+                        <td>8:30-10:00</td>
+                        <td>10:30-12:00</td>
+                        <td>10:30-12:00</td>
+                        <td></td>
+                        
+                      </tr>   
+                         
+                      <tr class="text-center">                       
+                        <td>1CM4</td>
+                        <td>Microcontroladores</td>
+                        <td>Perez Perez Juan</td>
+                        <td></td><td></td>
+                        <td>10:30-12:00</td>
+                        <td></td>
+                        <td></td>
+                        <td>8:30-10:00</td>
+                        <td>12:00-13:30</td>
+                        
+                      </tr>
+
+                    </tbody>
+                    </table>
+                   </div>
+                  </div>
+                  <!--div class="row top">
+                    <div class="col-md-4 col-md-offset-6"><a href="comprobante.html" class="btn btn-default" onclick="">Finalizar</a></div><div class="col-md-2"></div>
+                  </div-->
+                </form>
+              </div>
+            <div class="row" id="footer">
+              <div class="col-sm-8" id="dir">
+                 Av. Juan de Dios Bátiz esq. Av. Miguel Othón de Mendizábal, Col. Lindavista. Demarcación Territorial, Gustavo A. Madero. Ciudad de México. C. P. 07738.
+              </div>
+              <div class="col-sm-8 col-sm-offset-2" id="year">
+                <span class="pull-right"><span class="glyphicon glyphicon-registration-mark"></span>&nbsp;2016</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+     <script src="../js/jquery-ui.js"></script>
+
+
+  </body>
+</html>
