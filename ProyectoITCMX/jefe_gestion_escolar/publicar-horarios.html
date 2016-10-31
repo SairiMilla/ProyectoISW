@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Horarios de clase preliminares</title>
+	<title>Horarios de clase</title>
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="../css/base.css" rel="stylesheet">
     <link href="../css/estilo.css" rel="stylesheet">
@@ -46,7 +46,7 @@
 			</div>
 			<div class="row" id="content-container">
 				<div class="page-header">
-					<h2>Horarios preliminares</h2>
+					<h2>Horarios de clases</h2>
 				</div>
 				<div class="jumbotron content">
 					<div class="content">
@@ -76,10 +76,10 @@
 							</select>
 						</div>
 					</div>
-					</br>
-					</br>
-					</br>
-					</br>
+					<br>
+					<br>
+					<br>
+					<br>
 					<div class="table-responsive">
 						<table class="table table-striped">
 							<colgroup>
@@ -184,79 +184,7 @@
 						</tbody>
 					</table>
 					</div>
-					<!-- Modal -->
-						<div class="modal fade" id="modal2" role="dialog">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <div class="modal-body">
-                                            <div class="list-group">
-                                                <div class="col-sm-6">
-                                                	<h4>Grupo: 1CM1</h4>
-                                                    <h4>Materia:</h4>
-                                                    <select class="form-control">
-    		    						           		<option>Análisis Vectorial</option>
-				    			            	   		<option>Cálculo I</option>
-    		        		       						<option>Física</option>
-	    				    			           		<option>Matemáticas Discretas</option>
-    		        		       						<option>Ecuaciones Diferenciales</option>
-	    				    			           		<option>Álgebra Lineal</option>
-						    		               	</select>
-                                                    <h4>Profesor:</h4>
-                                                    <select class="form-control">
-                                                    	<option>Sin asignar</option>
-    		    						           		<option>Robles Monroy Alejandro</option>
-				    			            	   		<option>Melissa Forli Sforza</option>
-    		        		       						<option>Eduardo Catalena Castillo</option>
-						    		               	</select>
-                                                    <h4>Lunes:</h4>
-                                                    <select class="form-control">
-    		    						           		<option>7:00-8:30</option>
-				    			            	   		<option>8:30-10:00</option>
-    		        		       						<option>10:30-12:00</option>
-    		        		       						<option>12:00-13:30</option>
-    		        		       						<option>13:30-15:00</option>
-						    		               	</select>
-                                                    <h4>Martes:</h4>
-                                                    <select class="form-control">
-    		    						           		<option>7:00-8:30</option>
-				    			            	   		<option>8:30-10:00</option>
-    		        		       						<option>10:30-12:00</option>
-    		        		       						<option>12:00-13:30</option>
-    		        		       						<option>13:30-15:00</option>
-						    		               	</select>
-                                                    <h4>Miercoles:</h4>
-                                                    <select class="form-control">
-    		    						           		<option>7:00-8:30</option>
-				    			            	   		<option>8:30-10:00</option>
-    		        		       						<option>10:30-12:00</option>
-    		        		       						<option>12:00-13:30</option>
-    		        		       						<option>13:30-15:00</option>
-						    		               	</select>
-                                                    <h4>Jueves:</h4>
-                                                    <select class="form-control">
-    		    						           		<option>7:00-8:30</option>
-				    			            	   		<option>8:30-10:00</option>
-    		        		       						<option>10:30-12:00</option>
-    		        		       						<option>12:00-13:30</option>
-    		        		       						<option>13:30-15:00</option>
-						    		               	</select>
-                                                    <h4>Viernes:</h4>
-                                                    <select class="form-control">
-    		    						           		<option>7:00-8:30</option>
-				    			            	   		<option>8:30-10:00</option>
-    		        		       						<option>10:30-12:00</option>
-    		        		       						<option>12:00-13:30</option>
-    		        		       						<option>13:30-15:00</option>
-						    		               	</select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-					</br>
+					<br>
 					<div>
 						<button type="submit" class="btn btn-default" data-toggle="modal" data-target="#modal1">Agregar</button>
 					</div>
@@ -325,6 +253,8 @@
     		        		       						<option>12:00-13:30</option>
     		        		       						<option>13:30-15:00</option>
 						    		               	</select>
+						    		               	<br>
+						    		               	<button type="submit" class="btn btn-default change">Guardar</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -332,7 +262,7 @@
                                 </div>
                             </div>
                         </div>
-					</br>
+					<br>
 					<div>
 						<button type="submit" class="btn btn-default save">Guardar</button>
 						<button type="submit" class="btn btn-default send">Enviar</button>
@@ -470,6 +400,21 @@ document.querySelector('button.send').onclick = function(){
 	},
 	function(){
 		swal("Enviado!", "", "success");
+	});
+};
+
+document.querySelector('button.change').onclick = function(){
+	swal({
+		title: "¿Estas seguro?",
+		text: "Se Agregará la información ingresada",
+		type: "warning",
+		showCancelButton: true,
+		confirmButtonColor: '#DD6B55',
+		confirmButtonText: 'Si!',
+		closeOnConfirm: false
+	},
+	function(){
+		swal("Agregado!", "", "success");
 	});
 };
 </script>
