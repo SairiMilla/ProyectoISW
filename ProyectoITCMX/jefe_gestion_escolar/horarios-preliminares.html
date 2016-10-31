@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,10 @@
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="../css/base.css" rel="stylesheet">
     <link href="../css/estilo.css" rel="stylesheet">
+    <script src="../js/sweetalert.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/sweetalert.css">
 </head>
+
 <body>
 	<div class="row" id="main-content">
 		<div class="col-sm-2" id="menu-bg">
@@ -114,7 +118,7 @@
 								<td><label class="lab">7:00-8:30</label></td>
 								<td></td>
 								<td><label class="lab">7:00-8:30</label></td>
-								<td><button type="submit" class="btn btn-vergas">Borrar</button></td>
+								<td><button type="submit" class="btn btn-vergas warning">Borrar</button></td>
 								<td><button type="submit" class="btn btn-default">Cambiar</button></td>
 							</tr>
 							<tr>
@@ -126,7 +130,7 @@
 								<td></td>
 								<td><label class="lab">7:00-8:30</label></td>
 								<td><label class="lab">8:30-10:00</label></td>
-								<td><button type="submit" class="btn btn-vergas">Borrar</button></td>
+								<td><button type="submit" class="btn btn-vergas warning2">Borrar</button></td>
 								<td><button type="submit" class="btn btn-default">Cambiar</button></td>
 							</tr>
 							<tr>
@@ -138,7 +142,7 @@
 								<td><label class="lab">8:30-10:00</label></td>
 								<td><label class="lab">8:30-10:00</label></td>
 								<td></td>
-								<td><button type="submit" class="btn btn-vergas">Borrar</button></td>
+								<td><button type="submit" class="btn btn-vergas warning3">Borrar</button></td>
 								<td><button type="submit" class="btn btn-default">Cambiar</button></td>
 							</tr>
 							<tr>
@@ -150,7 +154,7 @@
 								<td></td>
 								<td><label class="lab">10:30-12:00</label></td>
 								<td></td>
-								<td><button type="submit" class="btn btn-vergas">Borrar</button></td>
+								<td><button type="submit" class="btn btn-vergas warning4">Borrar</button></td>
 								<td><button type="submit" class="btn btn-default">Cambiar</button></td>
 							</tr>
 							<tr>
@@ -162,7 +166,7 @@
 								<td><label class="lab">10:30-12:00</label></td>
 								<td></td>
 								<td><label class="lab">10:30-12:00</label></td>
-								<td><button type="submit" class="btn btn-vergas">Borrar</button></td>
+								<td><button type="submit" class="btn btn-vergas warning5">Borrar</button></td>
 								<td><button type="submit" class="btn btn-default">Cambiar</button></td>
 							</tr>
 							<tr>
@@ -174,19 +178,41 @@
 								<td></td>
 								<td><label class="lab">12:00-13:30</label></td>
 								<td></td>
-								<td><button type="submit" class="btn btn-vergas">Borrar</button></td>
+								<td><button type="submit" class="btn btn-vergas warning6">Borrar</button></td>
 								<td><button type="submit" class="btn btn-default">Cambiar</button></td>
 							</tr>
 						</tbody>
 					</table>
 					</div>
+
 					</br>
 					<div>
-						<button type="submit" class="btn btn-default">Agregar</button>
+						<button type="submit" class="btn btn-default" data-toggle="modal" data-target="#modal1">Agregar</button>
 					</div>
+					<!-- Modal -->
+						<div class="modal fade" id="modal1" role="dialog">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <div class="modal-body">
+                                            <div class="list-group">
+                                                <div class="col-sm-6">
+                                                    <h4>Agregaste las siguientes materias:</h4>
+                                                    <ul>
+                                                      <li>Analisis Vectorial</li>
+                                                      <li>Probabilidad y Estadistica</li>
+                                                      <li>Calculo II</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 					</br>
 					<div>
-						<button type="submit" class="btn btn-default">Guardar</button>
+						<button type="submit" class="btn btn-default save">Guardar</button>
 						<button type="submit" class="btn btn-default">Enviar</button>
 					</div>
 				</div>
@@ -202,8 +228,113 @@
 		</div>
 	</div>
 </div>
-<script src="js/jquery-1.11.3.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="../js/jquery-1.11.3.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script>
+document.querySelector('button.warning').onclick = function(){
+	swal({
+		title: "¿Estas seguro?",
+		text: "Al borrar el registro no lo podras recuperar",
+		type: "warning",
+		showCancelButton: true,
+		confirmButtonColor: '#DD6B55',
+		confirmButtonText: 'Si!',
+		closeOnConfirm: false
+	},
+	function(){
+		swal("Eliminado!", "El registro ha sido eliminado", "success");
+	});
+};
 
+document.querySelector('button.warning2').onclick = function(){
+	swal({
+		title: "¿Estas seguro?",
+		text: "Al borrar el registro no lo podras recuperar",
+		type: "warning",
+		showCancelButton: true,
+		confirmButtonColor: '#DD6B55',
+		confirmButtonText: 'Si!',
+		closeOnConfirm: false
+	},
+	function(){
+		swal("Eliminado!", "El registro ha sido eliminado", "success");
+	});
+};
+
+document.querySelector('button.warning3').onclick = function(){
+	swal({
+		title: "¿Estas seguro?",
+		text: "Al borrar el registro no lo podras recuperar",
+		type: "warning",
+		showCancelButton: true,
+		confirmButtonColor: '#DD6B55',
+		confirmButtonText: 'Si!',
+		closeOnConfirm: false
+	},
+	function(){
+		swal("Eliminado!", "El registro ha sido eliminado", "success");
+	});
+};
+
+document.querySelector('button.warning4').onclick = function(){
+	swal({
+		title: "¿Estas seguro?",
+		text: "Al borrar el registro no lo podras recuperar",
+		type: "warning",
+		showCancelButton: true,
+		confirmButtonColor: '#DD6B55',
+		confirmButtonText: 'Si!',
+		closeOnConfirm: false
+	},
+	function(){
+		swal("Eliminado!", "El registro ha sido eliminado", "success");
+	});
+};
+
+document.querySelector('button.warning5').onclick = function(){
+	swal({
+		title: "¿Estas seguro?",
+		text: "Al borrar el registro no lo podras recuperar",
+		type: "warning",
+		showCancelButton: true,
+		confirmButtonColor: '#DD6B55',
+		confirmButtonText: 'Si!',
+		closeOnConfirm: false
+	},
+	function(){
+		swal("Eliminado!", "El registro ha sido eliminado", "success");
+	});
+};
+
+document.querySelector('button.warning6').onclick = function(){
+	swal({
+		title: "¿Estas seguro?",
+		text: "Al borrar el registro no lo podras recuperar",
+		type: "warning",
+		showCancelButton: true,
+		confirmButtonColor: '#DD6B55',
+		confirmButtonText: 'Si!',
+		closeOnConfirm: false
+	},
+	function(){
+		swal("Eliminado!", "El registro ha sido eliminado", "success");
+	});
+};
+
+document.querySelector('button.save').onclick = function(){
+	swal({
+		title: "¿Estas seguro?",
+		text: "Los registros perdidos no se podran recuperar",
+		type: "warning",
+		showCancelButton: true,
+		confirmButtonColor: '#DD6B55',
+		confirmButtonText: 'Si!',
+		closeOnConfirm: false
+	},
+	function(){
+		swal("Guardado!", "El registro ha sido guardado satisfactoriamente", "success");
+	});
+};
+</script>
 </body>
 </html>
