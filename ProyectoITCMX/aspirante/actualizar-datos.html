@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Actualizar Datos</title>
+    <title>Registro Aspirante</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/base.css" rel="stylesheet">
-
+    <link href="../css/registro-aspirante.css" rel="stylesheet">  
+      
   </head>
   <body>
         <div class="row" id="main-content">
+        
+        <!-- Barra Lateral -->
           <div class="col-sm-2" id="menu-bg">
               <img src="../imgs/imagen-menu.jpg" id="menu-img">
           </div>
@@ -22,69 +25,140 @@
             <ul class="nav nav-pills nav-stacked" id="menu-list">
                 <li><a href="index-aspirante.html"><span class="glyphicon glyphicon-home"></span>&nbsp; Inicio</a></li>
                 <li class="active"><a href="actualizar-datos.html"><span class="glyphicon glyphicon-edit"></span>&nbsp; Actualizar Datos</a></li>
-                <li><a href="enviar-documentacion.html"><span class="glyphicon glyphicon-hourglass"></span>&nbsp; Enviar Documentaci&oacute;n</a></li>
-                <li><a href="consultar-resultados.html"><span class="glyphicon glyphicon-ok"></span>&nbsp; Consultar Resultados</a></li>
+                <li><a href="enviar-documentacion.html"><span class="glyphicon glyphicon-send"></span>&nbsp; Enviar Documentos</a></li>
+                <li><a href="consultar-resultados.html"><span class="glyphicon glyphicon-search"></span>&nbsp; Consulta de Resultados </a></li>
             </ul>
             <div id="menu-filler">
             </div>
           </div>
-            
-          <!-- Header -->
+
           <div class="col-sm-10 col-sm-offset-2" id="main-side">
+              
+            <!-- Header -->
             <div class="row" id="header">
               <div class="pull-right" id="user-name-container">
                 <div id="user-name"><a href="">Iniciar Sesión &nbsp;<span class="glyphicon glyphicon-log-in"></span></a></div>
               </div>
             </div>
+            
+
             <div class="row" id="content-container">
               <div class="page-header">
-                <h2>Registro de Aspirante</h2>
+                <h2>Actualizar Datos</h2>
               </div>
                 
-                <!-- Formulario --> 
-                <div class="content">
-                  <form class="form-horizontal">     
+                
+                <div class="content">   
+                <!-- Formulario -->      
+                  <form id="attributeForm" class="form-horizontal">   
                     <div class="form-group">
                       <label class="control-label col-sm-2" for="text">Nombre:</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" id="nombre" placeholder="Introduce nombre completo">
+                      <input type="text" class="form-control" id="nombre" placeholder="Introduce nombre o nombres" data-bv-notempty="true"
+                      data-bv-notempty-message="The first name is required and cannot be empty" >
                       </div>
                     </div>
+                      
                     <div class="form-group">
-                      <label class="control-label col-sm-2" for="text">Apellidos:</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" id="apellido" placeholder="Introduce apellidos">
+                      <label class="control-label col-sm-2" for="text">Primer Apellido:</label>
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control" id="apellido">
+                      </div>
+                      <label class="control-label col-sm-2" for="text">Segundo Apellido:</label>
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control" id="apellido" placeholder="(Opcional)">
                       </div>
                     </div>
-                    <div class="form-group">
-                      <label class="control-label col-sm-2" for="text">Edad:</label>
-                      <div class="col-sm-10">
-                        <input type="number" class="form-control" id="edad" placeholder="Introduce edad" min="15" max="100">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2 radio-label" for="text">Género:</label>
-                        <div class="col-sm-offset-2">
-                          <label class="radio-inline"><input type="radio" name="optradio">Masculino</label>
-                          <label class="radio-inline"><input type="radio" name="optradio">Femenino</label>
-                          <label class="radio-inline"><input type="radio" name="optradio">Otro</label>         
-                        </div>
-                    </div>    
-                    <div class="form-group">
-                      <label class="control-label col-sm-2" for="email">Correo:</label>
-                      <div class="col-sm-10">
-                        <input type="email" class="form-control" id="email" placeholder="Introduce correo">
-                      </div>
-                    </div>  
+
                     <div class="form-group">
                       <label class="control-label col-sm-2" for="text">CURP:</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" id="curp" placeholder="Introduce CURP">
+                        <input type="text" class="form-control" id="curp">
                       </div>
                     </div>
+
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="estado">Estado:</label>
-                        <div class="col-sm-10">
+                      <label class="control-label col-sm-2" for="callno">Calle y No. de casa:</label>
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control" id="callno">
+                      </div>
+                      <label class="control-label col-sm-2" for="colon">Colonia:</label>
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control" id="colon">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="cp">C.P.</label>
+                        <div class="col-sm-3">
+                          <input type="text" class="form-control" id="cp" placeholder="Código Postal">
+                        </div>
+                        <label class="control-label col-sm-2" for="municipio">Delegación:</label>
+                        <div class="col-sm-5">
+                            <select class="form-control" id="estado">
+                              <option>--Selecciona--</option>
+                              <option>Gustavo A. Madero</option>
+                              <option>Álvaro Obregón</option>
+                              <option>Coyoacán</option>
+                              <option>Iztapalapa</option>
+                            </select>  
+                        </div>
+                    </div>  
+
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="callno">Fecha de Nacimiento:</label>
+                      <div class="col-sm-4">
+                        <div class="input-group date form_date col-md-10" data-date=""
+                          data-date-format="dd MM yyyy" data-link-field="dtp_input2"
+                          data-link-format="yyyy-mm-dd">
+                          <input class="form-control" size="6" type="text" value=""
+                            placeholder="Seleccione Fecha Inicio" readonly> <span class="input-group-addon"><span
+                            class="glyphicon glyphicon-remove"></span></span> <span
+                            class="input-group-addon"><span
+                            class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
+                      </div>
+                      <label class="control-label col-sm-2" for="colon">Lugar de Nacimiento:</label>
+                      <div class="col-sm-4">
+                        <select class="form-control" id="estado">
+                            <option>--Selecciona--</option>
+                            <option>Ciudad de México</option>
+                            <option>Veracruz</option>
+                            <option>Jalisco</option>
+                            <option>Guerrero</option>
+                        </select> 
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+
+                        <label class="control-label col-sm-2 radio-label" for="text">Género:</label>
+                        <div class="col-sm-3">
+                          <div class="radio"><label><input type="radio" name="optradio">Masculino</label></div>
+                          <div class="radio"><label><input type="radio" name="optradio">Femenino</label></div>
+                          <div class="radio"><label><input type="radio" name="optradio">Otro</label></div>         
+                        </div>
+                        <label class="control-label col-sm-2" for="municipio">E-mail:</label>
+                        <div class="col-sm-5">
+                          <input type="email" class="form-control" id="cp" error="Bruh, that email address is invalid" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="text">Escuela de Procedencia:</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="escuela">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="text">Teléfono:</label>
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control" id="escuela">
+                      </div>
+
+                      <label class="control-label col-sm-2" for="estado">Plantel al que desea Ingresar:</label>
+                        <div class="col-sm-4">
                             <select class="form-control" id="estado">
                             <option>Ciudad de México</option>
                             <option>Veracruz</option>
@@ -92,34 +166,20 @@
                             <option>Guerrero</option>
                             </select>  
                         </div>
-                    </div>
+                    </div>    
+
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="municipio">Delegación:</label>
-                        <div class="col-sm-10">
-                            <select class="form-control" id="estado">
-                            <option>Gustavo A. Madero</option>
-                            <option>Álvaro Obregón</option>
-                            <option>Coyoacán</option>
-                            <option>Iztapalapa</option>
-                            </select>  
-                        </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label col-sm-2" for="text">Escuela de Procedencia:</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" id="escuela" placeholder="Introduce Escuela de Procedencia">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default">Enviar</button>
+                      <div class="col-sm-offset-5 col-sm-7">
+                        <button type="submit" class="btn btn-default">Actualizar</button>  
                       </div>
                     </div>  
+                      
                   </form>
+                
                 </div>
             </div>
               
-            <!-- Footer -->
+            <!-- Footer -->  
             <div class="row" id="footer">
               <div class="col-sm-5" id="dir">
                  Av. Juan de Dios Bátiz esq. Av. Miguel Othón de Mendizábal, Col. Lindavista. Demarcación Territorial, Gustavo A. Madero. Ciudad de México. C. P. 07738.
@@ -128,10 +188,15 @@
                 <span class="pull-right"><span class="glyphicon glyphicon-registration-mark"></span>&nbsp;2016</span>
               </div>
             </div>
+              
           </div>
-        </div>
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#attributeForm').bootstrapValidator();
+    });
+    </script>
+    </div>
   </body>
 </html>

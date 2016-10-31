@@ -208,3 +208,7 @@ body{
     color: #990000;
     border-color: #990000;
 }
+
+.extra-info{
+    font-size: 12px;
+}

@@ -22,8 +22,8 @@
             <ul class="nav nav-pills nav-stacked" id="menu-list">
                 <li><a href="index-aspirante.html"><span class="glyphicon glyphicon-home"></span>&nbsp; Inicio</a></li>
                 <li><a href="actualizar-datos.html"><span class="glyphicon glyphicon-edit"></span>&nbsp; Actualizar Datos</a></li>
-                <li class="active"><a href="enviar-documentacion.html"><span class="glyphicon glyphicon-hourglass"></span>&nbsp; Enviar Documentaci&oacute;n</a></li>
-                <li><a href="consultar-resultados.html"><span class="glyphicon glyphicon-ok"></span>&nbsp; Consultar Resultados</a></li>
+                <li class="active"><a href="enviar-documentacion.html"><span class="glyphicon glyphicon-send"></span>&nbsp; Enviar Documentos</a></li>
+                <li><a href="consultar-resultados.html"><span class="glyphicon glyphicon-search"></span>&nbsp; Consulta de Resultados </a></li>
             </ul>
             <div id="menu-filler">
 
@@ -45,23 +45,73 @@
                 
                 <!-- Formulario --> 
                 <div class="content">
-                  <form class="form-horizontal">     
+                  <h4 class="text-center">Selecciona todos los archivos que se requieren para ser enviados</h4>
+                  <p class="text-center"><i><b>Todos los archivos deben subirse en formado pdf</b></i></p>
+                  <p class="text-center extra-info"><i><a target="_blank" href="https://buxara.wordpress.com/2007/12/02/crear-un-archivo-pdf/">¿No sabes cómo generar un pdf?</a></i></p>    
+                  <br/>
+                  <form class="form-horizontal col-sm-offset-2" >   
+                    
+                    <label>Solicitud de Registro</label>
+                    <p><i>Puedes obtenerlo haciendo click <a>aquí</a></i></p>  
                     <div class="form-group">
-                      <label class="control-label col-sm-2" for="text">Identificador:</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" id="id" placeholder="Introduce el número de identificador">
-                      </div>
+                        <div class="col-md-7">
+                            <input id="fileopen1" type="file" value=""/>
+                        </div>
+                        <div>
+                            <button id="clear">Eliminar</button>
+                        </div>
                     </div>
+                    <hr/>
+                    <label>Comprobante de Pago</label>
+                    <p><i>Debidamente sellado por el banco especificado</i></p>
                     <div class="form-group">
-                        <div class="col-sm-offset-2 col-md-10">
-                        <input type="file" id="file">
+                        <div class="col-md-7">
+                            <input id="fileopen2" type="file" value=""/>
+                        </div>
+                        <div>
+                            <button id="clear">Eliminar</button>
+                        </div>
                     </div>
-                    </div>
+                    <hr/>
+                    <label>Comprobante de Estudios de Nivel Medio Superior</label>
+                    <p><i>Se debe solicitar en el plantel de procedencia</i></p>
                     <div class="form-group">
-                      <div class="col-sm-offset-2 col-sm-10">
+                        <div class="col-md-7">
+                            <input id="fileopen3" type="file" value=""/>
+                        </div>
+                        <div>
+                            <button id="clear">Eliminar</button>
+                        </div>
+                    </div>
+                    <hr/>
+                    <label>Identificación con Fotografía</label>
+                      <p><i>Puedes utilizar cualquier identificación oficial que cuente con fotografía</i></p>
+                    <div class="form-group">
+                        <div class="col-md-7">
+                            <input id="fileopen4" type="file" value=""/>
+                        </div>
+                        <div>
+                            <button id="clear">Eliminar</button>
+                        </div>
+                    </div>
+                    <hr/>
+                    <label>Comprobante de Domicilio</label>
+                    <p><i>Puedes subir un recibo de luz, agua o teléfono. Máximo tres meses de haberse expedido</i></p>
+                    <div class="form-group">
+                        <div class="col-md-7">
+                            <input id="fileopen4" type="file" value=""/>
+                        </div>
+                        <div>
+                            <button id="clear">Eliminar</button>
+                        </div>
+                    </div>  
+                    <br/>
+                    <div class="form-group">
+                      <div class="col-sm-offset-4 col-sm-2">
                         <a href="#" class="btn btn-default">Enviar</a>
                       </div>
                     </div>  
+                      
                   </form>
                 </div>
             </div>
@@ -77,8 +127,16 @@
             </div>
           </div>
         </div>
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script>
+    $("#clear").click(function () {
+        $("#fileopen1").val("");
+    });
+    
+    $("#clear").click(function () {
+        $("#fileopen2").val("");
+    });
+    </script>
   </body>
 </html>

@@ -22,8 +22,8 @@
             <ul class="nav nav-pills nav-stacked" id="menu-list">
                 <li><a href="index-aspirante.html"><span class="glyphicon glyphicon-home"></span>&nbsp; Inicio</a></li>
                 <li><a href="actualizar-datos.html"><span class="glyphicon glyphicon-edit"></span>&nbsp; Actualizar Datos</a></li>
-                <li><a href="enviar-documentacion.html"><span class="glyphicon glyphicon-hourglass"></span>&nbsp; Enviar Documentaci&oacute;n</a></li>
-                <li class="active"><a href="consultar-resultados.html"><span class="glyphicon glyphicon-ok"></span>&nbsp; Consultar Resultados</a></li>
+                <li><a href="enviar-documentacion.html"><span class="glyphicon glyphicon-send"></span>&nbsp; Enviar Documentos</a></li>
+                <li class="active"><a href="consultar-resultados.html"><span class="glyphicon glyphicon-search"></span>&nbsp; Consulta de Resultados </a></li>
             </ul>
             <div id="menu-filler">
 
@@ -40,24 +40,38 @@
               
             <!-- Contenido -->
             <div class="row" id="content-container">
+                
               <div class="page-header">
-                <h2>Consulta de Resultados</h2>
+                <h2>Resultados</h2>
               </div>
-              <div class="content col-sm-offset-3 col-sm-6">
-                <form class="form-horizontal">
-                  <div class="form-group">
-                    <label class="control-label col-sm-3" for="numasp">Número de Aspirante:</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="numasp" placeholder="Numero de aspirante">
-                    </div> 
+                
+              <div class="content col-sm-offset-2 col-sm-8">
+                <div class="row">
+                  <div class="col-sm-4" id="img-aspirante-container">
+                    <img src="http://placehold.it/150x200" class="img" id="img-aspirante">
                   </div>
-                  <div class="form-group">
-                    <div class="col-sm-offset-3 col-sm-3">
-                        <a href="resultados.html" class="btn btn-default">Consultar</a>
-                    </div>
+                  <div class="col-sm-8" id="datos-aspirante">
+                        <div class="row dato">
+                          <div class="col-sm-4"><span class="campo">Nombre:</span></div>
+                          <div class="col-sm-8">Juan Perez Gómez</div>
+                        </div>
+                        <div class="row dato">
+                          <div class="col-sm-4"><span class="campo">Número de aspirante:</span></div>
+                          <div class="col-sm-8">67128964723</div>
+                        </div>
+                        <div class="row dato">
+                          <div class="col-sm-4"><span class="campo">Escuela de Procedencia:</span></div>
+                          <div class="col-sm-8">Prepa 6</div>
+                        </div>
+                    
+                    <h2 id="resultado" class="text-center">Asignado</h2>                      
                   </div>
-                </form>
-              </div>
+                    
+                </div>
+                <div class="col-sm-offset-4">
+                    <button class="btn btn-default">Imprimir Ficha de Inscripción</button>
+                </div>
+              </div> 
             </div>
               
             <!-- Footer -->
