@@ -1,0 +1,25 @@
+#datos-aspirante{
+    border-bottom-style: solid;
+    border-top-style: solid;
+    border-bottom-width: 1px;
+    border-top-width: 1px;
+    margin-top: 30px;
+    border-color: #CED5D9;
+}
+
+.minor-data{
+    margin: 20px;
+}
+
+.data-label{
+    color: #4C768A;
+    font-weight: bold;
+}
+
+#primer-bloque{
+    margin-top: 30px;
+}
+
+#ultimo-bloque{
+    margin-bottom: 50px;
+}
