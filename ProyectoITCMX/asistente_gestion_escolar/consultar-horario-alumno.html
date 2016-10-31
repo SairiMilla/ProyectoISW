@@ -19,25 +19,28 @@
     <div class="col-sm-2" id="side-menu">
       <div class="text-center" id="image-container">
 
-        <img src="../imgs/logo3.png" class="img-circle" id="logo">
+        <a href="index-gestion.html"><img src="../imgs/logo3.png" class="img-circle" id="logo"></a>
       </div>
       <ul class="nav nav-pills nav-stacked" id="menu-list">
-        <li class="active"><a href=""><span
-            class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
-        <li class="dropdown"><a class="dropdown-toggle"
-          data-toggle="dropdown" href="#"> <span
-            class="glyphicon glyphicon-ok"></span>&nbsp; REINSCRIPCION
-        </a>
-          <ul class="dropdown-menu">
-
-            <li><a href="buscar-alumno.html">Buscar Alumno</a></li>
-            
-          </ul></li>
-        <li><a href="#"><span class="glyphicon glyphicon-ok"></span>&nbsp;
-            Inscripcion</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-hourglass"></span>&nbsp;
-            Horarios</a></li>
-      </ul>
+                    <li><a href="index-gestion.html"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
+                    <li>
+                        <a href="#" data-target="#item1" data-toggle="collapse" data-parent="#stacked-menu">
+                            Nuevo Ingreso<span class="caret arrow"></span>
+                        </a>
+                        
+                        <ul class="nav nav-stacked collapse left-submenu" id="item1">
+                                <li>
+                                    <a href="inscribir-horario.html">
+                                        <span class="glyphicon glyphicon-edit"></span>&nbsp; Inscribir Alumno</a>
+                                </li>
+                                <li>
+                                    <a href="buscar-alumno.html" data-target="#item2" data-toggle="collapse" data-parent="#stacked-menu">
+                                Buscar Alumno<span class="caret arrow"></span>
+                                </a>
+                        </ul>
+                    <li class="active"><a href="buscar-alumno.html"><span class="glyphicon glyphicon-search"></span>&nbsp; Buscar Alumno</a></li>
+                    <li><a href="consultar-horarios.html"><span class="glyphicon glyphicon-ok"></span>&nbsp; Consultar Horarios</a></li>
+              </ul>
       <div id="menu-filler"></div>
     </div>
               <div class="col-sm-12 col-sm-offset-2" id="main-side">
@@ -151,7 +154,7 @@
 	      <td>12:00-13:30</td>
 	      <td>13:30-15:00</td>
 	      <td>12:00-13:30</td>
-	      <td>7:00-8:30</td>
+	      <td></td>
 	      </tr>  
   </table>
   </div>

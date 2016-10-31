@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GESTION PERIODO REINSCRIPCION PARA GESTION ESCOLAR</title>
+
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/base.css" rel="stylesheet">
+<link href="../css/bootstrap-datetimepicker.min.css" rel="stylesheet"
+	media="screen">
+
+</head>
+<body>
+	<div class="row" id="main-content">
+		<div class="col-sm-2" id="menu-bg">
+			<img src="../imgs/imagen-menu.jpg" id="menu-img">
+		</div>
+
+        
+                <div class="col-sm-2" id="side-menu">
+            <div class="text-center" id="image-container">
+                <img src="../imgs/logo3.png" class="img-circle" id="logo">
+            </div>
+            
+            <ul class="nav nav-pills nav-stacked left-menu" id="menu-list">
+                <li class="active">
+                    <a href="">
+                        <span class="glyphicon glyphicon-home"></span>&nbsp; Home
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#" data-target="#item1" data-toggle="collapse" data-parent="#stacked-menu">
+                       Gestionar Horarios<span class="caret arrow"></span>
+                    </a>
+                    
+                    <ul class="nav nav-stacked collapse left-submenu" id="item1">
+                        <li>
+                            <a href="consultar-horarios.html">
+                                <span class="glyphicon glyphicon-question-sign"></span>&nbsp; Consultar Horarios</a>
+                        </li>
+                        <li>
+                            <a href="publicar-horarios.html">
+                                <span class="glyphicon glyphicon-edit"></span>&nbsp; Publicar Horarios</a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <a href="#" data-target="#item2" data-toggle="collapse" data-parent="#stacked-menu">
+                        Gestionar Periodos de Evaluacion <span class="caret arrow"></span>
+                    </a>          
+                    
+                    <ul class="nav nav-pills nav-stacked collapse" id="item2">
+                        <li>
+                            <a href="periodo-evaluacion.html">
+                                <span class="glyphicon glyphicon-edit">
+                                </span>&nbsp;Definir Periodo De Evaluacion</a>
+                        </li>
+                        
+                        <li>
+                                <a href="periodo-evaluacion.html">
+                                <span class="glyphicon glyphicon-question-sign"></span>&nbsp; ConsultarPeriodoEvaluacion</a>
+                        </li>
+                        
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" data-target="#item3" data-toggle="collapse" data-parent="#stacked-menu">
+                        Gestionar Periodos de Citas de Reinscripcion <span class="caret arrow"></span>
+                    </a>          
+                    
+                    <ul class="nav nav-pills nav-stacked collapse" id="item3">
+                        <li>
+                            <a href="definir-periodo-alumno.html">
+                                     <span class="glyphicon glyphicon-edit"></span>&nbsp; Definir Periodo De Citas De Reinscripcion</a>
+                        </li>
+                        
+                        <li>
+                            <a href="consultar-periodo-reinscripcion-modificar.html">
+                                <span class="glyphicon glyphicon-question-sign"></span>&nbsp; Consultar Periodos de Citas de Reinscripcion</a>
+                        </li>
+                        
+
+                    </ul>
+                </li>   
+            <li>
+                    <a href="#" data-target="#item4" data-toggle="collapse" data-parent="#stacked-menu">
+                        Gestionar Periodos Reinscripcion <span class="caret arrow"></span>
+                    </a>          
+                    
+                    <ul class="nav nav-pills nav-stacked collapse" id="item4">
+                        <li>
+                            <a href="definir-periodo-gestion-escolar.html">
+   <span class="glyphicon glyphicon-edit"></span>&nbsp; Definir Periodo De Citas De Reinscripcion</a>
+                        </li>
+                        
+                        <li>
+                            <a href="consultar-periodo-reinscripcion-modificar.html">
+                                <span class="glyphicon glyphicon-question-sign"></span>&nbsp; Consultar Periodos de Citas de Reinscripcion</a>
+                        </li>
+                        
+                    </ul>
+                </li> 
+
+            </ul>
+        </div>
+        
+        
+        
+		<div class="col-sm-12 col-sm-offset-2" id="main-side">
+			<div class="row" id="header">
+				<div class="pull-right" id="user-name-container">
+					<div id="user-name">
+						Jefe Departamento Escolar &nbsp;<span
+							class="glyphicon glyphicon-user"></span>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row" id="content-container">
+				<div class="page-header">
+					<h2>Horarios de clase próximo periodo</h2>
+				</div>
+				<div class="jumbotron content">
+					<div class="col-sm-10">
+						<br>
+						<br>
+					</div>
+					<div class="content">
+						<div>
+							<label for="sel1">Periodo escolar 2016/2</label>
+						</div>
+						</br>
+						<div class="panel-group" id="accordion">
+                    		<h2>Aún no se han generado los horarios del próximo periodo</h2>
+                		</div>
+					</div>
+				</div>
+			</div>
+			</div>
+			<div class="row" id="footer">
+				<div class="col-sm-8" id="dir">Av. Juan de Dios Bátiz esq. Av.
+					Miguel Othón de Mendizábal, Col. Lindavista. Demarcación
+					Territorial, Gustavo A. Madero. Ciudad de México. C. P. 07738.</div>
+				<div class="col-sm-8 col-sm-offset-2" id="year">
+					<span class="pull-right"><span
+						class="glyphicon glyphicon-registration-mark"></span>&nbsp;2016</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../js/jquery-1.11.3.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../js/bootstrap-datetimepicker.js"
+		charset="UTF-8"></script>
+	<script type="text/javascript" src="../js/bootstrap-datetimepicker.es.js"
+		charset="UTF-8"></script>
+	<script type="text/javascript">
+		$('.form_datetime').datetimepicker({
+			language : 'es',
+			weekStart : 1,
+			todayBtn : 1,
+			autoclose : 1,
+			todayHighlight : 1,
+			startView : 2,
+			forceParse : 0,
+			showMeridian : 1
+		});
+		$('.form_date').datetimepicker({
+		    multidate: true,
+		    daysOfWeekDisabled: "0,6",
+			language : 'es',
+			weekStart : 1,
+			todayBtn : 1,
+			autoclose : 1,
+			todayHighlight : 1,
+			startView : 2,
+			minView : 2,
+			forceParse : 0
+		});
+		$('.form_time').datetimepicker({
+			language : 'es',
+			weekStart : 1,
+			todayBtn : 1,
+			autoclose : 1,
+			todayHighlight : 1,
+			startView : 1,
+			minView : 0,
+			maxView : 1,
+			forceParse : 0
+		});
+	</script>
+</body>
+</html>
