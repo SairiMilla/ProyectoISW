@@ -8,6 +8,8 @@
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/sweetalert.css">
+    <script src="../js/sweetalert.min.js"></script>
 
   </head>
   <body>
@@ -52,10 +54,10 @@
                   <form class="form-horizontal col-sm-offset-2" >   
                     
                     <label>Solicitud de Registro</label>
-                    <p><i>Puedes obtenerlo haciendo click <a>aquí</a></i></p>  
+                    <p><i>Puedes obtenerlo haciendo en la sección <a href="actualizar-datos.html">"Actualizar Datos"</a></i></p>  
                     <div class="form-group">
                         <div class="col-md-7">
-                            <input id="fileopen1" type="file" value=""/>
+                            <input id="fileopen1" type="file" accept="application/pdf" value=""/>
                         </div>
                         <div>
                             <button id="clear">Eliminar</button>
@@ -66,7 +68,7 @@
                     <p><i>Debidamente sellado por el banco especificado</i></p>
                     <div class="form-group">
                         <div class="col-md-7">
-                            <input id="fileopen2" type="file" value=""/>
+                            <input id="fileopen2" type="file" accept="application/pdf" value=""/>
                         </div>
                         <div>
                             <button id="clear">Eliminar</button>
@@ -88,7 +90,7 @@
                       <p><i>Puedes utilizar cualquier identificación oficial que cuente con fotografía</i></p>
                     <div class="form-group">
                         <div class="col-md-7">
-                            <input id="fileopen4" type="file" value=""/>
+                            <input id="fileopen4" type="file" accept="application/pdf" value=""/>
                         </div>
                         <div>
                             <button id="clear">Eliminar</button>
@@ -99,7 +101,7 @@
                     <p><i>Puedes subir un recibo de luz, agua o teléfono. Máximo tres meses de haberse expedido</i></p>
                     <div class="form-group">
                         <div class="col-md-7">
-                            <input id="fileopen4" type="file" value=""/>
+                            <input id="fileopen4" type="file" accept="application/pdf" value=""/>
                         </div>
                         <div>
                             <button id="clear">Eliminar</button>
@@ -108,7 +110,7 @@
                     <br/>
                     <div class="form-group">
                       <div class="col-sm-offset-4 col-sm-2">
-                        <a href="#" class="btn btn-default">Enviar</a>
+                        <input type="button" class="btn btn-default" id="cerrar-proceso" value="Enviar">
                       </div>
                     </div>  
                       
@@ -136,6 +138,10 @@
     
     $("#clear").click(function () {
         $("#fileopen2").val("");
+    });
+    
+    $('#cerrar-proceso').click(function () {
+        swal("Documentación Enviada", "Tus documentos se han enviado exitosamente", "success");
     });
     </script>
   </body>
