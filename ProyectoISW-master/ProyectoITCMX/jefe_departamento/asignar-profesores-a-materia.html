@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Asignar Profesor a Materia</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/sweetalert.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="row" id="main-content">
+        <div class="col-sm-2" id="menu-bg">
+            <img src="../imgs/imagen-menu.jpg" id="menu-img">
+        </div>
+        <div class="col-sm-2" id="side-menu">
+            <div class="text-center" id="image-container">
+                <img src="../imgs/logo3.png" class="img-circle" id="logo">
+            </div>
+            <ul class="nav nav-pills nav-stacked" id="menu-list">
+                <li class="active"><a href=""><span class="glyphicon glyphicon-th-list"></span>&nbsp; Asignar Profesores a Materia</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-edit"></span>&nbsp; Inscripción</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-ok"></span>&nbsp; Calificaciones</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-hourglass"></span>&nbsp; Horarios</a></li>
+            </ul>
+            <div id="menu-filler">
+
+            </div>
+        </div>
+        <div class="col-sm-10 col-sm-offset-2" id="main-side">
+            <div class="row" id="header">
+                <div class="pull-right" id="user-name-container">
+                    <div id="user-name">Admin. Roberto Mondragon Quezada &nbsp;<span class="glyphicon glyphicon-list-alt"></span></div>
+                </div>
+            </div>
+            <div class="row" id="content-container">
+                <div class="page-header">
+                    <h1>Asignar Profesor a Materia</h1>
+                </div>
+
+                <div class="col-sm-5 col-sm-offset-3" >
+                    <div class="content">
+                        <h3>Seleccione la materia por Area:</h3>
+                        <center><div class="btn-group-vertical">
+                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalBasicas">Basicas</button>
+                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalSociales">Sociales</button>
+                        </div></center>
+                    </div>
+                </div>
+                
+
+                <!-- Modal -->
+              <div class="modal fade" id="modalBasicas" role="dialog">
+                <div class="modal-dialog modal-sm">
+
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <center><h4 class="modal-title">Basicas</h4></center>
+                    </div>
+                    <div class="modal-body">
+                      <div class="modal-body">
+                        <div class="list-group">                                        
+                            <center><div class="btn-group-vertical">
+                                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="nombre('Calculo I')">Calculo I</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="nombre('Calculo II')">Calculo II</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="nombre('Analisis Vectorial')">Analisis Vectorial</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="nombre('Probabilidad y Estadistica')">Probabilidad y Estadistica</button>
+                            </div></center>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+                
+                <!-- Modal -->
+              <div class="modal fade" id="modalSociales" role="dialog">
+                <div class="modal-dialog modal-sm">
+
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <center><h4 class="modal-title">Sociales</h4></center>
+                    </div>
+                    <div class="modal-body">
+                      <div class="modal-body">
+                        <div class="list-group">                                        
+                            <center><div class="btn-group-vertical">
+                                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="nombre('Ingenieria, Etica y Sociedad')">Ingenieria, Etica y Sociedad</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="nombre('Comunicacion Oral y Escrita')">Comunicacion Oral y Escrita</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="nombre('Liderazgo')">Liderazgo</button>
+                            </div></center>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+                <script>
+                    function nombre(cambio) {
+                        document.getElementById("tablaMateria").innerHTML = cambio;
+                    }
+                    function Alerta(){
+                            sweetAlert("Alerta", "Estas intentando asignar a el/la Prof. Melissa Sforza Forli mas de una vez en el mismo horario", "error");
+                        }
+                    function Exito(){
+                            swal("Exito", "Se han guardado correctamente los cambios", "success");
+                        }
+                    function Alerta2(){
+                            swal({
+                              title: "Cambios sin guardar",
+                              text: "Has hecho cambios para esta materia, ¿quieres regresar guardar y ir a la otra materia? o ¿cancelar y regresar a editarla?",
+                              type: "warning",
+                              showCancelButton: true,
+                              confirmButtonColor: "#DD6B55",
+                              confirmButtonText: "Guardar cambios y cambiar de materia",
+                              closeOnConfirm: false
+                            },
+                            function(){
+                              swal("Cambios Guardados", "Los cambios en la materia X han sido guardados", "success");
+                            });
+                        }
+                </script>
+
+                <div class="page-header col-sm-8 col-sm-offset-2">
+                    <center>
+                        <h2 id="tablaMateria">-</h2></center>
+                </div>
+
+                <div class="col-sm-8 col-sm-offset-2">
+                    <div class="table-responsive content">
+
+                        <table class="table table-striped table-hover">
+                            <colgroup>
+                                <col class="col-sm-1">
+                                <col class="col-sm-3">
+                                <col class="col-sm-3">
+                                <col class="col-sm-3">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Número</th>
+                                    <th>Grupo</th>
+                                    <th>Horario</th>
+                                    <th>Profesor</th>
+                                    <th>Turno Preferente</th>
+                                    <th>Eliminar Profesor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>1CM1</td>
+                                    <td>07:00 - 8:30</td>
+                                    <td>
+                                        <select class="form-control">
+                                    <option>-sin asignar-</option>
+                                    <option>Robles Monroy Alejandro</option>
+                                    <option>Victor Hugo Ojeda</option>
+                                    <option>Melissa Forli Sforza</option>
+                                    <option>Eduardo Catalena Castillo</option>
+                                  </select>
+                                    </td>
+                                    <td>Matutino</td>
+                                    <td>
+                                        <button type="submit" class="btn btn-vergas"><span class="glyphicon glyphicon-remove"></span>Quitar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>1CM2</td>
+                                    <td>8:30 - 10:00</td>
+                                    <td>
+                                        <select class="form-control">
+                                    <option>-sin asignar-</option>
+                                    <option>Robles Monroy Alejandro</option>
+                                    <option>Victor Hugo Ojeda</option>
+                                    <option>Melissa Forli Sforza</option>
+                                    <option>Eduardo Catalena Castillo</option>
+                                  </select>
+                                    </td>
+                                    <td>Matutino</td>
+                                    <td>
+                                        <button type="submit" class="btn btn-vergas"><span class="glyphicon glyphicon-remove"></span>Quitar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>1CM3</td>
+                                    <td>10:30 - 12:00</td>
+                                    <td>
+                                        <select class="form-control">
+                                    <option>-sin asignar-</option>
+                                    <option>Robles Monroy Alejandro</option>
+                                    <option>Victor Hugo Ojeda</option>
+                                    <option>Melissa Forli Sforza</option>
+                                    <option>Eduardo Catalena Castillo</option>
+                                  </select>
+                                    </td>
+                                    <td>Matutino</td>
+                                    <td>
+                                        <button type="submit" class="btn btn-vergas"><span class="glyphicon glyphicon-remove"></span>Quitar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>1CM4</td>
+                                    <td>12:00 - 13:30</td>
+                                    <td>
+                                        <select class="form-control">
+                                    <option>-sin asignar-</option>
+                                    <option>Robles Monroy Alejandro</option>
+                                    <option>Victor Hugo Ojeda</option>
+                                    <option>Melissa Forli Sforza</option>
+                                    <option>Eduardo Catalena Castillo</option>
+                                  </select>
+                                    </td>
+                                    <td>Matutino</td>
+                                    <td>
+                                        <button type="submit" class="btn btn-vergas"><span class="glyphicon glyphicon-remove"></span>Quitar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>1CM5</td>
+                                    <td>13:30 - 15:00</td>
+                                    <td>
+                                        <select class="form-control">
+                                    <option>-sin asignar-</option>
+                                    <option>Robles Monroy Alejandro</option>
+                                    <option>Victor Hugo Ojeda</option>
+                                    <option>Melissa Forli Sforza</option>
+                                    <option>Eduardo Catalena Castillo</option>
+                                  </select>
+                                    </td>
+                                    <td>Matutino</td>
+                                    <td>
+                                        <button type="submit" class="btn btn-vergas"><span class="glyphicon glyphicon-remove"></span>Quitar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <center><button type="submit" class="btn btn-default" data-toggle="modal" data-target="#myModal2">Enviar</button></center>
+                        <center><button type="submit" class="btn btn-default" onclick="Alerta()">Alert Dummy sobrecarga</button></center>
+                        <center><button type="submit" class="btn btn-default" onclick="Alerta2()">Alert Dummy cambiar</button></center>
+                        
+                        
+                        <!-- modal confirmcion -->
+
+                        
+                        
+                         <!-- Modal -->
+              <div class="modal fade" id="myModal2" role="dialog">
+                <div class="modal-dialog modal-sm">
+
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <center><h4 class="modal-title">Se realizaran los siguientes cambios:</h4></center>
+                    </div>
+                    <div class="modal-body">
+                      <div class="modal-body">
+                        <div class="list-group">                                        
+                            <h4>Analisis Vectorial:</h4>
+                                                    <ul>
+                                                      <li>Melissa Forli Sforza en  el 1MC1</li>
+                                                    </ul>
+                                                    <h4>Grupos sin asignar:</h4>
+                                                    <ul>
+                                                      <li>1MC2</li>
+                                                      <li>1MC3</li>
+                                                    </ul>
+                                                    <h4>¿Quieres realizar estos cambios?</h4>
+                                                    <center><button type="submit" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                                    <button type="submit" class="btn btn-default" data-dismiss="modal" onclick="Exito()">Enviar</button></center>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+                        
+                        
+                        </div>
+                    </div>
+                </div>
+
+             <div class="row" id="footer">
+                <div class="col-sm-5" id="dir">
+                    Av. Juan de Dios Bátiz esq. Av. Miguel Othón de Mendizábal, Col. Lindavista. Demarcación Territorial, Gustavo A. Madero. Ciudad de México. C. P. 07738.
+                </div>
+                <div class="col-sm-5 col-sm-offset-2" id="year">
+                    <span class="pull-right"><span class="glyphicon glyphicon-registration-mark"></span>&nbsp;2016</span>
+                </div>
+            </div>
+            
+            </div>
+            
+        </div>
+   
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/sweetalert.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

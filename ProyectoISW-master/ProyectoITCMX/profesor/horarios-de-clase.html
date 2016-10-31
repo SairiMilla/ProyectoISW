@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Horarios de clase</title>
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/base.css" rel="stylesheet">
+    <link href="../css/estilo.css" rel="stylesheet">
+
+</head>
+<body>
+	<div class="row" id="main-content">
+		<div class="col-sm-2" id="menu-bg">
+			<img src="../imgs/imagen-menu.jpg" id="menu-img">
+		</div>
+		<div class="col-sm-2" id="side-menu">
+			<div class="text-center" id="image-container">
+				<img src="../imgs/logo3.png" class="img-circle" id="logo">
+			</div>
+			<ul class="nav nav-pills nav-stacked" id="menu-list">
+                <li class="active"><a href="horarios-de-clase.html"><span class="glyphicon glyphicon-hourglass"></span>&nbsp; Horarios de Clase</a></li>
+                <li><a href="index-profesor.html"><span class="glyphicon glyphicon-education"></span>&nbsp; Inicio</a></li>
+                <li><a href="acta.html"><span class="glyphicon glyphicon-education"></span>&nbsp; Acta</a></li>
+                <li><a href="agregar-materias.html"><span class="glyphicon glyphicon-blackboard"></span>&nbsp; Agregar materias</a></li>
+                <li><a href="consultar-actas.html"><span class="glyphicon glyphicon-hourglass"></span>&nbsp; Consultar actas</a></li>
+                <li><a href="gestionar-grupos.html"><span class="glyphicon glyphicon-hourglass"></span>&nbsp; Gestionar grupos</a></li>
+                <li><a href="lista-alumnos.html"><span class="glyphicon glyphicon-hourglass"></span>&nbsp; Lista de alumnos</a></li>
+            </ul>
+			<div id="menu-filler">
+
+			</div>
+		</div>
+		<div class="col-sm-10 col-sm-offset-2" id="main-side">
+			<div class="row" id="header">
+				<div class="pull-right" id="user-name-container">
+					<div id="user-name">Prof. Alejandro Espada Cortez &nbsp;<span class="glyphicon glyphicon-blackboard"></span></div>
+				</div>
+			</div>
+			<div class="row" id="content-container">
+				<div class="page-header">
+					<h2>Horarios de clase</h2>
+				</div>
+				<div class="jumbotron content">
+					<div class="col-sm-10">
+						<br>
+						<br>
+					</div>
+	                <div class="col-sm-12">
+    	                <div class="col-sm-6">
+        	                <label for="sel1">Turno</label>
+            	            <select class="form-control">
+								<option>Matutino</option>
+								<option>Vespertino</option>
+							</select>
+    	                </div>
+    	                <div class="col-sm-6">
+    	                	<label for="sel1">Grupo</label>
+        	                <select class="form-control">
+								<option>1CM1</option>
+								<option>1CM2</option>
+								<option>1CM3</option>
+								<option>1CM4</option>
+								<option>1CM5</option>
+							</select>
+    	                </div>
+					</div>
+					<div class="content">
+    	                </br>
+    	                </br>
+    	                </br>
+    	                </br>
+						<table class="table table-responsive table-striped">
+							<colgroup>
+							<col class="col-sm-1">
+							<col class="col-sm-2">
+							<col class="col-sm-2">
+							<col class="col-sm-1">
+							<col class="col-sm-1">
+							<col class="col-sm-1">
+							<col class="col-sm-1">
+							<col class="col-sm-1">
+						</colgroup>
+						<thead>
+							<tr class="info">
+								<th class="text-center">Grupo</th>
+								<th class="text-center">Materia</th>
+								<th class="text-center">Profesor</th>
+								<th class="text-center">Lunes</th>
+								<th class="text-center">Martes</th>
+								<th class="text-center">Miercoles</th>
+								<th class="text-center">Jueves</th>
+								<th class="text-center">Viernes</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1CM1</td>
+								<td>Robles Monroy Alejandro</td>
+								<td>Analisis Vectorial</td>
+								<td>7:00-8:30</td>
+								<td>7:00-8:30</td>
+								<td></td>
+								<td>7:00-8:30</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>1CM3</td>
+								<td>Robles Monroy Alejandro</td>
+								<td>Calculo I</td>
+								<td>7:00-8:30</td>
+								<td>7:00-8:30</td>
+								<td></td>
+								<td>7:00-8:30</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>1CM1</td>
+								<td>Melissa Forli Sforza</td>
+								<td>Calculo I</td>
+								<td>8:30-10:00</td>
+								<td></td>
+								<td>7:00-8:30</td>
+								<td></td>
+								<td>7:00-8:30</td>
+							</tr>
+							<tr>
+								<td>1CM1</td>
+								<td>Melissa Forli Sforza</td>
+								<td>Probabilidad y Estadistica</td>
+								<td></td>
+								<td>8:30-10:00</td>
+								<td>8:30-10:00</td>
+								<td></td>
+								<td>8:30-10:00</td>
+							</tr>
+							<tr>
+								<td>1CM3</td>
+								<td>Eduardo Catalena Castillo</td>
+								<td>Analisis Vectorial</td>
+								<td>8:30-10:00</td>
+								<td></td>
+								<td>7:00-8:30</td>
+								<td></td>
+								<td>7:00-8:30</td>
+							</tr>
+							<tr>
+								<td>1CM2</td>
+								<td>Eduardo Catalena Castillo</td>
+								<td>Analisis Vectorial</td>
+								<td></td>
+								<td></td>
+								<td>10:30-12:00</td>
+								<td>8:30-10:00</td>
+								<td>10:30-12:00</td>
+							</tr>
+							<tr>
+								<td>1CM4</td>
+								<td>Eduardo Catalena Castillo</td>
+								<td>Analisis Vectorial</td>
+								<td>10:30-12:00</td>
+								<td>10:30-12:00</td>
+								<td></td>
+								<td>10:30-12:00</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>1CM5</td>
+								<td>Eduardo Catalena Castillo</td>
+								<td>Analisis Vectorial</td>
+								<td>12:00-13:30</td>
+								<td></td>
+								<td>10:30-12:00</td>
+								<td></td>
+								<td>10:30-12:00</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="row" id="footer">
+			<div class="col-sm-5" id="dir">
+				Av. Juan de Dios Bátiz esq. Av. Miguel Othón de Mendizábal, Col. Lindavista. Demarcación Territorial, Gustavo A. Madero. Ciudad de México. C. P. 07738.
+			</div>
+			<div class="col-sm-5 col-sm-offset-2" id="year">
+				<span class="pull-right"><span class="glyphicon glyphicon-registration-mark"></span>&nbsp;2016</span>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

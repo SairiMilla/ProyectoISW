@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Solicitud de Materias</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">    
+    <link href="../css/sweetalert.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="row" id="main-content">
+        <div class="col-sm-2" id="menu-bg">
+            <img src="../imgs/imagen-menu.jpg" id="menu-img">
+        </div>
+        <div class="col-sm-2" id="side-menu">
+            <div class="text-center" id="image-container">
+                <img src="../imgs/logo3.png" class="img-circle" id="logo">
+            </div>
+            <ul class="nav nav-pills nav-stacked" id="menu-list">
+                <li class="active"><a href="agregar-materias.html"><span class="glyphicon glyphicon-blackboard"></span>&nbsp; Agregar materias</a></li>
+                <li><a href="index-profesor.html"><span class="glyphicon glyphicon-education"></span>&nbsp; Inicio</a></li>
+                <li><a href="acta.html"><span class="glyphicon glyphicon-education"></span>&nbsp; Acta</a></li>
+                <li><a href="consultar-actas.html"><span class="glyphicon glyphicon-hourglass"></span>&nbsp; Consultar actas</a></li>
+                <li><a href="gestionar-grupos.html"><span class="glyphicon glyphicon-hourglass"></span>&nbsp; Gestionar grupos</a></li>
+                <li><a href="horarios-de-clase.html"><span class="glyphicon glyphicon-hourglass"></span>&nbsp; Horarios de Clase</a></li>
+                <li><a href="lista-alumnos.html"><span class="glyphicon glyphicon-hourglass"></span>&nbsp; Lista de alumnos</a></li>
+            </ul>
+            <div id="menu-filler">
+
+            </div>
+        </div>
+        <div class="col-sm-10 col-sm-offset-2" id="main-side">
+            <div class="row" id="header">
+                <div class="pull-right" id="user-name-container">
+                    <div id="user-name">Prof. Alejandro Espada Cortez &nbsp;<span class="glyphicon glyphicon-blackboard"></span></div>
+                </div>
+            </div>
+            <div class="row" id="content-container">
+                <div class="page-header">
+                    <h1>Solicitud de Materias</h1>
+                </div>
+
+
+                <div class="col-sm-5 col-sm-offset-3" >
+                    <div class="content">
+                    <center><button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal" onclick="zero()">Seleccionar Materia</button></center>
+                </div>
+                     </div>
+              
+                
+                <!-- Modal -->
+              <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog modal-sm">
+
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Seleccione materia y turno</h4>
+                    </div>
+                    <div class="modal-body">
+                      <div class="modal-body">
+                        <div class="list-group">                                        
+                            <h2>Basicas</h2>
+                            <div class="materiaRadios">
+                                <label><input type="radio" name="materiaRadio" value="Calculo I" onchange="getMateria('Calculo I')">Calculo I</label><br>
+                                <label><input type="radio" name="materiaRadio" value="Calculo II" onchange="getMateria('Calculo II')">Calculo II</label><br>
+                                <label><input type="radio" name="materiaRadio" value="Analisis Vectorial" onchange="getMateria('Analisis Vectorial')">Analisis Vectorial</label><br>
+                                <label><input type="radio" name="materiaRadio" value="Probabilidad y Estadistica" onchange="getMateria('Probabilidad y Estadistica')">Probabilidad y Estadistica</label><br>
+                            </div>
+                            <h2>Turno deseado</h2>
+                                <div class="turnoRadios">
+                                    <label><input type="radio" name="turnoRadio" value="Calculo I" onchange="getTurno('Matutino')">Matutino</label><br>
+                                    <label><input type="radio" name="turnoRadio" value="Calculo II" onchange="getTurno('Vespertino')">Vespertino</label><br>
+                                </div>
+                            <h2>Grupos deseados</h2>
+                                <div>
+                                    <select id="selectGrupos">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div>
+                            <br>
+                            <center><button disabled type="button" id="enviar" class="btn btn-default" onclick="celda()" data-dismiss="modal">Enviar</button></center>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+                <script>
+                    var materia ="";
+                    var turno = "";
+                    var selmat=0;
+                    var seltur=0;
+                    function zero(){
+                        document.getElementById("enviar").disabled = true;
+                        selmat=0;
+                        seltur=0;
+                        
+                    }
+                    function getMateria(mat){
+                        materia=mat;
+                        selmat=1;
+                        if(selturn==1){
+                            document.getElementById("enviar").disabled = false;
+                        }
+                    }
+                    function getTurno(tur){
+                        turno=tur;
+                        seltur=1;
+                        if(selmat==1){
+                            document.getElementById("enviar").disabled = false;
+                        }
+                    }
+                    function Exito(){
+                            swal("Exito", "Se han guardado correctamente los cambios", "success");
+                        }
+                    function Maximo(){
+                            sweetAlert("Maximo alcanzado", "No puedes impartir mas de X materias por semestre.", "error");
+                        }
+                    function celda() {   
+                        
+                        var table = document.getElementById("materias");
+                        var row = table.insertRow(1);
+                        var cell1 = row.insertCell(0);
+                        var cell2 = row.insertCell(1);
+                        var cell3 = row.insertCell(2);
+                        var cell4 = row.insertCell(3);
+                        cell1.innerHTML = materia;
+                        cell2.innerHTML = turno;
+                        
+                        var e = document.getElementById("selectGrupos");
+                        var strUser = e.options[e.selectedIndex].value;
+                        cell3.innerHTML = strUser;
+
+                        var element3 = document.createElement("input");
+                        element3.type = "button";
+                        element3.name = "add";
+                        element3.value = "Quitar";
+                        element3.className = "btn btn-vergas btn-lg"
+                        cell4.appendChild(element3);                        
+                        
+                    }
+                </script>
+
+                <div class="page-header col-sm-8 col-sm-offset-2">
+                    <center>
+                        <h2>Materias Agregadas</h2></center>
+                </div>
+
+                <div class="col-sm-7 col-sm-offset-2">
+                    <div class="table-responsive content">
+                        <table class="table table-striped table-hover" id="materias">
+                            <colgroup>
+                                <col class="col-sm-3">
+                                <col class="col-sm-3">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Materia</th>
+                                    <th>Turno Preferente</th>
+                                    <th>Numero de grupos deseado</th>
+                                    <th>Quitar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+
+                        
+                        <center><button type="submit" class="btn btn-default" data-toggle="modal" data-target="#myModal2">Enviar</button></center>
+                        <center><button type="submit" class="btn btn-default" onclick="Maximo()">Alert Dummy Maximo</button></center>
+                        
+                        <!-- Modal -->
+                          <div class="modal fade" id="myModal2" role="dialog">
+                            <div class="modal-dialog modal-sm">
+
+                              <!-- Modal content-->
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <h4 class="modal-title">Agregaste las siguientes materias:</h4>
+                                </div>
+                                <div class="modal-body">
+                                  <div class="modal-body">
+                                    <div class="list-group">   
+                                                    <ul>
+                                                      <li>Analisis Vectorial</li>
+                                                      <li>Probabilidad y Estadistica</li>
+                                                      <li>Calculo II</li>
+                                                    </ul>
+
+                                                    <h4>¿Quieres realizar estos cambios?</h4>
+                                                    <center><button type="submit" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                                    <button type="submit" class="btn btn-default" data-dismiss="modal" onclick="Exito()">Enviar</button></center>
+
+                                                    </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+                        
+                       
+
+                </div>
+
+            </div>
+            <div class="row" id="footer">
+                <div class="col-sm-5" id="dir">
+                    Av. Juan de Dios Bátiz esq. Av. Miguel Othón de Mendizábal, Col. Lindavista. Demarcación Territorial, Gustavo A. Madero. Ciudad de México. C. P. 07738.
+                </div>
+                <div class="col-sm-5 col-sm-offset-2" id="year">
+                    <span class="pull-right"><span class="glyphicon glyphicon-registration-mark"></span>&nbsp;2016</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>    
+    <script src="../js/sweetalert.min.js"></script>
+
+</body>
+
+</html>

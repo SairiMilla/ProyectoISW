@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inicio</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <script src="../js/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/sweetalert.css">
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  </head>
+  <body>
+        <div class="row" id="main-content">
+          <div class="col-sm-2" id="menu-bg">
+              <img src="../imgs/imagen-menu.jpg" id="menu-img">
+          </div>
+          <div class="col-sm-2" id="side-menu">
+            <div class="text-center" id="image-container">
+              <img src="../imgs/logo3.png" class="img-circle" id="logo">
+            </div>
+           <ul class="nav nav-pills nav-stacked" id="menu-list">
+                <li class="active"><a href="index-profesor.html"><span class="glyphicon glyphicon-home"></span>&nbsp; Inicio</a></li>
+                <li><a href="acta.html"><span class="glyphicon glyphicon-education"></span>&nbsp; Acta</a></li>
+                <li><a href="agregar-materias.html"><span class="glyphicon glyphicon-blackboard"></span>&nbsp; Agregar materias</a></li>
+                <li><a href="consultar-actas.html"><span class="glyphicon glyphicon-hourglass"></span>&nbsp; Consultar actas</a></li>
+                <li><a href="gestionar-grupos.html"><span class="glyphicon glyphicon-hourglass"></span>&nbsp; Gestionar grupos</a></li>
+                <li><a href="horarios-de-clase.html"><span class="glyphicon glyphicon-hourglass"></span>&nbsp; Horarios de Clase</a></li>
+                <li><a href="lista-alumnos.html"><span class="glyphicon glyphicon-hourglass"></span>&nbsp; Lista de alumnos</a></li>
+            </ul>
+            <div id="menu-filler">
+
+            </div>
+          </div>
+          <div class="col-sm-10 col-sm-offset-2" id="main-side">
+            <div class="row" id="header">
+              <div class="pull-right" id="user-name-container">
+                <div id="user-name">Prof. Alejandro Espada Cortez &nbsp;<span class="glyphicon glyphicon-blackboard"></span></div>
+              </div>
+            </div>
+            <div class="row" id="content-container">
+              <div class="page-header">
+                <h2>¡Bienvenido Alumno!</h2>
+              </div>
+              <div class="jumbotron content">
+                  <img src="../imgs/imagen-de-cosas.jpg" class="img">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod sapien volutpat sapien suscipit, et imperdiet diam consectetur. Suspendisse sodales dignissim ante tempor mattis. Morbi lacus est, fermentum eget vulputate in, convallis vel turpis. In volutpat cursus tellus in accumsan. Nunc tincidunt nec nunc eget sollicitudin. Donec libero eros, accumsan eget erat efficitur, facilisis accumsan sem. Nunc aliquet auctor risus id pellentesque.</p>
+              </div>
+            </div>
+             <!-- Modal Iniciar Sesión -->
+              <div class="modal fade" id="iniciar-sesion" role="dialog">
+                <div class="modal-dialog">
+
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title text-center">Inicia Sesión </h4>
+                    </div>
+                    <div class="modal-body">
+                          <form>
+                            <div class="form-group">
+                              <label for="text">Usuario:</label>
+                              <input type="text" class="form-control" id="email" placeholder="Introduce tu usuario">
+                            </div>
+                            <div class="form-group">
+                              <label for="pwd">Contraseña:</label>
+                              <input type="password" class="form-control" id="pwd" placeholder="Introduce tu contraseña">
+                            </div>
+                            <button type="submit" class="btn btn-default">Ingresar</button>
+                          </form>
+                    </div>
+
+                </div>
+               </div> 
+              </div>
+
+            <div class="row" id="footer">
+              <div class="col-sm-5" id="dir">
+                 Av. Juan de Dios Bátiz esq. Av. Miguel Othón de Mendizábal, Col. Lindavista. Demarcación Territorial, Gustavo A. Madero. Ciudad de México. C. P. 07738.
+              </div>
+              <div class="col-sm-5 col-sm-offset-2" id="year">
+                <span class="pull-right"><span class="glyphicon glyphicon-registration-mark"></span>&nbsp;2016</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+  </body>
+</html>
