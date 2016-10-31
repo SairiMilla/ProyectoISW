@@ -10,6 +10,8 @@
     <link href="../css/base.css" rel="stylesheet">
 
   </head>
+
+
   <body>
         <div class="row" id="main-content">
           <div class="col-sm-2" id="menu-bg">
@@ -21,8 +23,8 @@
             </div>
             <ul class="nav nav-pills nav-stacked" id="menu-list">
                 <li><a href="index-asistente-admision.html"><span class="glyphicon glyphicon-home"></span>&nbsp; Inicio</a></li>
-                <li><a href="captura-calificaciones.html"><span class="glyphicon glyphicon-th-list"></span>&nbsp; Captura de Resultados</a></li>
-                <li  class="active"><a href="gestion-aspirantes.html"><span class="glyphicon glyphicon-folder-open"></span>&nbsp; Gestion de Aspirantes</a></li>
+                <li class="active"><a href="gestion-aspirantes.html"><span class="glyphicon glyphicon-folder-open"></span>&nbsp; Gestionar Aspirantes</a></li>
+                <li><a href="captura-calificaciones.html"><span class="glyphicon glyphicon-th-list"></span>&nbsp; Capturar Resultados</a></li>
             </ul>
             <div id="menu-filler">
 
@@ -39,65 +41,141 @@
                 <h2>Gestión de Aspirantes</h2>
               </div>
               <div class="content">
-                  <table class="table table-striped">
-                    <colgroup>
-                      <col class="col-sm-5">
-                      <col class="col-sm-5">
-                      <col class="col-sm-2">   
-                    </colgroup>
-                      
-                    <thead>
-                      <tr>
-                        <th>Número de Aspirante</th>
-                        <th>Nombre Completo</th>
-                        <th >Documentos</th>
-                      </tr>
-                    </thead>
+                  <div class="row">
+                    <form class="form-inline">
+                      <div class="form-group col-sm-6">
 
-                    <tbody>
-                      <tr>
-                        <td>8374162539</td>
-                        <td >Pedro Jimenez Gonzalez</td>        
-                        <td>
-                          <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#myModal">Ver</button>                      
-                        </td>
-                           
-                      </tr>
-                      <tr>
-                        <td>4352617352</td>
-                        <td>Juan Gutierrez Gomez</td>        
-                        <td>
-                          <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#myModal">Ver</button>                      
-                        </td>
-            
-                      </tr>
-                      <tr>
-                        <td>1827364582</td>
-                        <td>Ana Jimena Mendoza Lopez</td>        
-                        <td>
-                          <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#myModal">Ver</button>                      
-                        </td>
-   
-                      </tr>
-                      <tr>
-                        <td>9283746152</td>
-                        <td>Sofía García Martinez</td>        
-                        <td>
-                          <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#myModal">Ver</button>                      
-                        </td>
-   
-                      </tr>
-                      <tr>
-                        <td>6735483916</td>
-                        <td>Laura Gonzalez Lopez</td>        
-                        <td>
-                          <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#myModal">Ver</button>                      
-                        </td>
-                         
-                      </tr>
-                    </tbody>
+                          <div class="input-group">
+                              <div class="form-group">
+                                  <select class="form-control select-search" name="category">
+                                    <option value="0">Buscar por Folio</option>
+                                    <option value="1">Buscar por Nombre</option>
+                                  </select>   
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control search-text" placeholder="Buscar un aspirante">
+                              </div>
+                              <div class="form-group">
+                                <button type="submit" class="btn btn-default btn-search btn-red"><span class="glyphicon glyphicon-search"></span></button>
+                              </div>
 
-                  </table>
+                          </div>
+                      </div>  
+                      <div class="form-group col-sm-offset-1 col-sm-5">
+                        <label class="control-label col-sm-2 radio-default" for="text">Filtro:</label>
+                        <div class="col-sm-offset-2">
+                            <label class="checkbox-inline"><input type="checkbox" value="">Correcto</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="">Incorrecto</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="">Pendiente</label>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="row">
+                      <table class="table table-striped">
+                        <colgroup>
+                          <col class="col-sm-3">
+                          <col class="col-sm-4">
+                          <col class="col-sm-1"> 
+                          <col class="col-sm-1"> 
+                          <col class="col-sm-1"> 
+                        </colgroup>
+
+                        <thead>
+                          <tr>
+                            <th>Número de Aspirante</th>
+                            <th>Nombre Completo</th>
+                            <th>Estado de la documentación</th>
+                            <th>Documentos</th>
+                            <th>Datos del Alumno</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <tr>
+                            <td>8374162539</td>
+                            <td >Pedro Jimenez Gonzalez</td>  
+                            <td><span class="highlight corr-highlight">Correcta</span></td>        
+
+                            <td>
+                              <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Revisar</button>                      
+                            </td>
+
+                            <td>
+                              <button type="button" class="btn btn-default" data-toggle="modal" data-target="#editarDatos">Editar</button>                 
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>4352617352</td>
+                            <td>Juan Gutierrez Gomez</td>        
+                            <td ><span class="highlight incorr-highlight">Incorrecta</span></td>        
+
+                            <td>
+                              <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Revisar</button>                      
+                            </td>
+
+                            <td>
+                              <button type="button" class="btn btn-default" data-toggle="modal" data-target="#editarDatos">Editar</button>                 
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <td>1827364582</td>
+                            <td>Ana Jimena Mendoza Lopez</td>        
+                            <td><span class="highlight incorr-highlight">Incorrecta</span></td>        
+
+                            <td>
+                              <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Revisar</button>                      
+                            </td>
+
+                            <td>
+                              <button type="button" class="btn btn-default" data-toggle="modal" data-target="#editarDatos">Editar</button>                 
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <td>9283746152</td>
+                            <td>Sofía García Martinez</td>        
+                            <td><span class="highlight rev-highlight">En revisión</span></td>        
+
+                            <td>
+                              <button type="button" class="btn btn-default disabled" data-toggle="modal" data-target="#myModal" disabled>Revisar</button>                      
+                            </td>
+
+                            <td>
+                              <button type="button" class="btn btn-default" data-toggle="modal" data-target="#editarDatos">Editar</button>                 
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <td>6735483916</td>
+                            <td>Laura Gonzalez Lopez</td>        
+                            <td><span class="highlight pend-highlight">Pendiente de Revisión</span></td>        
+
+                            <td>
+                              <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Revisar</button>                      
+                            </td>
+
+                            <td>
+                              <button type="button" class="btn btn-default" data-toggle="modal" data-target="#editarDatos">Editar</button>                 
+                            </td>
+
+                          </tr>
+
+
+                          <!-- inicia relleno-->
+                        </tbody>
+
+                      </table>
+                  </div>
+                  <div class="text-center">
+                    <ul class="pagination">
+                      <li><a href="#"><<</a></li>
+                      <li><a href="gestion-aspirantes.html">1</a></li>
+                      <li><a href="ejemplo-pagina-2-gestion-aspirantes.html">2</a></li>
+                      <li><a href="#">>></a></li>
+                    </ul>
+                  </div>
               </div>
             </div>
             <div class="row" id="footer">
@@ -110,13 +188,153 @@
             </div>
           </div>
         </div>
+
+        <div class="modal fade" id="editarDatos" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Datos del Aspirante Pedro Jimenez Gonzalez</h4>
+              </div>
+              <div class="modal-body">
+                 <form class="form-horizontal">     
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="text">Nombre:</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="nombre" placeholder="Introduce nombre o nombres">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="text">Primer Apellido:</label>
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control" id="apellido">
+                      </div>
+                      <label class="control-label col-sm-2" for="text">Segundo Apellido:</label>
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control" id="apellido" placeholder="(Opcional)">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="text">CURP:</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="curp">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="callno">Calle y No. de casa:</label>
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control" id="callno">
+                      </div>
+                      <label class="control-label col-sm-2" for="colon">Colonia:</label>
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control" id="colon">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+
+                        <label class="control-label col-sm-2" for="cp">C.P.</label>
+                        <div class="col-sm-3">
+                          <input type="text" class="form-control" id="cp" placeholder="Código Postal">
+                        </div>
+                        <label class="control-label col-sm-2" for="municipio">Delegación:</label>
+                        <div class="col-sm-5">
+                            <select class="form-control" id="estado">
+                              <option>--Selecciona--</option>
+                              <option>Gustavo A. Madero</option>
+                              <option>Álvaro Obregón</option>
+                              <option>Coyoacán</option>
+                              <option>Iztapalapa</option>
+                            </select>  
+                        </div>
+                    </div>  
+
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="callno">Fecha de Nacimiento:</label>
+                      <div class="col-sm-4">
+                        <div class="input-group date form_date col-md-10" data-date=""
+                          data-date-format="dd MM yyyy" data-link-field="dtp_input2"
+                          data-link-format="yyyy-mm-dd">
+                          <input class="form-control" size="6" type="text" value=""
+                            placeholder="Seleccione Fecha Inicio" readonly> <span class="input-group-addon"><span
+                            class="glyphicon glyphicon-remove"></span></span> <span
+                            class="input-group-addon"><span
+                            class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
+                      </div>
+                      <label class="control-label col-sm-2" for="colon">Lugar de Nacimiento:</label>
+                      <div class="col-sm-4">
+                        <select class="form-control" id="estado">
+                            <option>--Selecciona--</option>
+                            <option>Ciudad de México</option>
+                            <option>Veracruz</option>
+                            <option>Jalisco</option>
+                            <option>Guerrero</option>
+                        </select> 
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+
+                        <label class="control-label col-sm-2 radio-label" for="text">Género:</label>
+                        <div class="col-sm-3">
+                          <div class="radio"><label><input type="radio" name="optradio">Masculino</label></div>
+                          <div class="radio"><label><input type="radio" name="optradio">Femenino</label></div>
+                          <div class="radio"><label><input type="radio" name="optradio">Otro</label></div>         
+                        </div>
+                        <label class="control-label col-sm-2" for="municipio">E-mail:</label>
+                        <div class="col-sm-5">
+                          <input type="text" class="form-control" id="cp">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="text">Escuela de Procedencia:</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="escuela">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="text">Teléfono:</label>
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control" id="escuela">
+                      </div>
+
+                      <label class="control-label col-sm-2" for="estado">Plantel al que desea Ingresar:</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" id="estado">
+                            <option>Ciudad de México</option>
+                            <option>Veracruz</option>
+                            <option>Jalisco</option>
+                            <option>Guerrero</option>
+                            </select>  
+                        </div>
+                    </div>
+                                   
+
+                    <div class="form-group">
+                      <div class="col-sm-offset-5 col-sm-7">
+                        <button type="submit" class="btn btn-default">Actualizar</button>
+                      </div>
+                    </div>  
+                  </form>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
         <div class="modal fade" id="myModal" role="dialog">
           <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Documentos del Alumno Pedro Jimenez Gonzalez</h4>
+                <h4 class="modal-title">Documentos del Aspirante Pedro Jimenez Gonzalez</h4>
               </div>
               <div class="modal-body">
                 <table class="table table-striped">
@@ -130,7 +348,9 @@
                       <tr>
                         <th>Documentación</th>
                         <th>Opciones</th>
-                        <th>Correcto</th>
+                        <th>Correcto  &nbsp;
+                          <a href="#" data-toggle="tooltip" title="Marcar SÓLO los documentos correctos"><span class="glyphicon glyphicon-question-sign"></span></a>
+                        </th>
                       </tr>
                     </thead>
 
@@ -166,8 +386,8 @@
                 </table>
                 <div class="form-group">
                    
-                        <button type="submit" class="btn btn-default">Notificar Alumno</button>
-                        <button type="submit" class="btn btn-default pull-right">Guardar Datos de Documentos</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" id="btnNotificar">Notificar de Error</button>
+                        <button type="button" class="btn btn-default pull-right"  data-dismiss="modal" id="btnTerminar">Terminar y Notificar</button>
  
                   </div>  
               </div>
@@ -175,8 +395,68 @@
             
           </div>
         </div>
+
+        <div class="modal fade" id="modalComentarios" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Introduce un comentario</h4>
+              </div>
+              <div class="modal-body">
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <label for="comment">Comentario:</label>
+                      <textarea class="form-control" rows="5" id="comment"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-offset-7 col-sm-5">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Enviar Correo de Notificación</button>
+                      </div>
+                   </div>  
+                  </form> 
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
     <script src="../js/jquery-1.11.3.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="../js/bootstrap-datetimepicker.es.js" charset="UTF-8"></script>
+    <script>
+      $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip(); 
+          var notif=false;
 
+          $('#btnNotificar').on('click', function () {
+           notif=true;
+          });
+
+          $('#myModal').on('hidden.bs.modal', function () {
+            // Load up a new modal...
+            if(notif){
+              $('#modalComentarios').modal('show');
+              notif=false;
+            }
+          });
+
+          $('.form_date').datetimepicker({
+              multidate: true,
+              daysOfWeekDisabled: "0,6",
+            language : 'es',
+            weekStart : 1,
+            todayBtn : 1,
+            autoclose : 1,
+            todayHighlight : 1,
+            startView : 2,
+            minView : 2,
+            forceParse : 0
+          });
+      });
+      
+    </script>
   </body>
 </html>
