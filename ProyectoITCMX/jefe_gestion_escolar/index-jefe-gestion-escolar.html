@@ -17,77 +17,99 @@
 		<div class="col-sm-2" id="menu-bg">
 			<img src="../imgs/imagen-menu.jpg" id="menu-img">
 		</div>
-		<div class="col-sm-2" id="side-menu">
-			<div class="text-center" id="image-container">
 
-				<img src="../imgs/logo3.png" class="img-circle" id="logo">
-			</div>
-        <div class="panel-group" id="accordion" >
-    <div class="panel panel-info" >
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Gestionar Horarios</a>
-        </h4>
-      </div>
-      <div id="collapse1" class="panel-collapse collapse in">
-            <ul class="nav nav-pills nav-stacked" id="menu-list">
-          <li><a href=""><span class="glyphicon glyphicon-edit"></span>&nbsp; Consultar Horario</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-ok"></span>&nbsp; Publicar Horarios</a></li>
-        </ul> 
-      </div>
-    </div>
-</div>
-<div class="panel-group" id="accordion2">
-    <div class="panel panel-info">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion2" href="#collapse2">Gestionar Periodo de Evaluacion</a>
-        </h4>
-      </div>
-      <div id="collapse2" class="panel-collapse collapse in">
-          <ul class="nav nav-pills nav-stacked" id="menu-list">
-          <li><a href="periodoevaluacion.html"><span class="glyphicon glyphicon-edit"></span>&nbsp; Definir Periodo de Evaluacion</a></li>
-          <li><a href=""><span class="glyphicon glyphicon-edit"></span>&nbsp; Consultar Periodo de Evaluacion</a></li>
-          </ul> 
+        
+                <div class="col-sm-2" id="side-menu">
+            <div class="text-center" id="image-container">
+                <img src="../imgs/logo3.png" class="img-circle" id="logo">
+            </div>
+            
+            <ul class="nav nav-pills nav-stacked left-menu" id="menu-list">
+                <li class="active">
+                    <a href="">
+                        <span class="glyphicon glyphicon-home"></span>&nbsp; Home
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#" data-target="#item1" data-toggle="collapse" data-parent="#stacked-menu">
+                       Gestionar Horarios<span class="caret arrow"></span>
+                    </a>
+                    
+                    <ul class="nav nav-stacked collapse left-submenu" id="item1">
+                        <li>
+                            <a href="consultar-horarios.html">
+                                <span class="glyphicon glyphicon-question-sign"></span>&nbsp; Consultar Horarios</a>
+                        </li>
+                        <li>
+                            <a href="publicar-horarios.html">
+                                <span class="glyphicon glyphicon-edit"></span>&nbsp; Publicar Horarios</a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <a href="#" data-target="#item2" data-toggle="collapse" data-parent="#stacked-menu">
+                        Gestionar Periodos de Evaluacion <span class="caret arrow"></span>
+                    </a>          
+                    
+                    <ul class="nav nav-pills nav-stacked collapse" id="item2">
+                        <li>
+                            <a href="periodo-evaluacion.html">
+                                <span class="glyphicon glyphicon-edit">
+                                </span>&nbsp;Definir Periodo De Evaluacion</a>
+                        </li>
+                        
+                        <li>
+                                <a href="periodo-evaluacion.html">
+                                <span class="glyphicon glyphicon-question-sign"></span>&nbsp; ConsultarPeriodoEvaluacion</a>
+                        </li>
+                        
 
-      </div>
-    </div>
-</div>
-<div class="panel-group" id="accordion3">
-    <div class="panel panel-info">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion3" href="#collapse3">Gestionar Periodos Para Citas De Reinscripcion</a>
-        </h4>
-      </div>
-      <div id="collapse3" class="panel-collapse collapse in">
-           <ul class="nav nav-pills nav-stacked" id="menu-list">
-          <li><a href=""><span class="glyphicon glyphicon-edit"></span>&nbsp; Definir Periodo de Citas de Reinscripcion</a></li>
-          <li><a href=""><span class="glyphicon glyphicon-edit"></span>&nbsp; Consultar Periodo de Citas de Reinscripcion</a></li>
-            </ul>   
-      </div>
-    </div>
-</div>
-<div class="panel-group" id="accordion4">
-    <div class="panel panel-info">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion4" href="#collapse4">Gestionar Periodos De Reinscripcion</a>
-        </h4>
-      </div>
-      <div id="collapse4" class="panel-collapse collapse in">
-            <ul class="nav nav-pills nav-stacked" id="menu-list">
-          <li><a href=""><span class="glyphicon glyphicon-edit"></span>&nbsp; Definir Periodo de Citas de Reinscripcion</a></li>
-          <li><a href=""><span class="glyphicon glyphicon-edit"></span>&nbsp; Consultar Periodo de Citas de Reinscripcion</a></li>
-            </ul> 
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" data-target="#item3" data-toggle="collapse" data-parent="#stacked-menu">
+                        Gestionar Periodos de Citas de Reinscripcion <span class="caret arrow"></span>
+                    </a>          
+                    
+                    <ul class="nav nav-pills nav-stacked collapse" id="item3">
+                        <li>
+                            <a href="definir-periodo-alumno.html">
+                                     <span class="glyphicon glyphicon-edit"></span>&nbsp; Definir Periodo De Citas De Reinscripcion</a>
+                        </li>
+                        
+                        <li>
+                            <a href="consultar-periodo-reinscripcion-modificar.html">
+                                <span class="glyphicon glyphicon-question-sign"></span>&nbsp; Consultar Periodos de Citas de Reinscripcion</a>
+                        </li>
+                        
+
+                    </ul>
+                </li>   
+            <li>
+                    <a href="#" data-target="#item4" data-toggle="collapse" data-parent="#stacked-menu">
+                        Gestionar Periodos Reinscripcion <span class="caret arrow"></span>
+                    </a>          
+                    
+                    <ul class="nav nav-pills nav-stacked collapse" id="item4">
+                        <li>
+                            <a href="definir-periodo-gestion-escolar.html">
+   <span class="glyphicon glyphicon-edit"></span>&nbsp; Definir Periodo De Citas De Reinscripcion</a>
+                        </li>
+                        
+                        <li>
+                            <a href="consultar-periodo-reinscripcion-modificar.html">
+                                <span class="glyphicon glyphicon-question-sign"></span>&nbsp; Consultar Periodos de Citas de Reinscripcion</a>
+                        </li>
+                        
+                    </ul>
+                </li> 
+
+            </ul>
         </div>
-    </div>
-</div>
-	
-            
-            
-            
-		</div>
+        
+        
         
 		<div class="col-sm-12 col-sm-offset-2" id="main-side">
 			<div class="row" id="header">
