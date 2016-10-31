@@ -8,32 +8,33 @@
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/estilo.css" rel="stylesheet">
 
   </head>
   <body>
         <div class="row" id="main-content">
           <div class="col-sm-2" id="menu-bg">
-              <img src="imgs/imagen-menu.jpg" id="menu-img">
+              <img src="../imgs/imagen-menu.jpg" id="menu-img">
           </div>
           <div class="col-sm-2" id="side-menu">
             <div class="text-center" id="image-container">
               <img src="../imgs/logo3.png" class="img-circle" id="logo">
             </div>
             <ul class="nav nav-pills nav-stacked" id="menu-list">
-                <li class="active"><a href=""><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
+                <li><a href="alumno.html"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-edit"></span>&nbsp; Datos personales</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-edit"></span>&nbsp; Horario</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-ok"></span>&nbsp; Consultar calificaciones</a></li>               
-                <li role="presentation" class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                  Reinscripcion <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu" id="menu-list">
-                  <ul class="dropdown"><a href="inscribir_horario.html">Inscribir Horario</a></ul>
-                  <ul class="dropdown"><a href="#">Consultar Cita de Reinscripción</a></ul>
-                  <ul class="dropdown"><a href="#">Consultar Horarios</a></ul>
-                </ul>
-              </li>
+                <li><a href="#"><span class="glyphicon glyphicon-ok"></span>&nbsp; Consultar calificaciones</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-edit"></span>&nbsp; Horario</a></li>            
+                <li role="presentation" class="active dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    Reinscripcion <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu" id="menu-list">
+                    <ul class="dropdown"><a href="inscribir-horario.html">Inscribir Horario</a></ul>
+                    <ul class="dropdown"><a href="consultar-cita.html">Consultar Cita de Reinscripción</a></ul>
+                    <ul class="dropdown"><a href="#">Consultar Horarios</a></ul>
+                  </ul>
+                </li>
             </ul>
             <div id="menu-filler">
 
@@ -47,12 +48,10 @@
             </div>
             <div class="row" id="content-container">
               <div class="page-header">
-                <h2>Bienvenida</h2>
+                <h2>Reinscripción</h2>
               </div>
-              <div class="jumbotron content">
-                  <h1>¡Bienvenido Alumno!</h1>
-                  <img src="../imgs/imagen-de-cosas.jpg" class="img">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod sapien volutpat sapien suscipit, et imperdiet diam consectetur. Suspendisse sodales dignissim ante tempor mattis. Morbi lacus est, fermentum eget vulputate in, convallis vel turpis. In volutpat cursus tellus in accumsan. Nunc tincidunt nec nunc eget sollicitudin. Donec libero eros, accumsan eget erat efficitur, facilisis accumsan sem. Nunc aliquet auctor risus id pellentesque.</p>
+              <div class="content">
+                <div class="text-center">Aún no es tiempo de tu reinscripci&oacute;n</div>
               </div>
             </div>
             <div class="row" id="footer">
