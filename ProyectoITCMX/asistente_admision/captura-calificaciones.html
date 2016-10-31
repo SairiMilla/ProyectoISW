@@ -50,7 +50,7 @@
                                       </select>   
                                   </div>
                                   <div class="form-group">
-                                    <input type="text" class="form-control search-text" id="busqueda" placeholder="Buscar un aspirante">
+                                    <input type="text" class="form-control" placeholder="Buscar un aspirante" id="busqueda" >
                                   </div>
                                   <div class="form-group">
                                     <button type="button" class="btn btn-default" id="buscar"><span class="glyphicon glyphicon-search"></span></button>
@@ -73,7 +73,7 @@
                   <div class="row">
                     <div class="col-sm-offset-2 col-sm-8">
                         <div class="row text-center">
-                          <h2 > <span id="nombre-aspirante">Juan Perez Perez</span><br><small><span class="glyphicon glyphicon-tag"></span> <span id="folio-aspirante">14AB12T3</span></small></h2>
+                            <h2 > <span id="nombre-aspirante">Juan Perez Perez</span><br><small><span class="glyphicon glyphicon-tag"></span> <span id="folio-aspirante">14AB12T3</span></small></h2>
                         </div>
                               <div class="row">
                                 <div class="col-sm-5 col-sm-offset-2">
@@ -88,18 +88,19 @@
                                 <div class="col-sm-5 col-sm-offset-2">
                                     Telefono:
                                 </div>
-                                <div class="col-sm-5" id="telefono">
+                                <div class="col-sm-5"  id="telefono">
                                     5567985443
                                 </div>
                               </div>
                         
                               <div class="row text-center">
-                                  <h3>Resultado:</h3>
-                                <form class="form-horizontal">
+                                  <h3>Aciertos:</h3>
+                                <form class="form-horizontal" data-toggle="validator">
                                     <div class=" form-group">
                                         <div class="col-sm-4 col-sm-offset-4" id="result-input">
-                                            <input type="text" class="form-control">
+                                            <input type="number" class="form-control" required>
                                         </div>
+                                        <div class="help-block with-errors"></div>
                                     </div>
                                     <div class=" form-group">
                                         <div class="col-sm-3">
@@ -109,7 +110,8 @@
                                             <button class="btn btn-default">Guardar</button>
                                         </div>
                                         <div class="col-sm-3">
-                                            <a href="#" id="siguiente">Siguiente</a>
+                                            
+                                            <a href="#"  id="siguiente">Siguiente</a>
                                         </div>
                                     </div>
                                 </form>
@@ -130,7 +132,8 @@
         </div>
     <script src="../js/jquery-1.11.3.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-      <script>
+    <script src="../js/validator.min.js"></script>
+    <script>
         $(document).ready(function(){
           var i=0;
             $('#alerta-busqueda').hide();
