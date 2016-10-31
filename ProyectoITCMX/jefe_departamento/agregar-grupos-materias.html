@@ -23,6 +23,8 @@
 
     		materia.innerHTML = opcion.options[opcion.selectedIndex].text;
     		cantidad.innerHTML = cant;
+
+        document.getElementById("tabla").style.textAlign = "center";
     	}
     </script>
 
@@ -44,7 +46,7 @@
                 <a href="#" data-target="#item1" data-toggle="collapse" data-parent="#stacked-menu">Número de Grupos por Materia<span class="caret arrow"></span></a>
                 <ul class="nav nav-stacked collapse left-submenu" id="item1">
                   <li class="active">
-                    <a href="agregar-grupos-materias.html"><span class="glyphicon glyphicon-plus"></span>&nbsp; Definir Número de Grupos por Materia</a>
+                    <a href="agregar-grupos-materias.html"><span class="glyphicon glyphicon-edit"></span>&nbsp; Definir Número de Grupos por Materia</a>
                   </li>
                   <li>
                     <a href="consultar-numero-grupo-materias.html"><span class="glyphicon glyphicon-th-list"></span>&nbsp; Consultar Número de Grupos por Materia</a>
@@ -60,10 +62,10 @@
                 <a href="#" data-target="#item2" data-toggle="collapse" data-parent="#stacked-menu">Horarios<span class="caret arrow"></span></a>
                 <ul class="nav nav-stacked collapse left-submenu" id="item2">
                   <li>
-                    <a href="horarios-clases.html"><span class="glyphicon glyphicon-time"></span>&nbsp; Consultar Horarios</a>
+                    <a href="horarios-preliminares.html"><span class="glyphicon glyphicon-time"></span>&nbsp; Consultar Horarios</a>
                   </li>
                   <li>
-                    <a href="asignar-profesores-a-materia.html"><span class="glyphicon glyphicon-check"></span>&nbsp; Consultar Asignación de Profesores a Materias</a>
+                    <a href="#"><span class="glyphicon glyphicon-check"></span>&nbsp; Consultar Asignación de Profesores a Materias</a>
                   </li>
                 </ul>
               </li>
@@ -89,34 +91,36 @@
                   <br/>
                   <br/>
                   <br/>
-                  <form action="" class="form-horizontal">
-                    <div class="form-group">
-                      <label for="materia" class="control-label col-sm-2">Materia:</label>
-                      <div class="col-sm-6">
-                        <select name="" id="materia">
-                          <option value="">--Selecciona--</option>
-                          <option value="">Tecnologías para la Web</option>
-                          <option value="">Bases de Datos</option>
-                          <option value="">Teoría Computacional</option>
-                        </select>
-                      </div>
+
+                  <div class="row">
+                    <label for="materia" class="control-label col-sm-2">Materia:</label>
+                    <div class="col-sm-6">
+                      <select name="" id="materia">
+                        <option value="">--Selecciona--</option>
+                        <option value="">Tecnologías para la Web</option>
+                        <option value="">Bases de Datos</option>
+                        <option value="">Teoría Computacional</option>
+                      </select>
                     </div>
-                    <div class="form-group">
-                      <label for="cantidad" class="control-label col-sm-2">Cantidad de Grupos:</label>
-                      <div class="col-sm-2">
-                        <input type="text" class="form-control col-sm-6" id="cantidad" />
-                      </div>
+                  </div>
+                  <br/>
+                  <div class="row">
+                    <label for="cantidad" class="control-label col-sm-2">Cantidad de Grupos:</label>
+                    <div class="col-sm-2">
+                      <input type="text" class="form-control col-sm-6" id="cantidad" />
                     </div>
-                    <div class="form-group">
-                      <div class="col-sm-2 col-sm-offset-2">
-                        <button type="submit" class="btn btn-success" onclick="agregarMateria()">Guardar</button>
-                      </div>
+                  </div>
+                  <br/>
+                  <div class="row">
+                    <div class="col-sm-2 col-sm-offset-2">
+                      <button type="submit" class="btn btn-success" onclick="agregarMateria()">Agregar</button>
                     </div>
-                  </form>
+                  </div>
+
                   <br/>
                   <br/>
                   <div class="table-responsive">
-                    <table class="table table-striped" id="tabla">
+                    <table class="table table-striped text-center" id="tabla">
                       <colgroup>
                         <col class="col-sm-4">
                         <col class="col-sm-4">
@@ -144,11 +148,9 @@
                         </tr>
                       </tbody>
                     </table>
-
-                    <div class="text-center">
-                      <a href="consultar-numero-grupo-materias.html" class="btn btn-default">Agregar</a>
-                    </div>
-
+                  </div>
+                  <div class="text-center">
+                    <a href="consultar-numero-grupo-materias.html" class="btn btn-default">Guardar</a>
                   </div>
                 </div>
               </div>
