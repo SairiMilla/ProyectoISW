@@ -8,6 +8,9 @@
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/captura-calificaciones.css" rel="stylesheet">
+      <script src="../js/sweetalert.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="../css/sweetalert.css">
   </head>
   <body>
         <div class="row" id="main-content">
@@ -50,7 +53,7 @@
                                       </select>   
                                   </div>
                                   <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Buscar un aspirante" id="busqueda" >
+                                    <input type="text" class="form-control search-text" id="busqueda" placeholder="Buscar un aspirante">
                                   </div>
                                   <div class="form-group">
                                     <button type="button" class="btn btn-default" id="buscar"><span class="glyphicon glyphicon-search"></span></button>
@@ -60,7 +63,7 @@
                           </div> 
                           <div class="form-group col-sm-3">
                               <div class="form-group">
-                                    <button type="submit" class="btn btn-default btn-search btn-vergas">Cerrar Proceso</button>
+                                    <button type="button" class="btn btn-default btn-search btn-vergas" id="cerrar-proceso">Cerrar Proceso</button>
                             </div>
                               
                           </div>
@@ -72,11 +75,12 @@
                   </div>
                   <div class="row">
                     <div class="col-sm-offset-2 col-sm-8">
-                        <div class="row text-center">
-                            <h2 > <span id="nombre-aspirante">Juan Perez Perez</span><br><small><span class="glyphicon glyphicon-tag"></span> <span id="folio-aspirante">14AB12T3</span></small></h2>
-                        </div>
-                              <div class="row">
-                                <div class="col-sm-5 col-sm-offset-2">
+                        <div id="datos-aspirante">
+                            <div class="row text-center" id="primer-bloque">
+                              <h2 > <span id="nombre-aspirante">Juan Perez Perez</span><br><small><span class="glyphicon glyphicon-tag"></span> <span id="folio-aspirante">14AB12T3</span></small></h2>
+                            </div>
+                              <div class="row minor-data">
+                                <div class="col-sm-5 col-sm-offset-2 data-label">
                                     CURP:
                                 </div>
                                 <div class="col-sm-5" id="curp">
@@ -84,15 +88,15 @@
                                 </div>
                               </div>
                               
-                              <div class="row">
-                                <div class="col-sm-5 col-sm-offset-2">
+                              <div class="row minor-data" id="ultimo-bloque">
+                                <div class="col-sm-5 col-sm-offset-2 data-label">
                                     Telefono:
                                 </div>
-                                <div class="col-sm-5"  id="telefono">
+                                <div class="col-sm-5" id="telefono">
                                     5567985443
                                 </div>
                               </div>
-                        
+                        </div>
                               <div class="row text-center">
                                   <h3>Aciertos:</h3>
                                 <form class="form-horizontal" data-toggle="validator">
@@ -110,8 +114,7 @@
                                             <button class="btn btn-default">Guardar</button>
                                         </div>
                                         <div class="col-sm-3">
-                                            
-                                            <a href="#"  id="siguiente">Siguiente</a>
+                                            <a href="#" id="siguiente">Siguiente</a>
                                         </div>
                                     </div>
                                 </form>
@@ -133,9 +136,10 @@
     <script src="../js/jquery-1.11.3.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/validator.min.js"></script>
-    <script>
+      <script>
         $(document).ready(function(){
           var i=0;
+            completos=true;
             $('#alerta-busqueda').hide();
             $('#siguiente').on('click', function () {
                 if(i==2){
@@ -222,6 +226,24 @@
             $('.close').click(function () {
                 $(this).parent().hide();
             });
+            $('#cerrar-proceso').click(function () {
+                swal({
+                  title: "¿Seguro que desea cerrar el proceso?",
+                  text: "El proceso terminará y no se podrá realizar cambios",
+                  type: "warning",
+                  showCancelButton: true,
+                  confirmButtonColor: "#DD6B55",
+                  confirmButtonText: "Terminar Proceso",
+                  closeOnConfirm: false
+                },
+                function(){
+                  if(completos)
+                    swal("Proceso terminado", "Se publicarán los resultados", "success");
+                  else 
+                    swal("Ha ocurrido un error", "No se han guardado todas las calificaciones", "error");
+                });
+            });
+            
         });
       </script>
   </body>
