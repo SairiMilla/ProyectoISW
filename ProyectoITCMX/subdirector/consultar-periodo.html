@@ -8,6 +8,23 @@
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+    <link href="../css/sweetalert.css" rel="stylesheet">
+
+    <script>
+    	function modificarFecha() {
+    		var inicio = document.getElementById("inicio");
+    		var fin = document.getElementById("fin");
+
+    		if(inicio.value >= fin.value){
+    			sweetAlert("Periodo no válido","La fecha de fin no puede ser menor o igual a la fecha de inicio","error");
+    		}
+    		else{
+    			document.getElementById("fecha").innerHTML = document.getElementById("iniFormato").value + " - " + document.getElementById("finFormato").value;
+    			document.getElementById("def").innerHTML = "Modificar";
+    		}
+    	}
+    </script>
 
   </head>
   <body>
@@ -17,7 +34,7 @@
           </div>
           <div class="col-sm-2" id="side-menu">
             <div class="text-center" id="image-container">
-              <img src="../imgs/logo3.png" class="img-circle" id="logo">
+              <a href="../index.html"><img src="../imgs/logo3.png" class="img-circle" id="logo"/></a>
             </div>
             <ul class="nav nav-pills nav-stacked" id="menu-list">
                 <li><a href="index.html"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
@@ -37,32 +54,75 @@
               <div class="page-header">
                 <h2>Fechas de Generación de Periodo</h2>
               </div>
-              <div class="content">
-              	<div class="text-center">
-	              	<div class="panel panel-info">
-	              		<div class="panel-heading">Periodo Escolar</div>
-	              		<div class="table-responsive">
-	              			<table class="table table-striped">
-	              				<colgroup>
-	              					<col class="col-sm-4">
-	              					<col class="col-sm-4">
-	              				</colgroup>
-	              				<thead>
-	              					<tr>
-	              						<th class="text-center">Fecha</th>
-	              						<th class="text-center">Acción</th>
-	              					</tr>
-	              				</thead>
-	              				<tbody>
-	              					<tr>
-	              						<td>S/A</td>
-	              						<td><a href="definir-periodo.html" class="btn btn-default">Definir</a></td>
-	              					</tr>
-	              				</tbody>
-	              			</table>
-	              		</div>
+              <br/>
+              <br/>
+              <div class="col-sm-8 col-sm-offset-2">
+              	<div class="content">
+	              	<div class="text-center">
+		              	<div class="panel panel-info">
+		              		<div class="panel-heading">Periodo Escolar</div>
+		              		<div class="table-responsive">
+		              			<table class="table table-striped">
+		              				<colgroup>
+		              					<col class="col-sm-4">
+		              					<col class="col-sm-4">
+		              				</colgroup>
+		              				<thead>
+		              					<tr>
+		              						<th class="text-center">Fecha</th>
+		              						<th class="text-center">Acción</th>
+		              					</tr>
+		              				</thead>
+		              				<tbody>
+		              					<tr>
+		              						<td id="fecha">S/A</td>
+		              						<td><button class="btn btn-default" type="button" data-toggle="modal" data-target=#definir id="def">Gestionar</button></td>
+		              					</tr>
+		              				</tbody>
+		              			</table>
+		              		</div>
+		              	</div>
 	              	</div>
-              	</div>
+	            </div>
+
+                <div id="definir" class="modal fade" role="dialog">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button class="close" type="button" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Definir Periodo</h4>
+                      </div>
+                      <div class="modal-body">
+                        <form action="" class="form-horizontal">
+                          <div class="form-group">
+                            <label for="iniFormato" class="control-label col-sm-offset-3">Fecha de Inicio de Periodo:</label>
+                            <div class="input-group date form_date col-sm-offset-3 col-sm-6" data-date=""
+                                data-date-format="dd/M/yy" data-link-field="inicio"
+                                data-link-format="yyyy-mm-dd">
+                                <input class="form-control" type="text" value="" placeholder="Seleccione Fecha Inicio" id="iniFormato"><span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                            </div>
+                            <input type="hidden" id="inicio" value="" /><br/>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="finFormato" class="control-label col-sm-offset-3">Fecha de Fin de Periodo:</label>
+                            <div class="input-group date form_date col-sm-offset-3 col-sm-6" data-date=""
+                                data-date-format="dd/M/yy" data-link-field="fin"
+                                data-link-format="yyyy-mm-dd">
+                                <input class="form-control" type="text" value="" placeholder="Seleccione Fecha Fin" id="finFormato"><span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                            </div>
+                            <input type="hidden" id="fin" value="" /><br/>
+                          </div>
+
+                          <div class="text-center">
+	                          <button type="submit" class="btn btn-default" data-dismiss="modal" onclick="modificarFecha()">Definir</button>
+	                      </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
             <div class="row" id="footer">
@@ -77,6 +137,48 @@
         </div>
     <script src="../js/jquery-1.11.3.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/sweetalert.min.js"></script>
+    <script src="../js/sweetalert-dev.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-datetimepicker.js"
+      charset="UTF-8"></script>
+    <script type="text/javascript" src="../js/bootstrap-datetimepicker.es.js"
+      charset="UTF-8"></script>
+    <script type="text/javascript">
+      $('.form_datetime').datetimepicker({
+        language : 'es',
+        weekStart : 1,
+        todayBtn : 1,
+        autoclose : 1,
+        todayHighlight : 1,
+        startView : 2,
+        forceParse : 0,
+        showMeridian : 1
+      });
+      $('.form_date').datetimepicker({
+          multidate: true,
+          daysOfWeekDisabled: "0,6",
+        language : 'es',
+        weekStart : 1,
+        todayBtn : 1,
+        autoclose : 1,
+        todayHighlight : 1,
+        startView : 2,
+        minView : 2,
+        forceParse : 0
+      });
+      $('.form_time').datetimepicker({
+        language : 'es',
+        weekStart : 1,
+        todayBtn : 1,
+        autoclose : 1,
+        todayHighlight : 1,
+        startView : 1,
+        minView : 0,
+        maxView : 1,
+        forceParse : 0
+      });
+    </script>
 
   </body>
 </html>
