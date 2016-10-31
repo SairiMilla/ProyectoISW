@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GESTION  PARA ALUMNO</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+
+  </head>
+  <body>
+        <div class="row" id="main-content">
+          <div class="col-sm-2" id="menu-bg">
+              <img src="../imgs/imagen-menu.jpg" id="menu-img">
+          </div>
+            <div class="col-sm-2" id="side-menu">
+      <div class="text-center" id="image-container">
+
+        <a href="index-gestion.html"><img src="../imgs/logo3.png" class="img-circle" id="logo"></a>
+      </div>
+      <ul class="nav nav-pills nav-stacked" id="menu-list">
+                    <li><a href="index-gestion.html"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
+                    <li>
+                        <a href="#" data-target="#item1" data-toggle="collapse" data-parent="#stacked-menu">
+                            Nuevo Ingreso<span class="caret arrow"></span>
+                        </a>
+                        
+                        <ul class="nav nav-stacked collapse left-submenu" id="item1">
+
+                                <li>
+                                    <a href="consultar-alumno-nuevo.html" data-target="#item2" data-toggle="collapse" data-parent="#stacked-menu">
+                                        Buscar Alumno
+                                    </a>
+                                </li>
+                        </ul>
+                    <li class="active"><a href="buscar-alumno.html"><span class="glyphicon glyphicon-search"></span>&nbsp; Buscar Alumno</a></li>
+                    <li><a href="consultar-horarios.html"><span class="glyphicon glyphicon-ok"></span>&nbsp; Consultar Horarios</a></li>
+              </ul>
+      <div id="menu-filler"></div>
+    </div>
+        <div class="col-sm-12 col-sm-offset-2" id="main-side">
+            <div class="row" id="header">
+              <div class="pull-right" id="user-name-container">
+                <div id="user-name">Asistente de Gestión Escolar &nbsp;<span class="glyphicon glyphicon-user"></span></div>
+              </div>
+            </div>
+            <div class="row" id="content-container">
+                <div class="page-header">
+                    <h2>Consultar Alumno Nuevo</h2>
+                </div>
+                <div class="content">
+                        <div class="row"> 
+                          <div class="col-sm-2">			   	
+                             <img src="../imgs/user.png" class="img-thumbnail" alt="Usuario" width="160" height="130">
+
+                          </div>
+                           <div class="col-sm-3 ">
+                             <div class="form-group">
+                             <label for="inputPassword" >Nombre</label>
+                             <input class="form-control" id="disabledInput" type="text" placeholder="Carlos Alberto">
+                             </div>
+                                </div>
+                              <div class="col-sm-3 ">
+                             <div class="form-group">
+                             <label for="inputPassword" >Apellido Paterno</label>
+                             <input class="form-control" id="disabledInput" type="text" placeholder="Robles">
+                             </div>
+                                </div>
+                                <div class="col-sm-3 ">
+                             <div class="form-group">
+                             <label for="inputPassword" >Apellido Materno</label>
+                             <input class="form-control" id="disabledInput" type="text" placeholder="Ruiz">
+                             </div>
+                                </div>
+
+                                 <div class="col-sm-3 ">
+                             <div class="form-group">
+                             <label for="inputPassword" >Boleta</label>
+                             <input class="form-control" id="disabledInput" type="text" placeholder="2014630421" disabled>
+                             </div>
+                                </div>
+                              <div class="col-sm-3 ">
+                             <div class="form-group">
+                             <label for="inputPassword" >Semestre Actual</label>
+                             <input class="form-control" id="disabledInput" type="text" placeholder="1 Semestre" disabled>
+                             </div>
+                                </div>
+                        </div>
+                         <div class="row"> 
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-6 ">
+                                <ul class="pager">
+                                    <li><a href="grupo-actual-alumno-nuevo.html">Ver Horario de Alumno</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="row" id="footer">
+              <div class="col-sm-5" id="dir">
+                 Av. Juan de Dios Bátiz esq. Av. Miguel Othón de Mendizábal, Col. Lindavista. Demarcación Territorial, Gustavo A. Madero. Ciudad de México. C. P. 07738.
+              </div>
+              <div class="col-sm-5 col-sm-offset-2" id="year">
+                <span class="pull-right"><span class="glyphicon glyphicon-registration-mark"></span>&nbsp;2016</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+     <script src="../js/jquery-ui.js"></script>
+
+
+  </body>
+</html>
