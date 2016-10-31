@@ -195,3 +195,16 @@ body{
     color: #4C768A;
     border-color: #4C768A;
 }
+
+.btn-vergas {
+    background-color: #990000;
+    color: white;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.btn-vergas:hover {
+    background-color: whitesmoke;
+    color: #990000;
+    border-color: #990000;
+}
