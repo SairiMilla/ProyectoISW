@@ -8,8 +8,6 @@
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/base.css" rel="stylesheet">
-    <link href="../css/captura-calif.css" rel="stylesheet">
-
   </head>
   <body>
         <div class="row" id="main-content">
@@ -22,8 +20,8 @@
             </div>
             <ul class="nav nav-pills nav-stacked" id="menu-list">
                 <li><a href="index-asistente-admision.html"><span class="glyphicon glyphicon-home"></span>&nbsp; Inicio</a></li>
-                <li class="active"><a href="captura-calificaciones.html"><span class="glyphicon glyphicon-th-list"></span>&nbsp; Captura de Resultados</a></li>
-                <li><a href="gestion-aspirantes.html"><span class="glyphicon glyphicon-folder-open"></span>&nbsp; Gestion de Aspirantes</a></li>
+                <li><a href="gestion-aspirantes.html"><span class="glyphicon glyphicon-folder-open"></span>&nbsp; Gestionar Aspirantes</a></li>
+                <li class="active"><a href="captura-calificaciones.html"><span class="glyphicon glyphicon-th-list"></span>&nbsp; Capturar Resultados</a></li>
             </ul>
             <div id="menu-filler">
 
@@ -39,59 +37,75 @@
               <div class="page-header">
                 <h2>Captura de Resultados</h2>
               </div>
-              <div class="content">
-                <form action="lista-aceptados.html">
-                  <table class="table table-striped">
-                    <colgroup>
-                      <col class="col-sm-5">
-                      <col class="col-sm-5">
-                      <col class="col-sm-2">
-                    </colgroup>
-                    <thead>
-                      <tr>
-                        <th>Identificador</th><th>Nombre Completo</th><th>Puntaje</th>
-                      </tr>
-                    </thead>
+              <div class="content col-sm-offset-2 col-sm-8">
+                  <div class="row">
+                      <form class="form-inline">
+                        <div class="form-group col-sm-offset-2 col-sm-9">
 
-                    <tbody>
-                      <tr>
-                        <td>8374162539</td><td>Pedro Jimenez Gonzalez</td>        
-                        <td>
-                          <input type="text" class="form-control calif">
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>4352617352</td><td>Juan Gutierrez Gomez</td>        
-                        <td>
-                          <input type="text" class="form-control calif">
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>1827364582</td><td>Ana Jimena Mendoza Lopez</td>        
-                        <td>
-                          <input type="text" class="form-control calif">
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>9283746152</td><td>Sofía García Martinez</td>        
-                        <td>
-                          <input type="text" class="form-control calif">
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>6735483916</td><td>Laura Gonzalez Lopez</td>        
-                        <td>
-                          <input type="text" class="form-control calif">
-                        </td>
-                      </tr>
-                    </tbody>
+                              <div class="input-group">
+                                  <div class="form-group">
+                                      <select class="form-control select-search" name="category">
+                                        <option value="0">Buscar por Folio</option>
+                                        <option value="1">Buscar por Nombre</option>
+                                      </select>   
+                                  </div>
+                                  <div class="form-group">
+                                    <input type="text" class="form-control search-text" placeholder="Buscar un aspirante">
+                                  </div>
+                                  <div class="form-group">
+                                    <button type="submit" class="btn btn-default btn-search btn-red"><span class="glyphicon glyphicon-search"></span></button>
+                                  </div>
 
-                  </table>
-
-                  <div class="row" id="opciones">
-                    <button class="col-sm-offset-10 col-sm-2 btn btn-default" type="submit">Cerrar Proceso</button>
+                              </div>
+                          </div>  
+                       </form>
                   </div>
-                </form>
+                  <div class="row">
+                    <div class="col-sm-offset-2 col-sm-8">
+                        <div class="row text-center">
+                          <h2>Juan Perez Perez<br><small><span class="glyphicon glyphicon-tag"></span> 14AB12T3</small></h2>
+                        </div>
+                              <div class="row">
+                                <div class="col-sm-5 col-sm-offset-2">
+                                    CURP:
+                                </div>
+                                <div class="col-sm-5">
+                                    PEPJ010101HASRRN09
+                                </div>
+                              </div>
+                              
+                              <div class="row">
+                                <div class="col-sm-5 col-sm-offset-2">
+                                    Telefono:
+                                </div>
+                                <div class="col-sm-5">
+                                    5567985443
+                                </div>
+                              </div>
+                        
+                              <div class="row text-center">
+                                  <h3>Resultado:</h3>
+                                <form class="form-horizontal">
+                                    <div class=" form-group">
+                                        <div class="col-sm-4 col-sm-offset-4">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class=" form-group">
+                                        <div class="col-sm-3">
+                                            <a href="#">Atras</a>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <button class="btn btn-default">Guardar</button>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <a href="#">Siguiente</a>
+                                        </div>
+                                    </div>
+                                </form>
+                              </div>
+                      </div>
+                  </div>
               </div>
             </div>
             <div class="row" id="footer">
