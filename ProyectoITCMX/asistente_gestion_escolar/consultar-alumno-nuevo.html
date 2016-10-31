@@ -24,9 +24,22 @@
               <img src="../imgs/logo3.png" class="img-circle" id="logo">
             </div>
             <ul class="nav nav-pills nav-stacked" id="menu-list">
-                <li><a href="index-asistente-admision.html"><span class="glyphicon glyphicon-home"></span>&nbsp; Inicio</a></li>
-                <li class="active"><a href="gestion-aspirantes.html"><span class="glyphicon glyphicon-folder-open"></span>&nbsp; Gestionar Aspirantes</a></li>
-                <li><a href="captura-calificaciones.html"><span class="glyphicon glyphicon-th-list"></span>&nbsp; Capturar Resultados</a></li>
+                <li><a href="index-gestion.html"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
+                    <li>
+                        <a href="#" data-target="#item1" data-toggle="collapse" data-parent="#stacked-menu">
+                            Nuevo Ingreso<span class="caret arrow"></span>
+                        </a>
+                        
+                        <ul class="nav nav-stacked collapse left-submenu" id="item1">
+
+                                <li>
+                                    <a href="consultar-alumno-nuevo.html" data-target="#item2" data-toggle="collapse" data-parent="#stacked-menu">
+                                        Buscar Alumno
+                                    </a>
+                                </li>
+                        </ul>
+                    <li class="active"><a href="buscar-alumno.html"><span class="glyphicon glyphicon-search"></span>&nbsp; Buscar Alumno</a></li>
+                    <li><a href="consultar-horarios.html"><span class="glyphicon glyphicon-ok"></span>&nbsp; Consultar Horarios</a></li>
             </ul>
             <div id="menu-filler">
 
@@ -531,7 +544,7 @@
                 var tablaCons="";
                 if($('input[name="filtro"]:checkbox:checked').length>0){
                     if($("#corr").is(":checked")){
-                        tablaCons+=" <tr><td>IT20160001</td><td >Pedro Jimenez Gonzalez</td><td><span class='highlight corr-highlight'>Completa</span></td> <td><button type='button' class='btn btn-default' data-toggle='modal' data-target='#myModal'>Revisar</button></td><td><a href='consultar-info-alumno-nuevo.html'><button type='button' class='btn btn-default''>Ver</button></a></td></tr> <tr><td>IT00926553</td><td >Sofía García Martinez</td><td><span class='highlight corr-highlight'>Completa</span></td> <td><button type='button' class='btn btn-default' data-toggle='modal' data-target='#myModal'>Revisar<a href='consultar-info-alumno-nuevo.html'><button type='button' class='btn btn-default''>Ver</button></a></td></tr>";
+                        tablaCons+=" <tr><td>IT20160001</td><td >Pedro Jimenez Gonzalez</td><td><span class='highlight corr-highlight'>Completa</span></td> <td><button type='button' class='btn btn-default' data-toggle='modal' data-target='#myModal'>Revisar</button></td><td><a href='consultar-info-alumno-nuevo.html'><button type='button' class='btn btn-default''>Ver</button></a></td></tr> <tr><td>IT00926553</td><td >Sofía García Martinez</td><td><span class='highlight corr-highlight'>Completa</span></td> <td><button type='button' class='btn btn-default' data-toggle='modal' data-target='#myModal'>Revisar</button></td><td><a href='consultar-info-alumno-nuevo.html'><button type='button' class='btn btn-default''>Ver</button></a></td></tr>";
                     } 
                     if($("#incorr").is(":checked")){
                         tablaCons+=" <tr><td>IT52439172</td><td>Ana Jimena Mendoza Lopez</td><td><span class='highlight incorr-highlight'>Incompleta</span></td> <td><button type='button' class='btn btn-default' data-toggle='modal' data-target='#myModal'>Revisar</button></td><td><a href='consultar-info-alumno-nuevo.html'><button type='button' class='btn btn-default''>Ver</button></a></td></tr>";
