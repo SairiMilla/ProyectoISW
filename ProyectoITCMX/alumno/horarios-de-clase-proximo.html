@@ -4,10 +4,11 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Horarios de clase preliminares</title>
+	<title>Horarios de clase</title>
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="../css/base.css" rel="stylesheet">
     <link href="../css/estilo.css" rel="stylesheet">
+
 </head>
 <body>
 	<div class="row" id="main-content">
@@ -19,17 +20,11 @@
 				<img src="../imgs/logo3.png" class="img-circle" id="logo">
 			</div>
 			<ul class="nav nav-pills nav-stacked" id="menu-list">
-				<li class="active"><a href="indexGestion.html">
-				<span class="glyphicon glyphicon-home"></span>&nbsp;Home</a></li>
-				<li class="dropdown">
-				<a class="dropdown-toggle"	data-toggle="dropdown" href="#"> 
-				<span class="hicon glyphicon-ok"></span>&nbsp;REINSCRIPCION</a>
-					<ul class="dropdown-menu">
-
-						<li><a href="consultar-periodo-reinscripcion.html">Gestionar Periodo Escolar</a></li>
-						
-					</ul>
-			</ul>
+                <li class="active"><a href="index-aspirante.html"><span class="glyphicon glyphicon-home"></span>&nbsp; Inicio</a></li>
+                <li><a href="actualizar-datos.html"><span class="glyphicon glyphicon-edit"></span>&nbsp; Actualizar Datos</a></li>
+                <li><a href="enviar-documentacion.html"><span class="glyphicon glyphicon-hourglass"></span>&nbsp; Enviar Documentaci&oacute;n</a></li>
+                <li><a href="consultar-resultados.html"><span class="glyphicon glyphicon-ok"></span>&nbsp; Consultar Resultados</a></li>
+            </ul>
 			<div id="menu-filler">
 
 			</div>
@@ -37,53 +32,63 @@
 		<div class="col-sm-10 col-sm-offset-2" id="main-side">
 			<div class="row" id="header">
 				<div class="pull-right" id="user-name-container">
-					<div id="user-name">Jefe Gesti&oacute;n Escolar<span class="glyphicon glyphicon-education"></span></div>
+					<div id="user-name">Alumno &nbsp;<span class="glyphicon glyphicon-education"></span></div>
 				</div>
 			</div>
 			<div class="row" id="content-container">
 				<div class="page-header">
-					<h2>Horarios preliminares</h2>
+					<h2>Horarios de clase próximo periodo</h2>
 				</div>
 				<div class="jumbotron content">
-					<div class="content">
-					<div class="col-sm-12">
-						<div class="col-sm-3">
-							<label for="sel1">Turno:</label>
-            	            <select class="form-control">
-            	            	<option>Matutino</option>
-								<option>Vespertino</option>
-							</select>
-						</div>
-						<div class="col-sm-2">
-    		               	<label for="sel1">Semestre:</label>
-    		               	<select class="form-control">
-    		               		<option>1</option>
-    		               		<option>2</option>
-    		               		<option>3</option>
-    		               		<option>4</option>
-    		               	</select>
-    		            </div>
-						<div class="col-sm-2">
-							<label for="sel1">Grupo:</label>
-            	            <select class="form-control">
-            	            	<option>1CM1</option>
-								<option>1CM2</option>
-								<option>1CM3</option>
-							</select>
-						</div>
+					<div class="col-sm-10">
+						<br>
+						<br>
 					</div>
-					</br>
-					</br>
-					</br>
-					</br>
-					<div class="table-responsive">
+					<div class="content">
+						<div>
+							<label for="sel1">Periodo escolar 2016/2:</label>
+						</div>
+						<div class="col-sm-12">
+    		                <div class="col-sm-3">
+	        	                <label for="sel1">Turno:</label>
+            	            	<select class="form-control">
+            	            		<option>Todos</option>
+									<option>Matutino</option>
+									<option>Vespertino</option>
+								</select>
+    	    	            </div>
+    		                <div class="col-sm-2">
+    		                	<label for="sel1">Semestre:</label>
+    		                	<select class="form-control">
+    		                		<option>todos</option>
+    		                		<option>1</option>
+    		                		<option>2</option>
+    		                		<option>3</option>
+    		                		<option>4</option>
+    		                	</select>
+    		                </div>
+    		                <div class="col-sm-2">
+    		                	<label for="sel1">Grupo:</label>
+	        	                <select class="form-control">
+	        	                	<option>Todos</option>
+									<option>1CM1</option>
+									<option>1CM2</option>
+									<option>1CM3</option>
+									<option>1CM4</option>
+									<option>1CM5</option>
+								</select>
+    		                </div>
+    		            </div>
+    	                </br>
+    	                </br>
+    	                </br>
+    	                </br>
+    	                <div class="table-responsive">
 						<table class="table table-striped">
 							<colgroup>
 							<col class="col-sm-1">
 							<col class="col-sm-2">
 							<col class="col-sm-2">
-							<col class="col-sm-1">
-							<col class="col-sm-1">
 							<col class="col-sm-1">
 							<col class="col-sm-1">
 							<col class="col-sm-1">
@@ -100,8 +105,6 @@
 								<th class="text-center">Miercoles</th>
 								<th class="text-center">Jueves</th>
 								<th class="text-center">Viernes</th>
-								<th></th>
-								<th></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -109,92 +112,91 @@
 								<td><label class="lab">1CM1</label></td>
 								<td><label class="lab">An&aacute;lisis Vectorial</label></td>
 								<td><label class="lab">Robles Monroy Alejandro</label></td>
-								<td></td>
 								<td><label class="lab">7:00-8:30</label></td>
 								<td><label class="lab">7:00-8:30</label></td>
 								<td></td>
 								<td><label class="lab">7:00-8:30</label></td>
-								<td><button type="submit" class="btn btn-default">Borrar</button></td>
-								<td><button type="submit" class="btn btn-default">Cambiar</button></td>
+								<td></td>
 							</tr>
 							<tr>
 								<td><label class="lab">1CM1</label></td>
 								<td><label class="lab">C&aacute;lculo I</label></td>
 								<td><label class="lab">Melissa Forli Sforza</label></td>
-								<td><label class="lab">7:00-8:30</label></td>
-								<td></td>
-								<td></td>
-								<td><label class="lab">7:00-8:30</label></td>
 								<td><label class="lab">8:30-10:00</label></td>
-								<td><button type="submit" class="btn btn-default">Borrar</button></td>
-								<td><button type="submit" class="btn btn-default">Cambiar</button></td>
+								<td></td>
+								<td><label class="lab">7:00-8:30</label></td>
+								<td></td>
+								<td><label class="lab">7:00-8:30</label></td>
 							</tr>
 							<tr>
 								<td><label class="lab">1CM1</label></td>
-								<td><label class="lab">F&iacute;sica</label></td>
+								<td><label class="lab">Probabilidad y Estad&iacute;stica</label></td>
 								<td><label class="lab">Melissa Forli Sforza</label></td>
-								<td><label class="lab">8:30-10:00</label></td>
 								<td></td>
 								<td><label class="lab">8:30-10:00</label></td>
 								<td><label class="lab">8:30-10:00</label></td>
 								<td></td>
-								<td><button type="submit" class="btn btn-default">Borrar</button></td>
-								<td><button type="submit" class="btn btn-default">Cambiar</button></td>
+								<td><label class="lab">8:30-10:00</label></td>
 							</tr>
 							<tr>
-								<td><label class="lab">1CM1</label></td>
-								<td><label class="lab">Matem&aacute;ticas Discretas</label></td>
+								<td><label class="lab">1CM2</label></td>
+								<td><label class="lab">An&aacute;lisis Vectorial</label></td>
 								<td><label class="lab">Eduardo Catalena Castillo</label></td>
+								<td></td>
+								<td></td>
 								<td><label class="lab">10:30-12:00</label></td>
 								<td><label class="lab">8:30-10:00</label></td>
-								<td></td>
 								<td><label class="lab">10:30-12:00</label></td>
-								<td></td>
-								<td><button type="submit" class="btn btn-default">Borrar</button></td>
-								<td><button type="submit" class="btn btn-default">Cambiar</button></td>
 							</tr>
 							<tr>
-								<td><label class="lab">1CM1</label></td>
-								<td><label class="lab">Ecuaciones Diferenciales</label></td>
+								<td><label class="lab">1CM3</label></td>
+								<td><label class="lab">C&aacute;lculo I</label></td>
 								<td><label class="lab">Robles Monroy Alejandro</label></td>
+								<td><label class="lab">7:00-8:30</label></td>
+								<td><label class="lab">7:00-8:30</label></td>
 								<td></td>
-								<td><label class="lab">10:30-12:00</label></td>
-								<td><label class="lab">10:30-12:00</label></td>
+								<td><label class="lab">7:00-8:30</label></td>
 								<td></td>
-								<td><label class="lab">10:30-12:00</label></td>
-								<td><button type="submit" class="btn btn-default">Borrar</button></td>
-								<td><button type="submit" class="btn btn-default">Cambiar</button></td>
 							</tr>
 							<tr>
-								<td><label class="lab">1CM1</label></td>
-								<td><label class="lab">&Aacute;lgebra Lineal</label></td>
+								<td><label class="lab">1CM3</label></td>
+								<td><label class="lab">An&aacute;lisis Vectorial</label></td>
+								<td><label class="lab">Eduardo Catalena Castillo</label></td>
+								<td><label class="lab">8:30-10:00</label></td>
+								<td></td>
+								<td><label class="lab">7:00-8:30</label></td>
+								<td></td>
+								<td><label class="lab">7:00-8:30</label></td>
+							</tr>
+							<tr>
+								<td><label class="lab">1CM4</label></td>
+								<td><label class="lab">An&aacute;lisis Vectorial</label></td>
+								<td><label class="lab">Eduardo Catalena Castillo</label></td>
+								<td><label class="lab">10:30-12:00</label></td>
+								<td><label class="lab">10:30-12:00</label></td>
+								<td></td>
+								<td><label class="lab">10:30-12:00</label></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><label class="lab">1CM5</label></td>
+								<td><label class="lab">An&aacute;lisis Vectorial</label></td>
 								<td><label class="lab">Eduardo Catalena Castillo</label></td>
 								<td><label class="lab">12:00-13:30</label></td>
-								<td><label class="lab">12:00-13:30</label></td>
 								<td></td>
-								<td><label class="lab">12:00-13:30</label></td>
+								<td><label class="lab">10:30-12:00</label></td>
 								<td></td>
-								<td><button type="submit" class="btn btn-default">Borrar</button></td>
-								<td><button type="submit" class="btn btn-default">Cambiar</button></td>
+								<td><label class="lab">10:30-12:00</label></td>
 							</tr>
 						</tbody>
 					</table>
-					</div>
-					</br>
-					<div>
-						<button type="submit" class="btn btn-default">Agregar</button>
-					</div>
-					</br>
-					<div>
-						<button type="submit" class="btn btn-default">Guardar</button>
-						<button type="submit" class="btn btn-default">Enviar</button>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="row" id="footer">
 			<div class="col-sm-5" id="dir">
-				Av. Juan de Dios B&aacute;tiz esq. Av. Miguel Oth&oacute;n de Mendiz&aacute;bal, Col. Lindavista. Demarcaci&oacute;n Territorial, Gustavo A. Madero. Ciudad de M&eacute;xico. C. P. 07738.
+				Av. Juan de Dios Bátiz esq. Av. Miguel Othón de Mendizábal, Col. Lindavista. Demarcación Territorial, Gustavo A. Madero. Ciudad de México. C. P. 07738.
 			</div>
 			<div class="col-sm-5 col-sm-offset-2" id="year">
 				<span class="pull-right"><span class="glyphicon glyphicon-registration-mark"></span>&nbsp;2016</span>

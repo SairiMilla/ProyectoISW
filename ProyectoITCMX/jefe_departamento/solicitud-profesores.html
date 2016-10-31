@@ -21,11 +21,11 @@
 				<img src="../imgs/logo3.png" class="img-circle" id="logo">
 			</div>
 			<ul class="nav nav-pills nav-stacked" id="menu-list">
-				<li class="active"><a href=""><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
+                <li class="active"><a href=""><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-edit"></span>&nbsp; Número de Grupos por Materia</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-inbox"></span>&nbsp; Consultar Solicitudes de Profesores</a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-hourglass"></span>&nbsp; Horarios Preliminares</a></li>
-			</ul>
+                <li><a href="#"><span class="glyphicon glyphicon-hourglass"></span>&nbsp; Horarios Preliminares</a></li>
+            </ul>
 			<div id="menu-filler">
 
 			</div>
@@ -46,8 +46,33 @@
 						<br>
 					</div>
 					<div class="content">
-						<div>
-						<table class="table table-responsive table-striped">
+						<div class="col-sm-10">
+							<div class="col-sm-5">
+								<label for="sel1">Profesor:</label>
+            		            <select class="form-control">
+            		            	<option>Todos</option>
+            	    	        	<option>Robles Monroy Alejandro</option>
+									<option>Melissa Forli Sforza</option>
+									<option>Eduardo Catalena Castillo</option>
+								</select>
+							</div>
+							<div class="col-sm-5">
+								<label for="sel1">Materia:</label>
+            		            <select class="form-control">
+            	    	        	<option>Todos</option>
+									<option>An&aacute;lisis Vectorial</option>
+									<option>C&aacute;lculo I</option>
+									<option>Probabilidad y Estad&iacute;stica</option>
+								</select>
+							</div>
+						</div>
+						</br>
+						</br>
+						</br>
+						</br>
+						<div class="table-responsive">
+						<div class="col-sm-10">
+						<table class="table table-striped">
 							<colgroup>
 							<col class="col-sm-2">
 							<col class="col-sm-3">
@@ -61,28 +86,29 @@
 						<tbody>
 							<tr>
 								<td><label class="lab">Robles Monroy Alejandro</label></td>
-								<td><label class="lab">Analisis Vectorial</label></td>
+								<td><label class="lab">An&aacute;lisis Vectorial</label></td>
 							</tr>
 							<tr>
 								<td><label class="lab">Robles Monroy Alejandro</label></td>
-								<td><label class="lab">Calculo I</label></td>
+								<td><label class="lab">C&aacute;lculo I</label></td>
 							</tr>
 							<tr>
 								<td><label class="lab">Melissa Forli Sforza</label></td>
-								<td><label class="lab">Calculo I</label></td>
+								<td><label class="lab">C&aacute;lculo I</label></td>
 							</tr>
 							<tr>
 								<td><label class="lab">Melissa Forli Sforza</label></td>
-								<td><label class="lab">Probabilidad y Estadistica</label></td>
+								<td><label class="lab">Probabilidad y Estad&iacute;stica</label></td>
 							</tr>
 							<tr>
 								<td><label class="lab">Eduardo Catalena Castillo</label></td>
-								<td><label class="lab">Analisis Vectorial</label></td>
+								<td><label class="lab">An&aacute;lisis Vectorial</label></td>
 							</tr>
 						</tbody>
-					</table>
-				</div>
-			</div>
+						</table>
+						</div>
+						</div>
+					</div>
 		</div>
 		<div class="row" id="footer">
 			<div class="col-sm-5" id="dir">
@@ -91,6 +117,7 @@
 			<div class="col-sm-5 col-sm-offset-2" id="year">
 				<span class="pull-right"><span class="glyphicon glyphicon-registration-mark"></span>&nbsp;2016</span>
 			</div>
+		</div>
 		</div>
 	</div>
 </div>
