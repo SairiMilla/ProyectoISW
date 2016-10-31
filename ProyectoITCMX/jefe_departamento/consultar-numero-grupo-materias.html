@@ -19,11 +19,37 @@
             <div class="text-center" id="image-container">
               <a href="../index.html"><img src="../imgs/logo3.png" class="img-circle" id="logo"/></a>
             </div>
-            <ul class="nav nav-pills nav-stacked" id="menu-list">
-                <li class="active"><a href=""><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-edit"></span>&nbsp; Número de Grupos por Materia</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-inbox"></span>&nbsp; Consultar Solicitudes de Profesores</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-hourglass"></span>&nbsp; Horarios Preliminares</a></li>
+            <ul class="nav nav-pills nav-stacked left-menu" id="menu-list">
+              <li>
+                <a href="index.html"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a>
+              </li>
+              <li>
+                <a href="#" data-target="#item1" data-toggle="collapse" data-parent="#stacked-menu">Número de Grupos por Materia<span class="caret arrow"></span></a>
+                <ul class="nav nav-stacked collapse left-submenu" id="item1">
+                  <li>
+                    <a href="agregar-grupos-materias.html"><span class="glyphicon glyphicon-plus"></span>&nbsp; Definir Número de Grupos por Materia</a>
+                  </li>
+                  <li class="active">
+                    <a href="consultar-numero-grupo-materias.html"><span class="glyphicon glyphicon-th-list"></span>&nbsp; Consultar Número de Grupos por Materia</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <a href="solicitud-profesores.html"><span class="glyphicon glyphicon-envelope"></span>&nbsp; Consultar Solicitudes de Profesores</a>
+              </li>
+
+              <li>
+                <a href="#" data-target="#item2" data-toggle="collapse" data-parent="#stacked-menu">Horarios<span class="caret arrow"></span></a>
+                <ul class="nav nav-stacked collapse left-submenu" id="item2">
+                  <li>
+                    <a href="horarios-preliminares.html"><span class="glyphicon glyphicon-time"></span>&nbsp; Consultar Horarios</a>
+                  </li>
+                  <li>
+                    <a href="#"><span class="glyphicon glyphicon-check"></span>&nbsp; Consultar Asignación de Profesores a Materias</a>
+                  </li>
+                </ul>
+              </li>
             </ul>
             <div id="menu-filler">
 

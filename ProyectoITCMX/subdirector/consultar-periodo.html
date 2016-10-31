@@ -16,9 +16,12 @@
     		var inicio = document.getElementById("inicio");
     		var fin = document.getElementById("fin");
 
-    		if(inicio.value >= fin.value){
-    			sweetAlert("Periodo no válido","La fecha de fin no puede ser menor o igual a la fecha de inicio","error");
+    		if(inicio.value > fin.value){
+    			sweetAlert("Periodo no válido","La fecha de fin no puede ser menor a la fecha de inicio","error");
     		}
+        else if(inicio.value == fin.value){
+          sweetAlert("Periodo no válido","La fecha de fin no puede ser igual a la fecha de inicio","error");
+        }
     		else{
     			document.getElementById("fecha").innerHTML = document.getElementById("iniFormato").value + " - " + document.getElementById("finFormato").value;
     			document.getElementById("def").innerHTML = "Modificar";
