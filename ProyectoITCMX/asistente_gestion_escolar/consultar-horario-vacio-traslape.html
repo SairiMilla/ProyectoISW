@@ -11,7 +11,18 @@
     <link href="../css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
     <script src="../js/sweetalert.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/sweetalert.css">
+
   </head>
+ <style>
+.modal-body {
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+}
+</style>
+
+<!--
+El estilo interno anterior se aplica para que el modal tenga un scrollbar :x
+-->
   <body>
         <div class="row" id="main-content">
           <div class="col-sm-2" id="menu-bg">
@@ -90,77 +101,7 @@
 		
   <div class="row"> 
           <div class="col-sm-3 "></div>
-          <div class="table table-striped">
-               <div class="col-sm-11 ">
-  <table class="table table-striped ">
-    <tr class="info">
-       <th class="text-center"> </th>
-      <th class="text-center">Grupo</th>
-      <th class="text-center">Materia</th>    
-      <th class="text-center">Profesor</th>
-      <th class="text-center">Lunes</th>
-      <th class="text-center">Martes</th>
-      <th class="text-center">Miercoles</th>
-      <th class="text-center">Jueves   </th>
-      <th class="text-center">Viernes  </th>
-
-    
-      
-    </tr>
-    <tr>
-        <td>
-        <div class="checkbox">
-        <label><input type="checkbox" value=""></label>
-        </div>
-        </td>
-      <td>3CM1 </td>
-      <td>Ingenieria de Software</td>
-      <td>Lopez Rabadan Jose</td>
-      <td>7:00-8:30</td>
-      <td></td>
-      <td>7:00-8:30</td>
-      <td></td>
-      <td>7:00-8:30</td>
-           
-    </tr>
-
-    <tr>
-        <td>
-        <div class="checkbox">
-        <label><input type="checkbox" value=""></label>
-        </div>
-        </td>
-                   <td>3CM1 </td>
-                    <td>Microcontroladores</td>
-                    <td>Perez Perez Jose Juan</td>
-                    <td></td>
-                    <td>7:00-8:30</td>
-                    <td>8:00-10:30</td>
-                    <td>8:30-10:00</td>
-                    <td>8:30-10:00</td>
-                         
-                  </tr>
-
-
-                  <tr>
-                  <td>
-                  <div class="checkbox">
-                  <label><input type="checkbox" value=""></label>
-                  </div>
-                  </td>
-                    <td>3CM1 </td>
-                    <td>Matematicas Avanzadas</td>
-                    <td>Barranco Jimenez Marco</td>
-                    <td></td>
-                    <td>8:00-10:30</td>
-                    <td></td>
-                    <td>10:30-12:00</td>
-                    <td>10:30-12:00</td>
-                         
-                  </tr>
-  
-  </table>
-  </div>
+          <div class="col-sm-8 "><h3>No se ha inscrito ninguna materia</h3></div>
 
 </div>
 
@@ -180,10 +121,14 @@
 
 </div>
 <div class=row>
-    <div class="col-sm-1 ">
+    <div class="col-sm-3 ">
     </div>
-
 		<div class="col-sm-4 ">
+          <a href="consultar-informacion-alumno.html" class="btn btn-default" role="button">Regresar</a>
+    </div>
+		<div class="col-sm-4 ">
+
+      <div class="col-sm-4">
      <div class="container">
         <!-- Trigger the modal with a button -->
         <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Agregar Materia</button>
@@ -217,7 +162,15 @@
                     <div class="input-group">
                       <label class="sr-only" for="semestre">Semestre</label>
                       <div class="input-group-addon">Semestre:</div>
-                        <input class="form-control" id="semestre" type="text" placeholder="Semestre:">
+                     <select class="form-control" name="" id="buscarmateria">
+                     <option value="">1</option>
+                     <option value="">2</option>
+                     <option value="">3</option>
+                     <option value="">4</option>
+                     <option value="">5</option>
+                     <option value="">6</option>
+
+                     </select>
                   </div>
                 </div> 
            </div>
@@ -255,64 +208,115 @@
                          
                   </tr>
                   
-                   <tr>
+                  <tr>
+                    <td>
+                      <div class="checkbox">
+                    <label><input type="checkbox" value=""></label>
+                  </div>
+                    </td>
+                    <td>3CM1 </td>
+                    <td>Microcontroladores</td>
+                    <td></td>
+                    <td>7:00-8:30</td>
+                    <td></td>
+                    <td>8:30-10:00</td>
+                    <td>7:00-8:30</td>
+                         
+                  </tr>
+
+
+                  <tr>
+                    <td>
+                      <div class="checkbox">
+                    <label><input type="checkbox" value=""></label>
+                  </div>
+                    </td>
+                    <td>3CM1 </td>
+                    <td>Matematicas Avanzadas</td>
+                    <td></td>
+                    <td>7:00-8:30</td>
+                    <td></td>
+                    <td>8:30-10:00</td>
+                    <td>7:00-8:30</td>
+                         
+                  </tr>
+                    <tr>
+                    <td>
+                      <div class="checkbox">
+                    <label><input type="checkbox" value=""></label>
+                  </div>
+                    </td>
+                    <td>3CM1 </td>
+                    <td>Redes de Computadoras 2</td>
+                    <td>7:00-8:30</td>
+                    <td></td>
+                    <td>7:00-8:30</td>
+                    <td></td>
+                    <td>7:00-8:30</td>
+                         
+                  </tr>
+
+                    <tr>
                     <td>
                       <div class="checkbox">
                     <label><input type="checkbox" value=""></label>
                   </div>
                     </td>
                     <td>3CM2 </td>
-                    <td>Arquitectura de Computadoras</td>
-                    <td></td>
-                    <td>7:00-8:30</td>
-                    <td>8:30-10:00</td>
-                    <td>7:00-8:30</td>
-                    <td></td>
-                     </tr>   
-                     
-                     <tr>
-                      <td>
-                      <div class="checkbox">
-                    <label><input type="checkbox" value=""></label>
-                  </div>
-                    </td>
-                    <td>3CM4 </td>
                     <td>Compiladores</td>
-                    <td></td>
-                    <td>8:30-10:00</td>
-                    <td>10:30-12:00</td>
-                    <td>10:30-12:00</td>
-                    <td></td>
-                     </tr>   
-                     
-                     <tr>
-                      <td>
-                      <div class="checkbox">
-                    <label><input type="checkbox" value=""></label>
-                  </div>
-                    </td>
-                    <td>3CM6</td>
-                    <td>Micros</td>
                     <td>10:30-12:00</td>
                     <td></td>
                     <td></td>
                     <td>8:30-10:00</td>
                     <td>12:00-13:30</td>
-                     </tr>   
-                     
-                     <tr>
-                        <td>
-                        <div class="checkbox">
-                       <label><input type="checkbox" value=""></label>
-                    </div>
-                        </td>
-                      <td>3CM6</td>
-                      <td>Redes 2</td>
-                      <td>12:00-13:30</td>
-                      <td>13:30-15:00</td>
-                      <td>12:00-13:30</td>
-                      <td>7:00-8:30</td>
-                      </tr>  
+                         
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="checkbox">
+                    <label><input type="checkbox" value=""></label>
+                  </div>
+                    </td>
+                    <td>3CM2 </td>
+                    <td>Compiladores</td>
+                    <td>10:30-12:00</td>
+                    <td></td>
+                    <td></td>
+                    <td>8:30-10:00</td>
+                    <td>12:00-13:30</td>
+                         
+                  </tr>
+                                      <tr>
+                    <td>
+                      <div class="checkbox">
+                    <label><input type="checkbox" value=""></label>
+                  </div>
+                    </td>
+                    <td>3CM2 </td>
+                    <td>Compiladores</td>
+                    <td>10:30-12:00</td>
+                    <td></td>
+                    <td></td>
+                    <td>8:30-10:00</td>
+                    <td>12:00-13:30</td>
+                         
+                  </tr>
+                                      <tr>
+                    <td>
+                      <div class="checkbox">
+                    <label><input type="checkbox" value=""></label>
+                  </div>
+                    </td>
+                    <td>3CM2 </td>
+                    <td>Compiladores</td>
+                    <td>10:30-12:00</td>
+                    <td></td>
+                    <td></td>
+                    <td>8:30-10:00</td>
+                    <td>12:00-13:30</td>
+                         
+                  </tr>
                 </table>
                 </div>
               </div>
@@ -327,13 +331,13 @@
         </div>
       </div>
       </div>
+
+
+		 </div>
 </div>
-          <div class="col-sm-3">
-          <button type="button" class="btn btn-default" id="butn-eliminarmateias">Eliminar Materia</button>
-          </div>
-            <div class="col-sm-3">
-            <button type="button" class="btn btn-default" id="butn-finalizar">Finalizar</button>
-            </div>
+
+
+
 
 
 
@@ -352,78 +356,27 @@
     <script src="../js/jquery-1.11.3.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
      <script src="../js/jquery-ui.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('#butn-finalizar').click(function (e) {
-                swal({
-                  title: "Confirmar Guardar Cambios",
-                  text: "¿Estas seguro de GUARDAR estos cambios?",
-                  type: "warning",
-                  showCancelButton: true,
-                  confirmButtonColor: "#DD6B55",
-                  confirmButtonText: "Si, Guardar Materias",
-                  closeOnConfirm: false
-                },
-                function(){
-                  swal({
-                      title: "Materias Actualizadas",
-                      text: "Se han agregado correctamente las materias",
-                      type: "success",
-                    },
-                    function(){
-                      window.location.href = "comprobante-inscripcion-asistente.pdf";
-                    });
-                });
-            
-            });
-        });
-    </script>
+
     <script>
         $(document).ready(function(){
             $('#butn-agregarmateria').click(function (e) {
                 swal({
-                  title: "Confirmar Agregar Materias",
-                  text: "¿Estas seguro de  agregar las materias seleccionadas?",
-                  type: "warning",
+                  title: "Traslape en materias",
+                  text: "No se puede agregar las materias seleccionadas ya que existe traslape de horas, escoga otro grupo ",
+                  type: "error",
                   showCancelButton: true,
                   confirmButtonColor: "#DD6B55",
-                  confirmButtonText: "Si, Agregar Materias",
+                  confirmButtonText: "Cambiar Materias",
                   closeOnConfirm: false
                 },
                 function(){
                   swal({
                       title: "Datos Actualizados",
-                      text: "Se han agregado correctamente las materias",
+                      text: "Se han Eliminado las materias",
                       type: "success",
                     },
                     function(){
-                      window.location.href = "consultar-horario-una-materia.html";
-                    });
-                });
-            
-            });
-        });
-    </script>
-        <script>
-        $(document).ready(function(){
-            $('#butn-eliminarmateias').click(function (e) {
-                swal({
-                  title: "Confirmar Eliminar Materias",
-                  text: "¿Estas seguro de eliminar las materias seleccionadas?",
-                  type: "warning",
-                  showCancelButton: true,
-                  confirmButtonColor: "#DD6B55",
-                  confirmButtonText: "Si, Eliminar Materias",
-                  closeOnConfirm: false
-                },
-                function(){
-                  swal({
-                      title: "Datos Actualizados",
-                      text: "Se han Eliminado correctamente las materias",
-                      type: "success",
-                    },
-                    function(){
-                      window.location.href = "consultar-horario-una-materia.html";
+                      $('#myModal').modal('hide');
                     });
                 });
             
