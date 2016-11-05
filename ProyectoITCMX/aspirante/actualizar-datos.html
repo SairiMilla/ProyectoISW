@@ -8,7 +8,9 @@
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/base.css" rel="stylesheet">
-    <link href="../css/registro-aspirante.css" rel="stylesheet">  
+    <link href="../css/registro-aspirante.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/sweetalert.css">
+    <script src="../js/sweetalert.min.js"></script>
       
   </head>
   <body>
@@ -48,39 +50,47 @@
               </div>
                 
                 
-                <div class="content">   
-                <!-- Formulario -->      
-                  <form id="attributeForm" class="form-horizontal">   
+                <div class="content"> 
+                
+                <!-- Formulario -->
+                  <form class="form-horizontal" data-toggle="validator" role="form">  
+
+                    <!-- Nombre -->
                     <div class="form-group">
-                      <label class="control-label col-sm-2" for="text">Nombre:</label>
+                      <label class="control-label col-sm-2" for="inputNombre">Nombre:</label>
                       <div class="col-sm-10">
-                      <input type="text" class="form-control" id="nombre" placeholder="Introduce nombre o nombres" data-bv-notempty="true"
-                      data-bv-notempty-message="The first name is required and cannot be empty" >
-                      </div>
+                      <input type="text" class="form-control" id="inputNombre" placeholder="Introduce nombre o nombres" data-error="Introduce tu nombre" required>
+                      <div class="help-block with-errors"></div> 
+                      </div>   
                     </div>
                       
+                    <!-- Apellidos --> 
                     <div class="form-group">
                       <label class="control-label col-sm-2" for="text">Primer Apellido:</label>
                       <div class="col-sm-4">
-                        <input type="text" class="form-control" id="apellido">
+                        <input type="text" class="form-control" id="apellido" data-error="Debes introducir un apellido" required>
+                        <div class="help-block with-errors"></div>
                       </div>
                       <label class="control-label col-sm-2" for="text">Segundo Apellido:</label>
                       <div class="col-sm-4">
                         <input type="text" class="form-control" id="apellido" placeholder="(Opcional)">
-                      </div>
+                      </div> 
                     </div>
-
+                    
+                    <!-- CURP -->
                     <div class="form-group">
                       <label class="control-label col-sm-2" for="text">CURP:</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" id="curp">
+                        <input type="text" class="form-control" id="curp" data-minlength="18" data-error="El CURP introducido no es válido" required>
+                        <div class="help-block with-errors"></div>
                       </div>
                     </div>
 
+                    <!-- Dirección -->
                     <div class="form-group">
                       <label class="control-label col-sm-2" for="callno">Calle y No. de casa:</label>
                       <div class="col-sm-4">
-                        <input type="text" class="form-control" id="callno">
+                        <input type="text" class="form-control" id="callno" required>
                       </div>
                       <label class="control-label col-sm-2" for="colon">Colonia:</label>
                       <div class="col-sm-4">
@@ -88,10 +98,11 @@
                       </div>
                     </div>
 
+                    <!-- CP y Delegación -->
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="cp">C.P.</label>
                         <div class="col-sm-3">
-                          <input type="text" class="form-control" id="cp" placeholder="Código Postal">
+                          <input type="text" class="form-control" id="cp" placeholder="Código Postal" required>
                         </div>
                         <label class="control-label col-sm-2" for="municipio">Delegación:</label>
                         <div class="col-sm-5">
@@ -105,6 +116,7 @@
                         </div>
                     </div>  
 
+                    <!-- Fecha de Nacimiento y Lugar de Nacimiento -->
                     <div class="form-group">
                       <label class="control-label col-sm-2" for="callno">Fecha de Nacimiento:</label>
                       <div class="col-sm-4">
@@ -120,7 +132,7 @@
                       </div>
                       <label class="control-label col-sm-2" for="colon">Lugar de Nacimiento:</label>
                       <div class="col-sm-4">
-                        <select class="form-control" id="estado">
+                        <select class="form-control" id="estado" required>
                             <option>--Selecciona--</option>
                             <option>Ciudad de México</option>
                             <option>Veracruz</option>
@@ -130,31 +142,35 @@
                       </div>
                     </div>
 
+                     <!-- Género y Correo -->
                     <div class="form-group">
-
                         <label class="control-label col-sm-2 radio-label" for="text">Género:</label>
-                        <div class="col-sm-3">
+                        <div class="col-sm-2">
                           <div class="radio"><label><input type="radio" name="optradio">Masculino</label></div>
                           <div class="radio"><label><input type="radio" name="optradio">Femenino</label></div>
                           <div class="radio"><label><input type="radio" name="optradio">Otro</label></div>         
                         </div>
-                        <label class="control-label col-sm-2" for="municipio">E-mail:</label>
-                        <div class="col-sm-5">
-                          <input type="email" class="form-control" id="cp" error="Bruh, that email address is invalid" required>
+                        <label class="control-label col-md-4" for="municipio">Correo:</label>
+                        <div class="col-sm-3">
+                          <input type="email" class="form-control" id="cp" required>
+                          <div class="help-block with-errors"></div>
                         </div>
                     </div>
 
+                    <!-- Escuela de Procedencia -->
                     <div class="form-group">
                       <label class="control-label col-sm-2" for="text">Escuela de Procedencia:</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" id="escuela">
+                        <input type="text" class="form-control" id="escuela" required>
                       </div>
                     </div>
 
+                    <!-- Teléfono y Plantel -->
                     <div class="form-group">
                       <label class="control-label col-sm-2" for="text">Teléfono:</label>
                       <div class="col-sm-4">
-                        <input type="text" class="form-control" id="escuela">
+                        <input type="text" class="form-control" id="escuela" data-error="Debes introducir un número de teléfono. Si no cuentas con uno, introduce el de un familiar o amigo" required>
+                        <div class="help-block with-errors"></div>
                       </div>
 
                       <label class="control-label col-sm-2" for="estado">Plantel al que desea Ingresar:</label>
@@ -170,12 +186,15 @@
 
                     <div class="form-group">
                       <div class="col-sm-offset-5 col-sm-7">
-                        <button type="submit" class="btn btn-default">Actualizar</button>  
+                        <input type="button" class="btn btn-default" id="cerrar-proceso" value="Actualizar">
+                      </div><br/><br/>
+                      <div class="col-sm-offset-5 col-sm-5">
+                        <input type="button" class="btn btn-default" value="Imprimir Solicitud de Registro">
                       </div>
                     </div>  
                       
                   </form>
-                
+
                 </div>
             </div>
               
@@ -192,10 +211,11 @@
           </div>
     <script src="../js/jquery-1.11.3.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/validator.min.js"></script>
     <script>
-    $(document).ready(function() {
-        $('#attributeForm').bootstrapValidator();
-    });
+        $('#cerrar-proceso').click(function () {
+                swal("Datos Actualizado", "Tu información se ha guardado", "success");
+            });
     </script>
     </div>
   </body>

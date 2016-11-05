@@ -9,8 +9,15 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/base.css" rel="stylesheet">
     <link href="../css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
-
+    <script src="../js/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/sweetalert.css">
   </head>
+   <style>
+.modal-body {
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+}
+</style>
   <body>
         <div class="row" id="main-content">
           <div class="col-sm-2" id="menu-bg">
@@ -180,7 +187,7 @@
                   
                     
                   </tr>
-                  <tr>
+                 <tr>
                     <td>
                       <div class="checkbox">
                     <label><input type="checkbox" value=""></label>
@@ -196,14 +203,46 @@
                          
                   </tr>
                   
-                                    <tr>
+                  <tr>
                     <td>
                       <div class="checkbox">
                     <label><input type="checkbox" value=""></label>
                   </div>
                     </td>
                     <td>3CM1 </td>
-                    <td>Ingenieria de Software</td>
+                    <td>Microcontroladores</td>
+                    <td></td>
+                    <td>7:00-8:30</td>
+                    <td></td>
+                    <td>8:30-10:00</td>
+                    <td>7:00-8:30</td>
+                         
+                  </tr>
+
+
+                  <tr>
+                    <td>
+                      <div class="checkbox">
+                    <label><input type="checkbox" value=""></label>
+                  </div>
+                    </td>
+                    <td>3CM1 </td>
+                    <td>Matematicas Avanzadas</td>
+                    <td></td>
+                    <td>7:00-8:30</td>
+                    <td></td>
+                    <td>8:30-10:00</td>
+                    <td>7:00-8:30</td>
+                         
+                  </tr>
+                    <tr>
+                    <td>
+                      <div class="checkbox">
+                    <label><input type="checkbox" value=""></label>
+                  </div>
+                    </td>
+                    <td>3CM1 </td>
+                    <td>Redes de Computadoras 2</td>
                     <td>7:00-8:30</td>
                     <td></td>
                     <td>7:00-8:30</td>
@@ -211,19 +250,66 @@
                     <td>7:00-8:30</td>
                          
                   </tr>
-                                    <tr>
+
+                    <tr>
                     <td>
                       <div class="checkbox">
                     <label><input type="checkbox" value=""></label>
                   </div>
                     </td>
-                    <td>3CM1 </td>
-                    <td>Ingenieria de Software</td>
-                    <td>7:00-8:30</td>
+                    <td>3CM2 </td>
+                    <td>Compiladores</td>
+                    <td>10:30-12:00</td>
                     <td></td>
-                    <td>7:00-8:30</td>
                     <td></td>
-                    <td>7:00-8:30</td>
+                    <td>8:30-10:00</td>
+                    <td>12:00-13:30</td>
+                         
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="checkbox">
+                    <label><input type="checkbox" value=""></label>
+                  </div>
+                    </td>
+                    <td>3CM2 </td>
+                    <td>Compiladores</td>
+                    <td>10:30-12:00</td>
+                    <td></td>
+                    <td></td>
+                    <td>8:30-10:00</td>
+                    <td>12:00-13:30</td>
+                         
+                  </tr>
+                                      <tr>
+                    <td>
+                      <div class="checkbox">
+                    <label><input type="checkbox" value=""></label>
+                  </div>
+                    </td>
+                    <td>3CM2 </td>
+                    <td>Compiladores</td>
+                    <td>10:30-12:00</td>
+                    <td></td>
+                    <td></td>
+                    <td>8:30-10:00</td>
+                    <td>12:00-13:30</td>
+                         
+                  </tr>
+                                      <tr>
+                    <td>
+                      <div class="checkbox">
+                    <label><input type="checkbox" value=""></label>
+                  </div>
+                    </td>
+                    <td>3CM2 </td>
+                    <td>Compiladores</td>
+                    <td>10:30-12:00</td>
+                    <td></td>
+                    <td></td>
+                    <td>8:30-10:00</td>
+                    <td>12:00-13:30</td>
                          
                   </tr>
                 </table>
@@ -233,10 +319,9 @@
               
               
               </div>
-              <div class="modal-footer">
-          <a href="modificar-horario-alumno-una-materia.html" class="btn btn-default" role="button">Agregar</a>
-                
-             </div>
+                    <div class="text-center">
+                    <button type="button" class="btn btn-default" id="butn-agregarmateria">Agregar</button>
+                    </div>
            </div>      
         </div>
       </div>
@@ -266,7 +351,32 @@
     <script src="../js/jquery-1.11.3.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
      <script src="../js/jquery-ui.js"></script>
-
+    <script>
+        $(document).ready(function(){
+            $('#butn-agregarmateria').click(function (e) {
+                swal({
+                  title: "Confirmar Agregar Materias",
+                  text: "¿Estas seguro de  agregar las materias seleccionadas?",
+                  type: "warning",
+                  showCancelButton: true,
+                  confirmButtonColor: "#DD6B55",
+                  confirmButtonText: "Si, Agregar Materias",
+                  closeOnConfirm: false
+                },
+                function(){
+                  swal({
+                      title: "Datos Actualizados",
+                      text: "Se han agregado correctamente las materias",
+                      type: "success",
+                    },
+                    function(){
+                      window.location.href = "consultar-horario-una-materia.html";
+                    });
+                });
+            
+            });
+        });
+    </script>
 
   </body>
 </html>
