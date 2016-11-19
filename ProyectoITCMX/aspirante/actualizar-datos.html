@@ -36,14 +36,14 @@
 
           <div class="col-sm-10 col-sm-offset-2" id="main-side">
               
-            <!-- Header -->
+            <!-- Encabezado Principal -->
             <div class="row" id="header">
               <div class="pull-right" id="user-name-container">
                 <div id="user-name"><a href="">Iniciar Sesión &nbsp;<span class="glyphicon glyphicon-log-in"></span></a></div>
               </div>
             </div>
             
-
+            <!-- Contenido Principal -->
             <div class="row" id="content-container">
               <div class="page-header">
                 <h2>Actualizar Datos</h2>
@@ -59,7 +59,7 @@
                     <div class="form-group">
                       <label class="control-label col-sm-2" for="inputNombre">Nombre:</label>
                       <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputNombre" placeholder="Introduce nombre o nombres" data-error="Introduce tu nombre" required>
+                      <input type="text" class="form-control" id="inputNombre" placeholder="Introduce tu nombre o nombres" data-error="Introduce tu nombre" required>
                       <div class="help-block with-errors"></div> 
                       </div>   
                     </div>
@@ -84,38 +84,8 @@
                         <input type="text" class="form-control" id="curp" data-minlength="18" data-error="El CURP introducido no es válido" required>
                         <div class="help-block with-errors"></div>
                       </div>
-                    </div>
-
-                    <!-- Dirección -->
-                    <div class="form-group">
-                      <label class="control-label col-sm-2" for="callno">Calle y No. de casa:</label>
-                      <div class="col-sm-4">
-                        <input type="text" class="form-control" id="callno" required>
-                      </div>
-                      <label class="control-label col-sm-2" for="colon">Colonia:</label>
-                      <div class="col-sm-4">
-                        <input type="text" class="form-control" id="colon">
-                      </div>
-                    </div>
-
-                    <!-- CP y Delegación -->
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="cp">C.P.</label>
-                        <div class="col-sm-3">
-                          <input type="text" class="form-control" id="cp" placeholder="Código Postal" required>
-                        </div>
-                        <label class="control-label col-sm-2" for="municipio">Delegación:</label>
-                        <div class="col-sm-5">
-                            <select class="form-control" id="estado">
-                              <option>--Selecciona--</option>
-                              <option>Gustavo A. Madero</option>
-                              <option>Álvaro Obregón</option>
-                              <option>Coyoacán</option>
-                              <option>Iztapalapa</option>
-                            </select>  
-                        </div>
                     </div>  
-
+                    
                     <!-- Fecha de Nacimiento y Lugar de Nacimiento -->
                     <div class="form-group">
                       <label class="control-label col-sm-2" for="callno">Fecha de Nacimiento:</label>
@@ -142,36 +112,102 @@
                       </div>
                     </div>
 
-                     <!-- Género y Correo -->
+                    <!-- Género -->
                     <div class="form-group">
                         <label class="control-label col-sm-2 radio-label" for="text">Género:</label>
-                        <div class="col-sm-2">
-                          <div class="radio"><label><input type="radio" name="optradio">Masculino</label></div>
-                          <div class="radio"><label><input type="radio" name="optradio">Femenino</label></div>
-                          <div class="radio"><label><input type="radio" name="optradio">Otro</label></div>         
+                        <label class="radio-inline">
+                            <input type="radio" name="optradio">Masculino
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="optradio">Femenino
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="optradio">Otro
+                        </label>    
+                    </div>
+                    
+                    <!-- Teléfono -->
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="text">Teléfono:</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="escuela" data-error="Debes introducir un número de teléfono. Si no cuentas con uno, introduce el de un familiar o amigo." required>
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                    
+                    <!-- Correo Electrónico  -->
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="text">Correo:</label>
+                      <div class="col-sm-10">
+                        <input type="email" class="form-control" id="email" data-error="Introduce un correo válido" required>
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+
+                    <!-- Calle / Número de Casa -->
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="callno">Calle: </label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="calle" required>
+                      </div>
+                    </div> 
+                      
+                    <!-- Número Interior / Número Exterior -->
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="cp">Número Exterior:</label>
+                        <div class="col-sm-4">
+                          <input type="text" class="form-control">
                         </div>
-                        <label class="control-label col-md-4" for="municipio">Correo:</label>
-                        <div class="col-sm-3">
-                          <input type="email" class="form-control" id="cp" required>
-                          <div class="help-block with-errors"></div>
+                        <label class="control-label col-sm-2">
+                            Número Interior:
+                        </label>
+                        <div class="col-sm-4">
+                          <input type="text" class="form-control" id="numero-interior">
                         </div>
                     </div>
+                      
+                    <!-- Colonia -->
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="text">Colonia:</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="curp" data-minlength="18" data-error="Introduce el nombre de tu colonia" required>
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+
+                    <!-- Código Postal -->
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="text">Código Postal:</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="cp" data-minlength="5" data-error="Introduce tu código postal" required>
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="municipio">Delegación:</label>
+                        <div class="col-sm-5">
+                            <select class="form-control" id="estado">
+                              <option>--Selecciona--</option>
+                              <option>Gustavo A. Madero</option>
+                              <option>Álvaro Obregón</option>
+                              <option>Coyoacán</option>
+                              <option>Iztapalapa</option>
+                            </select>  
+                        </div>
+                    </div>  
 
                     <!-- Escuela de Procedencia -->
                     <div class="form-group">
                       <label class="control-label col-sm-2" for="text">Escuela de Procedencia:</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" id="escuela" required>
+                        <input type="text" class="form-control" id="escuela" data-error="Introduce tu escuela de procedencia" required>
+                        <div class="help-block with-errors"></div>
                       </div>
                     </div>
 
                     <!-- Teléfono y Plantel -->
                     <div class="form-group">
-                      <label class="control-label col-sm-2" for="text">Teléfono:</label>
-                      <div class="col-sm-4">
-                        <input type="text" class="form-control" id="escuela" data-error="Debes introducir un número de teléfono. Si no cuentas con uno, introduce el de un familiar o amigo" required>
-                        <div class="help-block with-errors"></div>
-                      </div>
 
                       <label class="control-label col-sm-2" for="estado">Plantel al que desea Ingresar:</label>
                         <div class="col-sm-4">
