@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Modificar Resultados</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/captura-calificaciones.css" rel="stylesheet">
+      <script src="../js/sweetalert.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="../css/sweetalert.css">
+  </head>
+  <body>
+        <div class="row" id="main-content">
+          <div class="col-sm-2" id="menu-bg">
+              <img src="../imgs/imagen-menu.jpg" id="menu-img">
+          </div>
+          <div class="col-sm-2" id="side-menu">
+            <div class="text-center" id="image-container">
+              <img src="../imgs/logo3.png" class="img-circle" id="logo">
+            </div>
+            <ul class="nav nav-pills nav-stacked" id="menu-list">
+                <li><a href="index-asistente-admision.html"><span class="glyphicon glyphicon-home"></span>&nbsp; Inicio</a></li>
+                <li><a href="gestion-aspirantes.html"><span class="glyphicon glyphicon-folder-open"></span>&nbsp; Gestionar Aspirantes</a></li>
+                <li class="active"><a href="modificar-calificaciones.html"><span class="glyphicon glyphicon-th-list"></span>&nbsp; Modificar Resultados</a></li>
+                <li><a href="captura-calificaciones.html"><span class="glyphicon glyphicon-th-list"></span>&nbsp; Capturar Calificaciones</a></li>
+            </ul>
+            <div id="menu-filler">
+
+            </div>
+          </div>
+          <div class="col-sm-10 col-sm-offset-2" id="main-side">
+            <div class="row" id="header">
+              <div class="pull-right" id="user-name-container">
+                <div id="user-name"><a href="">Asistente de Admisión &nbsp;<span class="glyphicon glyphicon-list-alt"></span></a></div>
+              </div>
+            </div>
+            <div class="row" id="content-container">
+              <div class="page-header">
+                <h2>Modificar Resultados</h2>
+              </div>
+              <div class="content col-sm-offset-2 col-sm-8">
+                  <div class="row">
+                      <form class="form-inline">
+                        <div class="form-group col-sm-9">
+
+                              <div class="input-group">
+                                  <div class="form-group">
+                                      <select class="form-control select-search" name="category" id="tipo-busqueda">
+                                        <option value="0">Buscar por Folio</option>
+                                        <option value="1">Buscar por Nombre</option>
+                                      </select>   
+                                  </div>
+                                  <div class="form-group">
+                                    <input type="text" class="form-control search-text" id="busqueda" placeholder="Buscar un aspirante">
+                                  </div>
+                                  <div class="form-group">
+                                    <button type="button" class="btn btn-default" id="buscar"><span class="glyphicon glyphicon-search"></span></button>
+                                  </div>
+
+                              </div>
+                          </div> 
+                          <div class="form-group col-sm-3">
+                              <div class="form-group">
+                                    <button type="button" class="btn btn-default btn-search btn-vergas" id="cerrar-proceso">Cerrar Proceso</button>
+                            </div>
+                              
+                          </div>
+                       </form>
+                  </div>
+                  <div class="alert alert-info fade in" id="alerta-busqueda">
+                    <a href="#" class="close" aria-label="close">&times;</a>
+                    <strong>Info!</strong> La búsqueda no ha arrojado resultados.
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-offset-2 col-sm-8">
+                        <div id="datos-aspirante">
+                            <div class="row text-center" id="primer-bloque">
+                              <h2 > <span id="nombre-aspirante">Juan Perez Perez</span><br><small><span class="glyphicon glyphicon-tag"></span> <span id="folio-aspirante">14AB12T3</span></small></h2>
+                            </div>
+                              <div class="row minor-data">
+                                <div class="col-sm-5 col-sm-offset-2 data-label">
+                                    CURP:
+                                </div>
+                                <div class="col-sm-5" id="curp">
+                                    PEPJ010101HASRRN09
+                                </div>
+                              </div>
+                              
+                              <div class="row minor-data" id="ultimo-bloque">
+                                <div class="col-sm-5 col-sm-offset-2 data-label">
+                                    Telefono:
+                                </div>
+                                <div class="col-sm-5" id="telefono">
+                                    5567985443
+                                </div>
+                              </div>
+                        </div>
+                              <div class="row text-center">
+                                  <h3>Aciertos:</h3>
+                                <form class="form-horizontal" data-toggle="validator">
+                                    <div class=" form-group">
+                                        <div class="col-sm-4 col-sm-offset-4" id="result-input">
+                                            <input type="number" class="form-control" required value="78">
+                                        </div>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    <div class=" form-group">
+                                        <div class="col-sm-3">
+                                            <a href="#" id="atras">Atras</a>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <button class="btn btn-default">Guardar</button>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <a href="#" id="siguiente">Siguiente</a>
+                                        </div>
+                                    </div>
+                                </form>
+                              </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="row" id="footer">
+              <div class="col-sm-5" id="dir">
+                 Av. Juan de Dios Bátiz esq. Av. Miguel Othón de Mendizábal, Col. Lindavista. Demarcación Territorial, Gustavo A. Madero. Ciudad de México. C. P. 07738.
+              </div>
+              <div class="col-sm-5 col-sm-offset-2" id="year">
+                <span class="pull-right"><span class="glyphicon glyphicon-registration-mark"></span>&nbsp;2016</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/validator.min.js"></script>
+      <script>
+        $(document).ready(function(){
+          var i=0;
+            completos=true;
+            $('#alerta-busqueda').hide();
+            $('#siguiente').on('click', function () {
+                if(i==2){
+                    i=0;
+                }
+                else{
+                    i++;
+                }
+                
+                if(i==0){
+                    $('#nombre-aspirante').html("Juan Perez Perez");
+                    $('#folio-aspirante').html("14AB12T3");
+                    $('#curp').html("PEPJ010101HASRRN09");
+                    $('#telefono').html("5567985443");
+                    $('#result-input').html("<input type='text' class='form-control'>");
+                }
+                else if(i==1){
+                    $('#nombre-aspirante').html("Pedro Jimenez Martinez");
+                    $('#folio-aspirante').html("FGHY6543");
+                    $('#curp').html("JIMP010101HI8");
+                    $('#telefono').html("67589045");
+                    $('#result-input').html("<input type='text' class='form-control'>");
+                }
+                else if(i==2){
+                   $('#nombre-aspirante').html("Paulina Gonzalez Lopez");
+                    $('#folio-aspirante').html("AF542HU7");
+                    $('#curp').html("GOLP010101DL2");
+                    $('#telefono').html("5578647389");
+                    $('#result-input').html("<h4>En revisión por otro usuario</h4>");
+
+                }
+              });
+            
+            $('#atras').on('click', function () {
+                if(i==0){
+                    i=2;
+                }
+                else{
+                    i--;
+                }
+                
+                if(i==0){
+                    $('#nombre-aspirante').html("Juan Perez Perez");
+                    $('#folio-aspirante').html("14AB12T3");
+                    $('#curp').html("PEPJ010101HASRRN09");
+                    $('#telefono').html("5567985443");
+                    $('#result-input').html("<input type='text' class='form-control'>");
+                }
+                else if(i==1){
+                    $('#nombre-aspirante').html("Pedro Jimenez Martinez");
+                    $('#folio-aspirante').html("FGHY6543");
+                    $('#curp').html("JIMP010101HI8");
+                    $('#telefono').html("67589045");
+                    $('#result-input').html("<input type='text' class='form-control'>");
+                }
+                else if(i==2){
+                   $('#nombre-aspirante').html("Paulina Gonzalez Lopez");
+                    $('#folio-aspirante').html("AF542HU7");
+                    $('#curp').html("GOLP010101DL2");
+                    $('#telefono').html("5578647389");
+                    $('#result-input').html("<h4>En revisión por otro usuario</h4>");
+
+                }
+              });
+            $('#buscar').click(function () {
+                if($('#busqueda').val()=="Pedro Jimenez Martinez" && $('#tipo-busqueda').val()==1){
+                    $('#nombre-aspirante').html("Pedro Jimenez Martinez");
+                    $('#folio-aspirante').html("FGHY6543");
+                    $('#curp').html("JIMP010101HI8");
+                    $('#telefono').html("67589045");
+                    $('#result-input').html("<input type='text' class='form-control'>");
+                }
+                else if($('#busqueda').val()=="AF542HU7" && $('#tipo-busqueda').val()==0){
+                    $('#nombre-aspirante').html("Paulina Gonzalez Lopez");
+                    $('#folio-aspirante').html("AF542HU7");
+                    $('#curp').html("GOLP010101DL2");
+                    $('#telefono').html("5578647389");
+                    $('#result-input').html("<h4>En revisión por otro usuario</h4>");
+                }
+                else
+                    $('#alerta-busqueda').show(); // shows alert with Bootstrap CSS3 implem
+            });
+
+            $('.close').click(function () {
+                $(this).parent().hide();
+            });
+            $('#cerrar-proceso').click(function () {
+                swal({
+                  title: "¿Seguro que desea cerrar el proceso?",
+                  text: "El proceso terminará y no se podrá realizar cambios",
+                  type: "warning",
+                  showCancelButton: true,
+                  confirmButtonColor: "#DD6B55",
+                  confirmButtonText: "Terminar Proceso",
+                  closeOnConfirm: false
+                },
+                function(){
+                  if(completos)
+                    swal("Proceso terminado", "Se publicarán los resultados", "success");
+                  else 
+                    swal("Ha ocurrido un error", "No se han guardado todas las calificaciones", "error");
+                });
+            });
+            
+        });
+      </script>
+  </body>
+</html>
