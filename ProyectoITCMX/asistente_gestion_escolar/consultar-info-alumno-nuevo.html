@@ -60,34 +60,38 @@
                            <div class="col-sm-3 ">
                              <div class="form-group">
                              <label for="inputPassword" >Nombre</label>
-                             <input class="form-control" id="disabledInput" type="text" placeholder="Carlos Alberto">
+                             <input class="form-control editable" type="text" placeholder="Carlos Alberto" disabled>
                              </div>
                                 </div>
                               <div class="col-sm-3 ">
                              <div class="form-group">
                              <label for="inputPassword" >Apellido Paterno</label>
-                             <input class="form-control" id="disabledInput" type="text" placeholder="Robles">
+                             <input class="form-control editable" type="text" placeholder="Robles" disabled>
                              </div>
                                 </div>
                                 <div class="col-sm-3 ">
                              <div class="form-group">
                              <label for="inputPassword" >Apellido Materno</label>
-                             <input class="form-control" id="disabledInput" type="text" placeholder="Ruiz">
+                             <input class="form-control editable" type="text" placeholder="Ruiz" disabled>
                              </div>
                                 </div>
 
                                  <div class="col-sm-3 ">
                              <div class="form-group">
                              <label for="inputPassword" >Boleta</label>
-                             <input class="form-control" id="disabledInput" type="text" placeholder="2014630421" disabled>
+                             <input class="form-control disabledInput" type="text" placeholder="2014630421" disabled>
                              </div>
                                 </div>
                               <div class="col-sm-3 ">
                              <div class="form-group">
                              <label for="inputPassword" >Semestre Actual</label>
-                             <input class="form-control" id="disabledInput" type="text" placeholder="1 Semestre" disabled>
+                             <input class="form-control disabledInput" type="text" placeholder="1 Semestre" disabled>
                              </div>
                                 </div>
+                        </div>
+                    
+                        <div class="row text-center" id="info-options">
+                            <button id="editar" type="button" class="btn btn-default">Editar</button>
                         </div>
                          <div class="row"> 
                             <div class="col-sm-3"></div>
@@ -112,7 +116,21 @@
     <script src="../js/jquery-1.11.3.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
      <script src="../js/jquery-ui.js"></script>
-
+    <script>
+        $(document).ready(function(){
+            $('#editar').on('click', function () {
+               $('input.editable').prop('disabled',false);
+               $('#info-options').html("<div class='col-sm-offset-2 col-sm-4 text-center'><button id='actualizar' type='button' class='btn btn-default'>Actualizar</button></div><div class='col-sm-4 text-center'><button id='cancelar' type='button' class='btn btn-vergas'>Cancelar</button></div>")
+               $('#cancelar').on('click', function () {
+                   $('input.editable').prop('disabled',true);
+                   $('#info-options').html("<button id='editar' type='button' class='btn btn-default'>Editar</button>")
+                });
+            });
+            
+            
+        });  
+    </script>
 
   </body>
+    
 </html>
