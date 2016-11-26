@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Establecer Periodo</title>
+    <title>Periodos de Admisión</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/base.css" rel="stylesheet">
@@ -12,21 +12,7 @@
     <link href="../css/sweetalert.css" rel="stylesheet">
 
     <script>
-    	function modificarFecha() {
-    		var inicio = document.getElementById("inicio");
-    		var fin = document.getElementById("fin");
-
-    		if(inicio.value > fin.value){
-    			sweetAlert("Periodo no válido","La fecha de fin no puede ser menor a la fecha de inicio","error");
-    		}
-        else if(inicio.value == fin.value){
-          sweetAlert("Periodo no válido","La fecha de fin no puede ser igual a la fecha de inicio","error");
-        }
-    		else{
-    			document.getElementById("fecha").innerHTML = document.getElementById("iniFormato").value + " - " + document.getElementById("finFormato").value;
-    			document.getElementById("def").innerHTML = "Modificar";
-    		}
-    	}
+    	
     </script>
 
   </head>
@@ -41,10 +27,11 @@
             </div>
             <ul class="nav nav-pills nav-stacked" id="menu-list">
                 <li><a href="index.html"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
-                <li class="active"><a href=""><span class="glyphicon glyphicon-calendar"></span>&nbsp; Periodo de Generación de Horarios</a></li>
+                <li><a href="consultar-periodo.html"><span class="glyphicon glyphicon-calendar"></span>&nbsp; Periodo de Generación de Horarios</a></li>
                 <li><a href="estudiantes-admitidos.html"><span class="glyphicon glyphicon-plus"></span>&nbsp; Estudiantes Admitidos por Ciclo Escolar</a>
                 </li>
-                <li><a href="periodos-admision.html"><span class="glyphicon glyphicon-calendar"></span>&nbsp; Periodo de Admisión</a></li>
+                <li class="active"><a href="periodos-admision.html"><span class="glyphicon glyphicon-calendar"></span>&nbsp; Periodo de Admisión</a></li>
+                
             </ul>
             <div id="menu-filler">
 
@@ -58,7 +45,7 @@
             </div>
             <div class="row" id="content-container">
               <div class="page-header">
-                <h2>Periodo de Generación de Horarios</h2>
+                <h2>Periodos de Admisión</h2>
               </div>
               <br/>
               <br/>
@@ -66,7 +53,7 @@
               	<div class="content">
 	              	<div class="text-center">
 		              	<div class="panel panel-info">
-		              		<div class="panel-heading">Periodo Escolar</div>
+		              		<div class="panel-heading">Periodo de registro</div>
 		              		<div class="table-responsive">
 		              			<table class="table table-striped">
 		              				<colgroup>
@@ -81,8 +68,78 @@
 		              				</thead>
 		              				<tbody>
 		              					<tr>
-		              						<td id="fecha">S/A</td>
-		              						<td><button class="btn btn-default" type="button" data-toggle="modal" data-target=#definir id="def">Gestionar</button></td>
+		              						<td id="fecha1">S/A</td>
+		              						<td><button class="btn btn-default asignPer" type="button" data-toggle="modal" data-target=#definir id="def" data-idfecha="fecha1">Gestionar</button></td>
+		              					</tr>
+		              				</tbody>
+		              			</table>
+		              		</div>
+		              	</div>
+                        <div class="panel panel-info">
+		              		<div class="panel-heading">Periodo de recepción de documentos</div>
+		              		<div class="table-responsive">
+		              			<table class="table table-striped">
+		              				<colgroup>
+		              					<col class="col-sm-4">
+		              					<col class="col-sm-4">
+		              				</colgroup>
+		              				<thead>
+		              					<tr>
+		              						<th class="text-center">Fecha</th>
+		              						<th class="text-center">Acción</th>
+		              					</tr>
+		              				</thead>
+		              				<tbody>
+		              					<tr>
+		              						<td id="fecha2">S/A</td>
+		              						<td><button class="btn btn-default asignPer" type="button" data-toggle="modal" data-target=#definir id="def" data-idfecha="fecha2">Gestionar</button></td>
+		              					</tr>
+		              				</tbody>
+		              			</table>
+		              		</div>
+		              	</div>
+                        <div class="panel panel-info">
+		              		<div class="panel-heading">Periodo de Publicación de Resultados</div>
+		              		<div class="table-responsive">
+		              			<table class="table table-striped">
+		              				<colgroup>
+		              					<col class="col-sm-4">
+		              					<col class="col-sm-4">
+		              				</colgroup>
+		              				<thead>
+		              					<tr>
+		              						<th class="text-center">Fecha</th>
+		              						<th class="text-center">Acción</th>
+		              					</tr>
+		              				</thead>
+		              				<tbody>
+		              					<tr>
+		              						<td id="fecha3">S/A</td>
+		              						<td><button class="btn btn-default asignPer" type="button" data-toggle="modal" data-target=#definir id="def" data-idfecha="fecha3">Gestionar</button></td>
+		              					</tr>
+		              				</tbody>
+		              			</table>
+		              		</div>
+		              	</div>
+                        
+                        <div class="panel panel-info">
+		              		<div class="panel-heading">Periodo de Inscripción</div>
+		              		<div class="table-responsive">
+		              			<table class="table table-striped">
+		              				<colgroup>
+		              					<col class="col-sm-4">
+		              					<col class="col-sm-4">
+		              				</colgroup>
+		              				<thead>
+		              					<tr>
+		              						<th class="text-center">Fecha</th>
+		              						<th class="text-center">Acción</th>
+		              					</tr>
+		              				</thead>
+		              				<tbody>
+		              					<tr>
+		              						<td id="fecha4">S/A</td>
+		              						<td><button class="btn btn-default asignPer" type="button" data-toggle="modal" data-target=#definir id="def" data-idfecha="fecha4">Gestionar</button></td>
 		              					</tr>
 		              				</tbody>
 		              			</table>
@@ -121,7 +178,7 @@
                           </div>
 
                           <div class="text-center">
-	                          <button type="submit" class="btn btn-default" data-dismiss="modal" onclick="modificarFecha()">Definir</button>
+	                          <button type="submit" class="btn btn-default" data-dismiss="modal" id="modalboton">Definir</button>
 	                      </div>
                         </form>
                       </div>
@@ -184,6 +241,29 @@
         maxView : 1,
         forceParse : 0
       });
+        
+      $(document).ready(function(){
+          var fechaDisplay;
+            $('.asignPer').on('click', function (event) {
+               fechaDisplay='#'+$(this).data("idfecha");
+            });   
+          
+            $('#modalboton').click(function() {
+                var inicio = $("#inicio");
+                var fin = $("#fin");
+
+                if(inicio.val() > fin.val()){
+                    sweetAlert("Periodo no válido","La fecha de fin no puede ser menor a la fecha de inicio","error");
+                }
+                else if(inicio.val() == fin.val()){
+                  sweetAlert("Periodo no válido","La fecha de fin no puede ser igual a la fecha de inicio","error");
+                }
+                else{
+                    $(fechaDisplay).html($("#iniFormato").val() + " - " + $("#finFormato").val());
+                    $("#def").html("Modificar");
+                }
+            });
+        });  
     </script>
 
   </body>
