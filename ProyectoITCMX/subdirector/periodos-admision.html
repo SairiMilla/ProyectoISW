@@ -251,8 +251,10 @@
             $('#modalboton').click(function() {
                 var inicio = $("#inicio");
                 var fin = $("#fin");
-
-                if(inicio.val() > fin.val()){
+                if(inicio.val()==''||fin.val()==''){
+                    sweetAlert("Periodo no válido","No deje fechas en blanco","error");
+                }
+                else if(inicio.val() > fin.val()){
                     sweetAlert("Periodo no válido","La fecha de fin no puede ser menor a la fecha de inicio","error");
                 }
                 else if(inicio.val() == fin.val()){
@@ -261,6 +263,8 @@
                 else{
                     $(fechaDisplay).html($("#iniFormato").val() + " - " + $("#finFormato").val());
                     $("#def").html("Modificar");
+                    sweetAlert("Periodo modificado","Se ha definidio el periodo","success");
+
                 }
             });
         });  
