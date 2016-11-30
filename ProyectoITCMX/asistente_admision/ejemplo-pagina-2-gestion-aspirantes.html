@@ -480,7 +480,7 @@
                 });
               }
             });
-          
+/*
           $('#comentarios-correo').validator().on('submit', function (e) {
               if (e.isDefaultPrevented()) {
                 // handle the invalid form...
@@ -496,7 +496,31 @@
                 });
               }
             });
-          
+*/
+          // Notificaciones con Sweet Alert 
+          $('#comentarios-correo').validator().on('submit', function (e) {
+              if (e.isDefaultPrevented()) {
+                // handle the invalid form...
+              } else {
+                  e.preventDefault();
+                swal({
+                  title: "¿Seguro que deseas continuar?",
+                    text: "Se enviará una notificación al alumno si decides continuar",
+                    type: "warning",
+                    showCancelButton: true,
+                    cancelButtonText: "Cancelar",
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Sí, deseo continuar",
+                    closeOnConfirm: false
+                },
+                function(){
+                  $('#modalComentarios').modal('hide');
+                  swal("Accion Completada", "Se ha enviado notificación al alumno.", "success");
+                  
+                });
+              }
+            });
+  
           
           $('#butn-enviar').on('click', function () {
            notif=true;
