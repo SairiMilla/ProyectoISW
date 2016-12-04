@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registro Aspirante</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/registro-aspirante.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/sweetalert.css">
+    <script src="../js/sweetalert.min.js"></script>
+      
+  </head>
+  <body>
+        <div class="row" id="main-content">
+        
+        <!-- Barra Lateral -->
+          <div class="col-sm-2" id="menu-bg">
+              <img src="../imgs/imagen-menu.jpg" id="menu-img">
+          </div>
+          <div class="col-sm-2" id="side-menu">
+            <div class="text-center" id="image-container">
+              <img src="../imgs/logo3.png" class="img-circle" id="logo">
+            </div>
+            <ul class="nav nav-pills nav-stacked" id="menu-list">
+                <li class="active"><a href="actualizar-datos.html"><span class="glyphicon glyphicon-edit"></span>&nbsp; Registrar Datos</a></li>
+            </ul>
+            <div id="menu-filler">
+            </div>
+          </div>
+
+          <div class="col-sm-10 col-sm-offset-2" id="main-side">
+              
+            <!-- Encabezado Principal -->
+            <div class="row" id="header">
+              <div class="pull-right" id="user-name-container">
+                <div id="user-name"><a href="">Iniciar Sesión &nbsp;<span class="glyphicon glyphicon-log-in"></span></a></div>
+              </div>
+            </div>
+            
+            <!-- Contenido Principal -->
+            <div class="row" id="content-container">
+              <div class="page-header">
+                <h2>Actualizar Datos</h2>
+              </div>
+                
+                
+                <div class="content"> 
+                
+                <!-- Formulario -->
+                  <form class="form-horizontal" data-toggle="validator" role="form">  
+
+                    <!-- Nombre -->
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="inputNombre">Nombre:</label>
+                      <div class="col-sm-10">
+                      <input type="text" class="form-control" id="inputNombre" placeholder="Introduce tu nombre o nombres" data-error="Introduce tu nombre" required>
+                      <div class="help-block with-errors"></div> 
+                      </div>   
+                    </div>
+                      
+                    <!-- Apellidos --> 
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="text">Primer Apellido:</label>
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control" id="apellido" data-error="Debes introducir un apellido" required>
+                        <div class="help-block with-errors"></div>
+                      </div>
+                      <label class="control-label col-sm-2" for="text">Segundo Apellido:</label>
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control" id="apellido" placeholder="(Opcional)">
+                      </div> 
+                    </div>
+                    
+                    <!-- CURP -->
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="text">CURP:</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="curp" data-minlength="18" data-error="El CURP introducido no es válido" required>
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>  
+                    
+                    <!-- Fecha de Nacimiento y Lugar de Nacimiento -->
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="callno">Fecha de Nacimiento:</label>
+                      <div class="col-sm-4">
+                        <div class="input-group date form_date col-md-10" data-date=""
+                          data-date-format="dd MM yyyy" data-link-field="dtp_input2"
+                          data-link-format="yyyy-mm-dd">
+                          <input class="form-control" size="6" type="text" value=""
+                            placeholder="Seleccione Fecha Inicio" readonly> <span class="input-group-addon"><span
+                            class="glyphicon glyphicon-remove"></span></span> <span
+                            class="input-group-addon"><span
+                            class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
+                      </div>
+                      <label class="control-label col-sm-2" for="colon">Lugar de Nacimiento:</label>
+                      <div class="col-sm-4">
+                        <select class="form-control" id="estado" required>
+                            <option>--Selecciona--</option>
+                            <option>Ciudad de México</option>
+                            <option>Veracruz</option>
+                            <option>Jalisco</option>
+                            <option>Guerrero</option>
+                        </select> 
+                      </div>
+                    </div>
+
+                    <!-- Género -->
+                    <div class="form-group">
+                        <label class="control-label col-sm-2 radio-label" for="text">Género:</label>
+                        <label class="radio-inline">
+                            <input type="radio" name="optradio">Masculino
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="optradio">Femenino
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="optradio">Otro
+                        </label>    
+                    </div>
+                    
+                    <!-- Teléfono -->
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="text">Teléfono:</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="escuela" data-error="Debes introducir un número de teléfono. Si no cuentas con uno, introduce el de un familiar o amigo." required>
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                    
+                    <!-- Correo Electrónico  -->
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="text">Correo:</label>
+                      <div class="col-sm-10">
+                        <input type="email" class="form-control" id="email" data-error="Introduce un correo válido" required>
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+
+                    <!-- Calle / Número de Casa -->
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="callno">Calle: </label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="calle" required>
+                      </div>
+                    </div> 
+                      
+                    <!-- Número Interior / Número Exterior -->
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="cp">Número Exterior:</label>
+                        <div class="col-sm-4">
+                          <input type="text" class="form-control">
+                        </div>
+                        <label class="control-label col-sm-2">
+                            Número Interior:
+                        </label>
+                        <div class="col-sm-4">
+                          <input type="text" class="form-control" id="numero-interior">
+                        </div>
+                    </div>
+                      
+                    <!-- Colonia -->
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="text">Colonia:</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="curp" data-minlength="18" data-error="Introduce el nombre de tu colonia" required>
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+
+                    <!-- Código Postal -->
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="text">Código Postal:</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="cp" data-minlength="5" data-error="Introduce tu código postal" required>
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="municipio">Delegación:</label>
+                        <div class="col-sm-5">
+                            <select class="form-control" id="estado">
+                              <option>--Selecciona--</option>
+                              <option>Gustavo A. Madero</option>
+                              <option>Álvaro Obregón</option>
+                              <option>Coyoacán</option>
+                              <option>Iztapalapa</option>
+                            </select>  
+                        </div>
+                    </div>  
+
+                    <!-- Escuela de Procedencia -->
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="text">Escuela de Procedencia:</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="escuela" data-error="Introduce tu escuela de procedencia" required>
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+
+                    <!-- Teléfono y Plantel -->
+                    <div class="form-group">
+
+                      <label class="control-label col-sm-2" for="estado">Plantel al que desea Ingresar:</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" id="estado">
+                            <option>Ciudad de México</option>
+                            <option>Veracruz</option>
+                            <option>Jalisco</option>
+                            <option>Guerrero</option>
+                            </select>  
+                        </div>
+                    </div>    
+
+                    <div class="form-group">
+                      <div class="col-sm-offset-5 col-sm-7">
+                        <input type="button" class="btn btn-default" id="cerrar-proceso" value="Registrar Datos">
+                      </div><br/><br/>
+                      <div class="col-sm-offset-5 col-sm-5">
+                        <input type="button" class="btn btn-default" value="Imprimir Solicitud de Registro">
+                      </div>
+                    </div>  
+                      
+                  </form>
+
+                </div>
+            </div>
+              
+            <!-- Footer -->  
+            <div class="row" id="footer">
+              <div class="col-sm-5" id="dir">
+                 Av. Juan de Dios Bátiz esq. Av. Miguel Othón de Mendizábal, Col. Lindavista. Demarcación Territorial, Gustavo A. Madero. Ciudad de México. C. P. 07738.
+              </div>
+              <div class="col-sm-5 col-sm-offset-2" id="year">
+                <span class="pull-right"><span class="glyphicon glyphicon-registration-mark"></span>&nbsp;2016</span>
+              </div>
+            </div>
+              
+          </div>
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/validator.min.js"></script>
+    <script>
+        $('#cerrar-proceso').click(function () {
+                swal("Datos Actualizado", "Tu información se ha guardado", "success");
+            });
+    </script>
+    </div>
+  </body>
+</html>
